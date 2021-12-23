@@ -1,0 +1,6 @@
+Open an account:
+1. Root -> email and credit card
+2. IAM -> AWS Account -> Account Alias
+3. IAM -> MFA
+4. Account -> Billing Dashboard -> set alert
+5. Cloud Watch -> Set billing Alert
