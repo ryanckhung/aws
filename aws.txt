@@ -3,4 +3,4 @@ Open an account:
 2. IAM -> AWS Account -> Account Alias
 3. IAM -> MFA
 4. Account -> Billing Dashboard -> Billing Preferences -> Receive Free Tier Usage Alerts
-5. Cloud Watch -> Set billing Alert
+5. Cloud Watch -> Alarms -> Billing
