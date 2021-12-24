@@ -12,3 +12,6 @@ IAM:
 4. [HOL] Change password policy -> IAM -> Account Settings -> Change Password Policy
 5. Identity based policy and resource based policy (Role is some how a resource based policy which attched with trust policy and permission policy)
 6. Permission has it's logic sequence. For example, S3 has a reousce policy and Peter has an identity policy. When Peter access S3, it will first check the RESORUCE POLICY, if it's allowed, AWS will check Peter's identity policy. If resource policy rejected Peter, AWS won't check for Peter's identiy policy.
+7. [HOL] IAM Policy Simulator: IAM Dashboard -> right hand side (Tools) -> Policy Simulator
+
+EC2:
