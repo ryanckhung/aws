@@ -4,3 +4,6 @@ Open an account:
 3. IAM -> MFA
 4. Account -> Billing Dashboard -> Billing Preferences -> Receive Free Tier Usage Alerts
 5. Cloud Watch -> Alarms -> Billing -> Create Alarm
+
+IAM:
+1. 
