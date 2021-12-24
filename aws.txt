@@ -1,9 +1,14 @@
 Open an account:
-1. Root -> email and credit card
-2. IAM -> AWS Account -> Account Alias
-3. IAM -> MFA
-4. Account -> Billing Dashboard -> Billing Preferences -> Receive Free Tier Usage Alerts
-5. Cloud Watch -> Alarms -> Billing -> Create Alarm
+1. [HOL] Root -> email and credit card
+2. [HOL] IAM -> AWS Account -> Account Alias
+3. [HOL] IAM -> MFA
+4. [HOL] Account -> Billing Dashboard -> Billing Preferences -> Receive Free Tier Usage Alerts
+5. [HOL] Cloud Watch -> Alarms -> Billing -> Create Alarm
 
 IAM:
-1. 
+1. User should add into group, then policy apply to the group, 
+2. [HOL] Create user -> IAM -> users
+3. Role will have polcies (trust policy and permission policy) attached to it and tell which resource have right to assume the role and get the sts token; STS just like a temporary password; STS will auto renew when it's almost expire; 
+4. [HOL] Change password policy -> IAM -> Account Settings -> Change Password Policy
+5. Identity based policy and resource based policy (Role is some how a resource based policy which attched with trust policy and permission policy)
+6. Permission has it's logic sequence. For example, S3 has a reousce policy and Peter has an identity policy. When Peter access S3, it will first check the RESORUCE POLICY, if it's allowed, AWS will check Peter's identity policy. If resource policy rejected Peter, AWS won't check for Peter's identiy policy.
