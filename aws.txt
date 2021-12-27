@@ -1,3 +1,5 @@
+[HOL] = handson lab
+
 Open an account:
 1. [HOL] Root -> email and credit card
 2. [HOL] IAM -> AWS Account -> Account Alias
@@ -15,3 +17,7 @@ IAM:
 7. [HOL] IAM Policy Simulator: IAM Dashboard -> right hand side (Tools) -> Policy Simulator
 
 EC2:
+1. [HOL] Create EC2 -> EC2 Dashboard -> Select Region -> Launch Instance [if it's not working, most likely due to the port not yet open in the security group OR in private subnet] -> Remark: open in browser use http://public-ip
+2. User Data: user script (.sh) run at the initializing the instance; 
+3. Meta data: Information related to the instance [in any EC2 instance, you can run > curl http://169.254.169.254/latest/meta-data]
+
