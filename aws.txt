@@ -29,7 +29,7 @@ EC2:
 10. [HOL] VPC, subnet, route table, and internet gateway -> goto VPC dashboard; click the VPC, subenet, route table and internet gateway to play around
 11. [HOL] Create Subnet: VPC dashboard -> Subnets -> Create Subnet -> Choose which VPC, availablity zone and the coresponding CIDR Block -> create a route table without the internet gateway and associate it with the subnet (the original created subnet is associate with a route table which will send the subnet excluded 0.0.0.0 traffic to the internet gateway) 
 12. [HOL] connect SSH through the bastion host; log to public ec2 to private ec2; Reference https://towardsdatascience.com/connecting-to-an-ec2-instance-in-a-private-subnet-on-aws-38a3b86f58fb -> In Local machine run "ssh-add -K chu.pem" -> In Local machine ssh with -A option "ssh -A -i "chu.pem" ec2-user@ec2-54-173-60-110.compute-1.amazonaws.com" -> Now in the public EC2, to access the private EC2 run "ssh 172.31.105.163" or "ssh <ip-addr-private-ec2>"
-
+13. A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT gateway so that instances in a private subnet can connect to services outside your VPC but external services cannot initiate a connection with those instances.
 
 
 
