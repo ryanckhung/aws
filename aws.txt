@@ -24,4 +24,14 @@ EC2:
 5. [HOL] Monitoring -> EC2 -> EC2 Dashboard -> Select a running EC2 instance -> Scroll down and check "Status Checks" and "Monitoring" [These data are coming from cloud watch, you can goto cloud watch page and check the details; EC2 Monitoring is automatically created as the instance created, it check every 5 minutes and it's free. If you want to monitor more closely, you can goto "Monitoring" -> "Manage detailed monitoring" -> check the "enable", then it will monitor every 1 minutes (need to pay extra fee)] To check the monitoring data in cloud watch -> remember the instance ID or name -> Cloud Watch Dashboard -> Metrics -> All Metrics
 6. [HOL] Working with Network Interface -> There are 3 types of network interface -> start a EC2 instance -> EC2 Dashboard -> Network & Security -> Network Interfaces -> Create Network Interface -> Network Interfaces dashboard; check the newly created network interface; Actions; Attach; select the EC2 instance to be attached
 7. Private IP always attached to the EC2 (unless you terminate and recreate; stop the EC2 private IP will retain); Public IP will always change after the EC2 is stop (reboot will still keep the public IP); for public IP which fix IP, you need Elastic IP
-8. [HOL] Elastic IP -> EC2 dashboard -> Network & Security -> Elastic IPs (need to pay if it's not in use) -> can assign the elastic ip to an instance or a network interface -> 
+8. [HOL] Elastic IP -> EC2 dashboard -> Network & Security -> Elastic IPs (need to pay if it's not in use) -> Allocate Elastic IP Address -> after created, in the elastic ips dashboard, check the elastic ip, then click Actions, select associlate elastic ip address -> can assign the elastic ip to an instance or a network interface; 
+9. Bastion Host = host in the public subnet which act as a middleman between the private subnet and outside world
+10. [HOL] VPC, subnet, route table, and internet gateway -> goto VPC dashboard; click the VPC, subenet, route table and internet gateway to play around
+11. [HOL] Create Subnet: VPC dashboard -> Subnets -> Create Subnet -> Choose which VPC, availablity zone and the coresponding CIDR Block -> create a route table without the internet gateway and associate it with the subnet (the original created subnet is associate with a route table which will send the subnet excluded 0.0.0.0 traffic to the internet gateway) 
+12. [HOL] connect SSH through the bastion host; log to public ec2 to private ec2; Reference https://towardsdatascience.com/connecting-to-an-ec2-instance-in-a-private-subnet-on-aws-38a3b86f58fb -> In Local machine run "ssh-add -K chu.pem" -> In Local machine ssh with -A option "ssh -A -i "chu.pem" ec2-user@ec2-54-173-60-110.compute-1.amazonaws.com" -> Now in the public EC2, to access the private EC2 run "ssh 172.31.105.163" or "ssh <ip-addr-private-ec2>"
+
+
+
+
+
+
