@@ -30,8 +30,8 @@ EC2:
 11. [HOL] Create Subnet: VPC dashboard -> Subnets -> Create Subnet -> Choose which VPC, availablity zone and the coresponding CIDR Block -> create a route table without the internet gateway and associate it with the subnet (the original created subnet is associate with a route table which will send the subnet excluded 0.0.0.0 traffic to the internet gateway) 
 12. [HOL] connect SSH through the bastion host; log to public ec2 to private ec2; Reference https://towardsdatascience.com/connecting-to-an-ec2-instance-in-a-private-subnet-on-aws-38a3b86f58fb -> In Local machine run "ssh-add -K chu.pem" -> In Local machine ssh with -A option "ssh -A -i "chu.pem" ec2-user@ec2-54-173-60-110.compute-1.amazonaws.com" -> Now in the public EC2, to access the private EC2 run "ssh 172.31.105.163" or "ssh <ip-addr-private-ec2>"
 13. A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT gateway so that instances in a private subnet can connect to services outside your VPC but external services cannot initiate a connection with those instances.
-
-
+14. [HOL] NAT Gateway -> VPC Dashboard -> NAT Gateway -> Create NAT Gateway -> Update/Create Private subnet's routing table which direct the traffic to NAT gateways
+15. A bare metal server is a physical server dedicated to a single tenant. The server’s tenant can optimize the server according to its needs for performance, security and reliability. The alternative to a bare metal server is a hypervisor server, in which multiple users share a virtual server’s compute, storage and other resources. Bare metal servers are also known as single-tenant physical servers or managed dedicated servers. On a bare metal server, the operating system is installed directly on to the server, eliminating layers and delivering better performance.
 
 
 
