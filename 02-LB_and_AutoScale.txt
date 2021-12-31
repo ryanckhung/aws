@@ -1,3 +1,6 @@
 1. Amazon Web Services defines Elasticity as "The ability to acquire resources as you need them and release resources when you no longer need them."
 2. Scaling up = vertical scaling; scaling out = horizontal scaling
-3. [HOL] Auto Scaling: EC2 Dashboard -> Instances -> Launch Templates -> Launch template is just like telling AWS that you have a EC2 template, which include the image type, machine type, security group, etc -> back to the EC2 dashboard and select Auto Scaling -> Auto Scaling Groups -> Create Auto Scaling Groups -> Associate the Launch Template just crated with the Auto Scaling Group -> Back to the EC2 dashbard, auto scaling and selected the just created Auto Scaling group (ASG), play around and take a look on the monitoring
+3. Auto Scaling includes the concept of Launch Templates and Auto Scaling Group
+4. [HOL] Auto Scaling: EC2 Dashboard -> Instances -> Launch Templates -> Launch template is just like telling AWS that you have a EC2 template, which include the image type, machine type, security group, etc -> back to the EC2 dashboard and select Auto Scaling -> Auto Scaling Groups -> Create Auto Scaling Groups -> Associate the Launch Template just crated with the Auto Scaling Group -> Back to the EC2 dashbard, auto scaling and selected the just created Auto Scaling group (ASG), play around and take a look on the monitoring
+5. Load Balancing includes the concept of ALB/NLB and Target Group, the Load Balancer will redirect traffic to difference target group
+6. [HOL]
