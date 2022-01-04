@@ -10,4 +10,6 @@
 
 Defualt is SCP is assoicate with the default organization unit (root), Under the defualt organization unit (root) there will be the default AWS account (management account); similary you can create your own SCP assoicate with an OU, under the OU assgin the aws accounts in
 
+https://digitalcloud.training/certification-training/aws-solutions-architect-associate/management-tools/aws-organizations/
+
 need to review later
