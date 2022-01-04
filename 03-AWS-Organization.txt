@@ -13,3 +13,5 @@ Defualt is SCP is assoicate with the default organization unit (root), Under the
 https://digitalcloud.training/certification-training/aws-solutions-architect-associate/management-tools/aws-organizations/
 
 need to review later
+
+Two main ways exist to manage employee access to your company AWS account—IAM users and AWS Organizations.
