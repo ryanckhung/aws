@@ -1,1 +1,3 @@
 1. AWS organizations is a service that enables us to create one organization for many AWS accounts.
+2. Example: Under the AWS Organization, you have a Management Account, Production Account, Development Account. You can group account into Organization Unit (OU) and the Service Control Polices (SCP) will be attached into the Organization Unit.
+3. [HOL] Create Organization and Account ->
