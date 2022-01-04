@@ -15,3 +15,7 @@ https://digitalcloud.training/certification-training/aws-solutions-architect-ass
 need to review later
 
 Two main ways exist to manage employee access to your company AWS account—IAM users and AWS Organizations.
+https://www.cloudsavvyit.com/2951/should-you-use-iam-users-or-aws-organizations/
+
+
+
