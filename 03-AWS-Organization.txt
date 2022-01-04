@@ -18,4 +18,5 @@ Two main ways exist to manage employee access to your company AWS account—IAM 
 https://www.cloudsavvyit.com/2951/should-you-use-iam-users-or-aws-organizations/
 
 
-
+https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html
+IAM provides granular control over users and roles in individual accounts. AWS Organizations expands that control to the account level by giving you control over what users and roles in an account or a group of accounts can do.
