@@ -15,3 +15,6 @@
 9. [HOL] Query String Routing: Create an EC2 instance -> Create a target group, add the newly created instance to this target group [this target group won't have auto scaling] -> Goto the created ALB, Listener, Edit/Add Listener, if you want to attach the target to the http:80 (which used beofre), then choose edit the http:80, add rule, query string
 
 10. [HOL] Scaling Policies -> EC2 dashboard -> Create ASG - Scaling Policies, Target tracking scaling policy (No scaling policy needed to create at this moment) -> after create ASG; selected the created ASG; click the tab Automatic Scaling; Dynamic scaling policies; Create dynamic scaling policy; select the policy type -> after adding the scaling policy - add the load in the existing EC2; then new EC2 should add in automatically after N (300) seconds.
+
+11. [HOL] Sticky Session -> EC2 Dashboard -> Target Groups -> Select the created target group -> Attributes -> Stickiness -> Select from Round Robin to Stickiness -> after that you keep reloading the content pointing to the load balancer will always stick to the same node
+
