@@ -1,1 +1,1 @@
-
+1. AWS organizations is a service that enables us to create one organization for many AWS accounts.
