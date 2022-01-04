@@ -18,3 +18,7 @@
 
 11. [HOL] Sticky Session -> EC2 Dashboard -> Target Groups -> Select the created target group -> Attributes -> Edit -> Select from Round Robin to Stickiness -> after that you keep reloading the content pointing to the load balancer will always stick to the same node
 
+12. SSL can be generated in the AWS Certificate Manager (ACM) Service or import a cert. into the ACM. The certificate usually bind with the load balancer
+
+13. [HOL] [1] Create a secure listener -> goto AWS Certificate Manager (ACM) -> Request a public certificate -> Associate the domain name with the certificate (Goto Route 53; hosted zone; there should be a domain name, associate it with the cert in ACM) -> Use email validation; then cert applied successfully -> [2] Then back (EC2 Dashboard) to the Load Balancer -> Listeners -> Add Listeners -> Select HTTPS, Select forward the traffic to a particular Target Group, and select the newly created certificate (associate the cert. to the HTTPS portocol in Load Balance - that is when traffic with https protocl goes to the Load Balancer will forward to a Target group) -> [3] Back to Route 53, selected the associated domain name, create record -> Select Alias, Route Traffic to the Load Balancer (this let DNS map the domain name to the entry point of the Load Balance) -> [4] make sure the security group, inbound rules open the https port -> [REMARK] Alias = A Record
+
