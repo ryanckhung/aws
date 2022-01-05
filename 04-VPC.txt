@@ -1,4 +1,12 @@
 1. Each VPC will have it's own CIDR block. This CIDR block will use across the AZ and subnets. For example the VPC with CIDR = 10.0.0.0/16.
    Then in Zone A -> public subnet with CIDR = 10.0.0.0/24; private subnet with 10.0.1.0/24
    Then in Zone B -> public subnet with CIDR = 10.0.2.0/24; private subnet with 10.0.3.0/24
-   all CIDR must fall within 10.0.0.0/16
+   all CIDR must fall within 10.0.0.0/16; in other word the subnet must with the CIDR block which is the subset of the overall CIDR block address
+   In AWS, CIDR block must within /16 - /24; once the CIDR is set, you can't change it, therefore need to plan carefully; 
+   You can't overlap the CIDR Block between VPCs;
+   CIDR Block Calculator: https://network00.com/NetworkTools/IPv4SubnetCreator/
+   
+
+2. [HOL] VPC Wizard -> VPC Service -> Launch VPC Wizard (create the VPC by Wizard; somehow automated by filling a little bit information)
+
+3. [HOL]
