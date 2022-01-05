@@ -42,8 +42,24 @@ Let's externally access the public and private EC2 instance, this make sure the 
 ======================================================================================================================================================
 
 
-
 4 [HOL] continue the above (continue optional setting) -> [7] Create a NAT gateway -> assign a name and MUST put it in the PUBLIC subnet, allocate Elastic IP -> [8] update the route table of the private subnet -> check the private subnet, click the Routes tab, Add Route with 0.0.0.0/0 point to NAT gateway -> [9] Create Security Group -> Assign name, assoicate with the new VPC, set in bound and out bound will all permission (all traffic go in and out) for testing purpose 
+
+
+5. Security Group vs Network ACL
+
+Security groups and Network Access Control Lists (ACLs) are two different types of firewall.
+Network ACL apply in the subnet level. All traffic go through the subnet will go through the network ACL.
+Security groups apply in the EC2 instance level
+
+Security group is STATEFUL firewall. It only care about the incoming traffic; all the return traffic will be automatically allow 
+ACL is a STATELESS firewall. It will check both of the incoming and out going traffic. Therefore in Network ACL you need to set both the inbound and outbound rule
+
+Security Group you mainly concern about the Inbound Rules (but you are also allow to set the outbound rules, eg your instance will initiate an outbound traffic)
+Security groups only support allow rules. If no allow, by default all are deny. You can make an explicit deny in security group.
+
+ACL can have explicit deny and allow; Rules are process in order; once the traffic match one of the rules, it will stop there; eg. Rule 1 allow a particular traffic and Rule 2 deny this traffic immediately, because Rule 1 is allow and hit, it will stop there and ignore all the remaining traffic and allow the traffic to go (even rule 2 is deny)
+
+
 
 
 
