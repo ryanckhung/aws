@@ -24,7 +24,6 @@ General Steps: VPC -> Subnet (public/private) -> Internet Gateway -> Route Table
 
 [3] create a internet gateway -> back to VPC dashboard and create a internet gateway -> just give a name, then internet gateway is crated -> after gateway internet gateway is created, select it and click Actions, Attach to VPC 
 
-
 [4] create a route table for both the public and private -> Route tables -> Create Route Table -> assign route table name, associate it with the newly created VPC -> after route table created, select the route table, select subnet associations, click edit subnet associations
 For public route table back to route table and edit the main route table with 0.0.0.0/0 point to the internet gateway
 
