@@ -19,7 +19,6 @@ General Steps: VPC -> Subnet (public/private) -> Internet Gateway -> Route Table
 [1] VPC -> Create VPC -> CIDR block can set at 10.0.0.0/16 as long as it's not overlap with others -> in the created VPC; select actions; edit DNS hostnames; enable it (this makes the dns hostname for the ec2 instance available) 
 
 [2] create subnets (public/private) -> VPC dashboard -> subnets -> Create Subnet -> Select the newly created VPC, give subnet name, assign AZ, assign CIDR block (up to this moment you just created the subnet; all subnets are private subnet; you can check the route table of the subnet, base on it you can judge if it's private or public, public should forward address to internet gateway and should enable auto assign public IPv4 Address) 
-
 * for public subnet, you need to check the subnet -> Actions -> Edit Subnet Setting -> Enable auto assign public IPv4 address; otherwise when EC2 added to the public subnet, it won't have the public IP address assigned
 
 [3] create a internet gateway -> back to VPC dashboard and create a internet gateway -> just give a name, then internet gateway is crated -> after gateway internet gateway is created, select it and click Actions, Attach to VPC 
