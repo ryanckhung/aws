@@ -22,9 +22,11 @@ General Steps: VPC -> Subnet (public/private) -> Internet Gateway -> Route Table
 
 * for public subnet, you need to check the subnet -> Actions -> Edit Subnet Setting -> Enable auto assign public IPv4 address; otherwise when EC2 added to the public subnet, it won't have the public IP address assigned
 
-[3] create a internet gateway -> back to VPC dashboard and create a internet gateway -> just give a name, then internet gateway is crated -> after gateway internet gateway is created, select it and click Actions, Attach to VPC -> [5] back to route table and edit the main route table with 0.0.0.0/0 point to the internet gateway -> [6] VPC, private, public subnet, route table and internet gateway are created; a whole basic set up is completed
+[3] create a internet gateway -> back to VPC dashboard and create a internet gateway -> just give a name, then internet gateway is crated -> after gateway internet gateway is created, select it and click Actions, Attach to VPC 
+
 
 [4] create a route table for both the public and private -> Route tables -> Create Route Table -> assign route table name, associate it with the newly created VPC -> after route table created, select the route table, select subnet associations, click edit subnet associations
+For public route table back to route table and edit the main route table with 0.0.0.0/0 point to the internet gateway
 
 Remark:
 
