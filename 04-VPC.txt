@@ -60,6 +60,8 @@ Security groups only support allow rules. If no allow, by default all are deny. 
 ACL can have explicit deny and allow; Rules are process in order; once the traffic match one of the rules, it will stop there; eg. Rule 1 allow a particular traffic and Rule 2 deny this traffic immediately, because Rule 1 is allow and hit, it will stop there and ignore all the remaining traffic and allow the traffic to go (even rule 2 is deny)
 
 
-6. [HOL] Config Security Group and Network ACL: for Security Group -> EC2 Dashboard -> Create Security Group -> Assign Name, Associate with the VPC, Create Inbound / outbout rules (the source maybe an AWS instance)
+6. [HOL] Config Security Group and Network ACL: 
+[1] for Security Group -> EC2 Dashboard -> Create Security Group -> Assign Name, Associate with the VPC, Create Inbound / outbout rules (the source maybe an AWS instance) -> assing the created security group to the EC2
+[2] for network ACL -> VPC -> Security -> Network ACLs -> Create Network ACL -> give a name and associate it with a VPC -> After created the Network ACL, select it and click the "edit inboud rules" button
 
 
