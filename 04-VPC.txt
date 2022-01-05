@@ -28,7 +28,7 @@ For public route table back to route table and edit the main route table with 0.
 
 Remark:
 
-Route table ASSOCIATE with the VPC ONLY; on the other hand it associate with the CIDR block of VPC (eg 10.0.0.0/16); after the route table is created you can associate the Route table to many subnets like (10.0.1.0/24, 10.0.2.0/24), BUT you NEVER set the route table with 10.0.1.0/24 and 10.0.2.0/24; this imply the all the difference subnets under 10.0.0.0/16 can be internal routed; in other words all subnets (10.0.1.0/24, 10.0.2.0/24) can talk to each other
+Route table ASSOCIATE with the VPC ONLY; on the other hand it associate with the CIDR block of VPC (eg 10.0.0.0/16); after the route table is created you can associate the Route table to many created subnets like (10.0.1.0/24, 10.0.2.0/24), BUT you NEVER set the route table with 10.0.1.0/24 and 10.0.2.0/24; this imply the all the difference subnets under 10.0.0.0/16 can be internal routed; in other words all subnets (10.0.1.0/24, 10.0.2.0/24) can talk to each other
 
 For private subnet, only have one route entry, that is route internally
 For public subnet, need to add one more entry to internet gateway for it to route externally
