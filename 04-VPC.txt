@@ -62,6 +62,6 @@ ACL can have explicit deny and allow; Rules are process in order; once the traff
 
 6. [HOL] Config Security Group and Network ACL: 
 [1] for Security Group -> EC2 Dashboard -> Create Security Group -> Assign Name, Associate with the VPC, Create Inbound / outbout rules (the source maybe an AWS instance) -> assing the created security group to the EC2
-[2] for network ACL -> VPC -> Security -> Network ACLs -> Create Network ACL -> give a name and associate it with a VPC -> After created the Network ACL, select it and click the "edit inboud rules" button (the order of the rule is very important, you can sort by the rule number)
+[2] for network ACL -> VPC -> Security -> Network ACLs -> Create Network ACL -> give a name and associate it with a VPC -> After created the Network ACL, select it and click the "edit inboud rules" button (the order of the rule is very important, you can sort by the rule number), associate the ACL rule with subnet by "subnet association"
 
 
