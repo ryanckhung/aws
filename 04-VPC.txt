@@ -64,4 +64,9 @@ ACL can have explicit deny and allow; Rules are process in order; once the traff
 [1] for Security Group -> EC2 Dashboard -> Create Security Group -> Assign Name, Associate with the VPC, Create Inbound / outbout rules (the source maybe an AWS instance) -> assing the created security group to the EC2
 [2] for network ACL -> VPC -> Security -> Network ACLs -> Create Network ACL -> give a name and associate it with a VPC -> After created the Network ACL, select it and click the "edit inboud rules" button (the order of the rule is very important, you can sort by the rule number), associate the ACL rule with subnet by "subnet association"
 
+7. VPC peering allow routing internally between VPCs. To use VPC peering, those VPC can't over lap the CIDR Blocks. VPC peering just support one hop jump.
+That's if VPC-A connect to VPC-B, and VPC-B connect to VPC-C; then VPC-A can't access VPC-c even they are logically connected
+Update the Route Table to forward the peering address to the VPC peering-id AND update the security group to allow the corresponding traffic
 
+
+8. [HOL] Configure VPC peering: you need to have 2 VPCs -> VPC dashboard -> Virtual Private Cloud -> Peering Connections -> Create Peering Connection -> assign a name and the two peer VPC information -> Then update the Security Group (eg inbound rule ICMP coming from the other VPC CIDR Block) and Route table (other VPC's Block address and target it to peering connection) accordingly 
