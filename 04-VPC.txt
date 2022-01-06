@@ -86,6 +86,6 @@ Update the Route Table to forward the peering address to the VPC peering-id AND 
 
 11. AWS Client VPN: connect the client computer to the AWS data center. To a VPC via a VPN connection.
 12. AWS Direct Connect is a private connection to the AWS to reduce the transmission delay. It's a connection all the way into your AWS data center and into your Amazon VPC.
-
+13. Direct connect gateway link the external world through the direct connect and can split it into multiple regions.
 
 
