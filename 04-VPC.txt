@@ -1,3 +1,11 @@
+Key things to know:
+VPC is setting a superset of CIDR Block
+Private subnet is setting a subset of CIDR Block under VPC; it's routing table only contain the internal route path
+Public subnet is setting a subset of CIDR Block under VPC; it's route table has internal route path and other's goto internet gateway
+Internet gateway attach to the VPC; it let's the public subnet route to the external world
+
+
+
 1. Each VPC will have it's own CIDR block. This CIDR block will use across the AZ and subnets. For example the VPC with CIDR = 10.0.0.0/16.
    Then in Zone A -> public subnet with CIDR = 10.0.0.0/24; private subnet with 10.0.1.0/24
    Then in Zone B -> public subnet with CIDR = 10.0.2.0/24; private subnet with 10.0.3.0/24
