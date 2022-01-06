@@ -78,3 +78,11 @@ Update the Route Table to forward the peering address to the VPC peering-id AND 
 
 
 8. [HOL] Configure VPC peering: you need to have 2 VPCs -> VPC dashboard -> Virtual Private Cloud -> Peering Connections -> Create Peering Connection -> assign a name and the two peer VPC information -> Then update the Security Group (eg inbound rule ICMP coming from the other VPC CIDR Block) and Route table (other VPC's Block address and target it to peering connection) accordingly 
+
+
+9. VPC Endpoint help EC2 instance (in the private subnet) to connects to the public AWS service. For Example, You can add a S3 gateway endpoint to the VPC, then in the private subnet add a route to this S3 gateway, this will make a private machine to access the AWS service like S3, you can set the S3 bucket only accept the traffic from the S3 gateway endpoint
+
+10. [HOL]
+
+
+
