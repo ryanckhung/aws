@@ -82,7 +82,9 @@ Update the Route Table to forward the peering address to the VPC peering-id AND 
 
 9. VPC Endpoint help EC2 instance (in the private subnet) to connects to the public AWS service. For Example, You can add a S3 gateway endpoint to the VPC, then in the private subnet add a route to this S3 gateway, this will make a private machine to access the AWS service like S3, you can set the S3 bucket only accept the traffic from the S3 gateway endpoint
 
-10. [HOL]
+10. [HOL] Create VPC Endpoint: [1] VPC Dashbard -> Endpoints -> Select Service Name (eg. S3), associate it with the VPC and the route table -> goto the route table, check the route table which associated with the VPC endpoint, there should be a new entry added -> [2] goto IAM and crate a role to allow EC2 has Full Access on S3 -> [3] associate the Role to EC2 by selecting the instance, Actions, Security, Modify IAM role, select the newly created role -> [4] create the 3s bucket by "Create bucket" -> [5] back to EC2 and connect with ssh, check if it can connect to S3 by command "aws s3 ls" -> now the EC2 can connect to S3 throught the S3 Gateway (or the VPC endopoint) -> [6] back to the S3 and add policy which only allow traffic from VPC endpoint -> goto the bucket, Permissions tab,  Bucket policy (edit the policy in JSON)
+
+
 
 
 
