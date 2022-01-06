@@ -12,3 +12,7 @@ AWS Fargate manages the task execution. No EC2 instances to manage anymore. You 
 
 [HOL] Launch Task on AWS Fargate: ECS Dashboard -> Get Start -> four steps, define container and task (deploy as fargate), define service, define cluster and review -> just follow it step by step (easy) -> after created, goto clusters and select the newly created cluster -> click the tasks tab (task in AWS = container in docker), you can see the newly created task, you can keep adding tasks in -> click the newly created task copy the public IP address and put it in the browswer (assume nginx image is used)
 
+
+ECS and IAM Roles: the Role allow the EC2 to access EC2, ECS permission. The ECS IAM task role provides permissions to the container.
+ECS Instance: The container instances have access to all of the permissions that are supplied to the container instance role through the EC2 instance metadata.
+For Fargate: on the IAM Task Role is applied to the the task; not in the instance level
