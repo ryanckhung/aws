@@ -88,4 +88,9 @@ Update the Route Table to forward the peering address to the VPC peering-id AND 
 12. AWS Direct Connect is a private connection to the AWS to reduce the transmission delay. It's a connection all the way into your AWS data center and into your Amazon VPC.
 13. Direct connect gateway link the external world through the direct connect and can split it into multiple regions.
 
+14. AWS Transit Gateway act as a cloud router and it connects VPCs and on-premises locations. If you system has a lot of VPCs, you can use VPC peering to connect the VPCs one by one. If you have 4 VPCs, you need 6 VPC peering to make it fully connect. To solve this probelm (too many VPC peering) AWS Transit Gateway is used.
+
+15. IPv6 is 128 bit address; also with network and node part. 
+IPv4 become shortage of IP; therefore we need to use 1 public IP and NAT for the private IP hide behind the public IP.
+But IPv6 don't have IP issue, therefore it's suppose no pirvate network is needed. As every machine can have it's own public facing IPv6. Instead to make it as a private machine (hide behind the internet), we need an egress-only internet gateway to allow IPv6 traffic outbound but not inbound.
 
