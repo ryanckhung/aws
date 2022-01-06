@@ -15,4 +15,4 @@ AWS Fargate manages the task execution. No EC2 instances to manage anymore. You 
 
 ECS and IAM Roles: the Role allow the EC2 to access EC2, ECS permission. The ECS IAM task role provides permissions to the container.
 ECS Instance: The container instances have access to all of the permissions that are supplied to the container instance role through the EC2 instance metadata.
-For Fargate: on the IAM Task Role is applied to the the task; not in the instance level
+For Fargate: the IAM Task Role is applied to the the task; not in the instance level
