@@ -20,3 +20,8 @@ For Fargate: the IAM Task Role is applied to the the task; not in the instance l
 Two type of scaling for ECS: 1. Service auto scaling 2. Cluster auto scaling
 Service auto scaling is for scaling Tasks (containers). It automatically adjusts the desired task (not adding EC2 instance) count up or down using the "Application Auto Scaling" Service. It supports target tracking, step and scheduled scaling polices.
 Cluster auto scaling uses a capacity provider to scale the number of EC2 cluster instances (not increase the number of tasks) using EC2 auto scaling
+
+
+ECS somehow equals AWS version of k8s (ECS has AWS version of controlplane too), to become standardize, better to use EKS
+EKS = Elastic Kubernetes Services
+EKS control plane is provisioned for you
