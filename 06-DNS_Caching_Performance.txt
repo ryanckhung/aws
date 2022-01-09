@@ -22,4 +22,15 @@ TTL determine the content to store in the cache, when it's expired, it will be d
 decreasing TTL is best for dynamic content
 increasing TTL is better for performance
 
+Cloud Front Security:
+Cloud Front Signed URLs: provide more control on the content, you need to get signed URL for each file, it can't use one single signed URLs for multiple files
+Cloud Front Signed Cookies: use one cookies for multiple restricted files
+Cloud Front OAI (Origin Access Identity): by assing a role to cloud front to access the origin
+
+
+[HOL] Cache and Behaviour Settings: will use cloud front and S3 in this HOL -> S3, Create bucket -> set the name, region, create the bucket -> goto CloudFront, Create Distribution -> set origin domain name (bucket name), enable Restrict Bucket Access (optional), Create an Origin Access Identity (optional), Grand Read Permission on Bucket (optional), edit the distribution setting, create the cloud front distribution -> DONE -> you can goto the cloud front distribution, origins and origin groups tab and create the other origin which point to the other origin (other s3) ->  create behavior, you can for example direct the *.mp4 file to a specify origin (s3) 
+In general, Create Cloud Front Distribution(CFD), under it (CFD) create origin, under CFD create behaviour
+
+
+
 Global Accelerator
