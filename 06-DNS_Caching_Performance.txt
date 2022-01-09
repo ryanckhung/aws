@@ -1,1 +1,24 @@
+Route 53 is a DNS server; It can use routing polices to route data; eg, you have one domain name can map to several IPs (or data centre), you can use routing policies to route data to different IPs; Routing Polices: Simple, failover, geolocation, latency, multi value answer (act as a load Balancer), base on weight
 
+Route 53 can also have domain registration, hosted domain, health checks, traffic flow features.
+
+[HOL] Register Domain with Route 53: Route 53 -> Domain Registration -> choose a domain name ->  Fill in contact data and make the payment -> after done goto Host zones to check
+
+Hosted zone = a set of records belonging to a domain; you can create the DNS record like A record (domain name and IP mapping); TTL = 60 means the browser can cache 60 seconds for the DNS results 
+
+Private Hosted Zone -> create a private domain name (anything you want) associate with the VPC; Enable DNS hostnames means enable the DNS resolution; then it route53 will just act as a private DNS to resolve the IP to private domain name internally
+
+Migration to / from route 53 by import and export the record to and from other DNS provider.
+
+
+[HOL] Using Route 53 Routing Policies: Set EC2 within nginx in different regions ->  Back to Route 53; Hosted zones; select the domain name -> Create Record -> set as A record, IP address, routing policy (select the type like weight, latency, geo, etc.), Done -> use VPN to switch country and try the launched EC2 
+
+
+
+CloudFront is a content delivery network; it caches data in different location
+CloudFront Origins = where the origin data store, eg S3, EC2, in one physical location
+Edge Location are all over the world. The content will cache in the edge location to improve the transmission performance
+Users are directed automatically to the nearest edge location; if the content is expired in the edge location, it will pull form the origin again
+To create cloudFront Distribution, you need to tell the name like “xxx.abc.com”, and the Origin (like S3 or EC2 instance)
+
+Global Accelerator
