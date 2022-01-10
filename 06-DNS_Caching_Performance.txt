@@ -33,4 +33,7 @@ In general, Create Cloud Front Distribution(CFD), under it (CFD) create origin, 
 
 
 
-Global Accelerator
+Lambda@Edge means you can apply the lambda function in the input and the output of the CloudFront
+
+AWS Global Accelerator = using AWS's network and avoid then internet for data transfer. (Increase the transmission speed)
+
