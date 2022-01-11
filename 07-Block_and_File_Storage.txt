@@ -4,17 +4,24 @@ Network Attached Storage - File based (eg. NAS shares filesystems over the netwo
 
 Object Storage (S3), File Storage (Amazon Elastic File System), Block Storage (Amazon Elastic Block Store)
 
-EBS exist in single availability zone (AZ), can't cross AZ
+EBS exist in single availability zone (AZ), can't cross AZ (EC2 in AZ-A can't access EBS in AZ-B)
 1 EBS can connect to 1 EC2; but 1 EC2 can connect to many EBS
 But EBS multi-attach (most of the ESB type doesn't support) does allow you to connect from mulitple Nitro system based EC2 to a single EBS
 SSD can be classified as General Purpose SSD and Provisioned IOPS SSD (higher performance)
 EBS persist independently of the life of the EC2 instance
 EBS don't need to attach to an instance
-Root EBS Volumes are deleted on instance termination 
+Root EBS Volumes are deleted on instance termination (can be edit as "retain after EC2 delete" when create the EC2 instance)
 Non root EBS volumes are not deleted on termination
 Backup EBS and copy to other AZ's EBS; by using S3, you can also create the data as AMI (image)
 EBS snapshots usually stores in S3
 Data Life Cycle Management (DLM)- it can create a snapshot and AMIs from EBS volume automatically
 EC2 instance store volumes are physically attached to the host; while EBS are connect through the network
 
+Instance store volumes are high performance local disk that physically attached to host computer on which an EC2 runs.
+Instance store are ephemeral
+When create a EC2 there is a new root device which is EBS by default
 
+EBS volume is network attached drive which results in slow performance but data is persistent meaning even if you reboot the instance data will be there.
+Instance store instance store provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer.
+
+[HOL] Creating and Attaching EBS Volumes: when creating EC2, you can add more new volumes (default will have 1), or create a EBS and attach back the EC2 later -> After created the EC2; goto Elastic Block Store, Volume, Create Volume, Make sure it put it the right AZ, Done -> Back to the Volume page, select the newly created volume and attach it to the EC2 instance
