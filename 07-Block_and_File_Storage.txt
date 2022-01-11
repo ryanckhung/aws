@@ -1,1 +1,6 @@
+S3 - Object Based Storage System (Use HTTP protocol to GET/PUT/POST/DELETE)
+Hard drive - Block based (OS communicating hard drive at block level; low level way to connect to disk)
+Network Attached Storage - File based (eg. NAS shares filesystems over the network; remote computer can mount to the drive and perform RW)
+
+Object Storage (S3), File Storage (Amazon Elastic File System), Block Storage (Amazon Elastic Block Store)
 
