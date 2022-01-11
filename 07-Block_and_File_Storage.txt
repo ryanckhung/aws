@@ -28,3 +28,9 @@ Instance store instance store provides temporary block-level storage for your in
 
 [HOL] Amazon Machine Image (AMI) similar to docker Image but it's for the AWS VM or ESB -> EC2 dashboard, select a created instance, actions, image and templates, create image, give an image name, create the image -> Back to EC2 Dashboard, check AMIs, you will see there is an image created, also check the snapshots (it will take the snapshot of EBS) -> goto the AMIs, click Launch to create an Instance through AMIs -> OR goto EC2 dashboard, Launch instances, My AMIs, select your AMIs, then create the EC2 as usual
 
+
+EC2 Image Builder is a tool to create, customize, manage and distribute EC2 images.
+[HOL] EC2 Image Builder -> EC2 Dashboard, AMIs, EC2 Image Builder -> Create image pipeline
+
+
+
