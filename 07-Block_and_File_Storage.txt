@@ -4,3 +4,17 @@ Network Attached Storage - File based (eg. NAS shares filesystems over the netwo
 
 Object Storage (S3), File Storage (Amazon Elastic File System), Block Storage (Amazon Elastic Block Store)
 
+EBS exist in single availability zone (AZ), can't cross AZ
+1 EBS can connect to 1 EC2; but 1 EC2 can connect to many EBS
+But EBS multi-attach (most of the ESB type doesn't support) does allow you to connect from mulitple Nitro system based EC2 to a single EBS
+SSD can be classified as General Purpose SSD and Provisioned IOPS SSD (higher performance)
+EBS persist independently of the life of the EC2 instance
+EBS don't need to attach to an instance
+Root EBS Volumes are deleted on instance termination 
+Non root EBS volumes are not deleted on termination
+Backup EBS and copy to other AZ's EBS; by using S3, you can also create the data as AMI (image)
+EBS snapshots usually stores in S3
+Data Life Cycle Management (DLM)- it can create a snapshot and AMIs from EBS volume automatically
+EC2 instance store volumes are physically attached to the host; while EBS are connect through the network
+
+
