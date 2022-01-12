@@ -36,7 +36,5 @@ Image Builder is offered at no cost, other than the cost of the underlying AWS r
 
 EC2 Image Builder is a tool to create, customize, manage and distribute EC2 images.
 [HOL] EC2 Image Builder -> EC2 Dashboard, AMIs, EC2 Image Builder -> Create image pipeline -> Before create image pipeline, back to create a IAM Role for EC2 (allow AmazonSSMManagedInstanceCore, EC2InstanceProfileForImageBuilder) -> back to EC2 dashboard, AMIs, EC2 image builder, create image pipeline -> enter name, build schdule, create a new recipe (can be AMI image or docker image), select an image (eg. ubuntu, centos), build components (eg. cloudwatch agent) -> Create a new infrastructure configuration, pick the role just created, instance type, VPC, subnet, security group -> Create the pipeline, then Done -> Back to the "EC2 Image Builder" page, and you will see a newly created image pipeline, check it and click actions, Run pipeline (it take a very long time) -> back to the EC2 instance page, you will see a new instance is created
-()
-
 
 
