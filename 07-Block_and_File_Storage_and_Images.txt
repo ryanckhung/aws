@@ -41,4 +41,4 @@ To create a volume with the created snapshot: by select the snapshot, select Act
 
 [HOL] Working with EBS Snapshots and DLM (Data Lifecycle Manager), DLM will help to automate the backup of EC2 instance by using snapshot -> EC2 dashboard, Volumes, select one of the created volume, goto Tags tab and add a tag (eg DLM=Weekly) -> Then goto EC2 Dashboard, Lifecycle Manager -> Set Target resource type as Volume, set target resource tags as DLM=Weekly -> set the schedule details as Weekly, set the retaintion (eg. keep the snapshot for 2 weeks) -> Done 
 
-
+AWS not support RAID, but you can set it in OS level.
