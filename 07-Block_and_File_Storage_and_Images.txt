@@ -28,17 +28,17 @@ Instance store instance store provides temporary block-level storage for your in
 
 [HOL] Amazon Machine Image (AMI) similar to docker Image but it's for the AWS VM or ESB -> EC2 dashboard, select a created instance, actions, image and templates, create image, give an image name, create the image (by default, when the image is creating, the EC2 will be terminate then generate image then start again) -> Back to EC2 Dashboard, check AMIs, you will see there is an image created; and also check the snapshot, there will be a napshot created -> goto the AMIs, click Launch to create an Instance through AMIs -> OR goto EC2 dashboard, Launch instances, My AMIs, select your AMIs, then create the EC2 as usual (REMARK: AMI image just the image of the running instance, you still need to config the instance type, VPC, subnet, harddisk, security group)
 
-
 Keeping Virtual Machine and container images up-to-date can be time consuming, resource intensive, and error-prone. Currently, customers either manually update and snapshot VMs or have teams that build automation scripts to maintain images.
 Image Builder significantly reduces the effort of keeping images up-to-date and secure by providing a simple graphical interface, built-in automation, and AWS-provided security settings. With Image Builder, there are no manual steps for updating an image nor do you have to build your own automation pipeline.
 Image Builder is offered at no cost, other than the cost of the underlying AWS resources used to create, store, and share the images.
 
-
 EC2 Image Builder is a tool to create, customize, manage and distribute EC2 images.
 [HOL] EC2 Image Builder -> EC2 Dashboard, AMIs, EC2 Image Builder -> Create image pipeline -> Before create image pipeline, back to create a IAM Role for EC2 (allow AmazonSSMManagedInstanceCore, EC2InstanceProfileForImageBuilder) -> back to EC2 dashboard, AMIs, EC2 image builder, create image pipeline -> enter name, build schdule, create a new recipe (can be AMI image or docker image), select an image (eg. ubuntu, centos), build components (eg. cloudwatch agent) -> Create a new infrastructure configuration, pick the role just created, instance type, VPC, subnet, security group -> Create the pipeline, then Done -> Back to the "EC2 Image Builder" page, and you will see a newly created image pipeline, check it and click actions, Run pipeline (it take a very long time) -> back to the EC2 instance page, you will see a new instance is created
-
 
 [HOL] Migrate EBS Volume between AZs -> EC2 Dashboard, Volumes, select a volume, click Actions and create snapshot -> snapshot is created and stored in S3 -> in the snapshot page, you can edit the permission
 To copy the snapshot to other region: by select the snapshot, select Actions, select copy 
 To create a volume with the created snapshot: by select the snapshot, select Actions, create volume
+
+[HOL] Working with EBS Snapshots and DLM (Data Lifecycle Manager), DLM will help to automate the backup of EC2 instance by using snapshot -> EC2 dashboard, Volumes, select one of the created volume, goto Tags tab and add a tag (eg DLM=Weekly) -> Then goto EC2 Dashboard, Lifecycle Manager -> Set Target resource type as Volume, set target resource tags as DLM=Weekly -> set the schedule details as Weekly, set the retaintion (eg. keep the snapshot for 2 weeks) -> Done 
+
 
