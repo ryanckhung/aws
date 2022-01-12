@@ -42,3 +42,12 @@ To create a volume with the created snapshot: by select the snapshot, select Act
 [HOL] Working with EBS Snapshots and DLM (Data Lifecycle Manager), DLM will help to automate the backup of EC2 instance by using snapshot -> EC2 dashboard, Volumes, select one of the created volume, goto Tags tab and add a tag (eg DLM=Weekly) -> Then goto EC2 Dashboard, Lifecycle Manager -> Set Target resource type as Volume, set target resource tags as DLM=Weekly -> set the schedule details as Weekly, set the retaintion (eg. keep the snapshot for 2 weeks) -> Done 
 
 AWS not support RAID, but you can set it in OS level.
+
+
+Elastic file system - file based storage using NFS protocol (Network file system)
+Create VPC, create a file system within the VPC, EC2 connector the EFS by NFS protocol
+EFS can connect thousands of instance simultaneously
+
+[HOL] Create EFS Filesystem -> Create a new security group allow inbound with NFS traffic -> goto the EFS dashboard, click create file system, click Customize, give name and select the option base on your need (once the EFS is setted up, the configuration can't be change) -> associate the newly created security group to the EFS (in network access page) -> EFS creation done -> goto the EFS page and copy the "File system ID" -> goto the ssh of EC2 instance, create a mount directory "sudo mkdir efs", run "sudo yum install -y amazon-efs-utils" (this install the EFC utility), then run "sudo mount -t efs xxxxx-file-sys-id efs/" (mount the efs with the EC2 mount directory)
+
+
