@@ -1,1 +1,15 @@
+S3 is an object based storage system
+S3 bucket is a container for objects; AWS fully managed, fully scalable
+you can access the bucket object by URL (https), the URL format maybe
+https://<bucket>.s3.<aws-region>.amazonaws.com/<key>
+https://s3.<aws-region>.amazonaws.com/<bucket>/<key>
+<bucket> is bucket name, <aws-region> is the aws region name, <key> is the object name (the value is the content of the file)
+Use Restful API to access the S3 bucket
+S3 bucket name must be unique gobally
+S3 bucket is located in a selected region; that is your data is in a specify region
+No Hierarchy for objects within a bucket; you should included a folder like structure in the name (key) of the file; eg animals/dog.txt (animals/dog is the name/key of the file); all the object in S3 are in the same level
+Bucket can't inside the other bucket. 
+S3 is public facing, you can access it through internet; you can use S3 gateway endpoint in VPC to make a secure connect to S3 (just like intranet)
+
+
 
