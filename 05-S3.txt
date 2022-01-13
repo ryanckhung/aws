@@ -11,5 +11,23 @@ No Hierarchy for objects within a bucket; you should included a folder like stru
 Bucket can't inside the other bucket. 
 S3 is public facing, you can access it through internet; you can use S3 gateway endpoint in VPC to make a secure connect to S3 (just like intranet)
 
+There are many storage class in S3 (standard, intelligent tiering, stardard-IA, One Zone-IA, Glacier, Glacier Deep Archive)
+Standard - default
+intelligent tiering - move data for you between stroage classes based on access patterns
+standard IA - standard infrequently access
+One zone ia - infrequently access data but it's only stored in one availability
+Glacier - for archiving
+Glacier deep archive - for archiving
+all with eleven 9 durability - 99.999999999%
+Data availability may due to network error but not the harddrive failure 
+There are minimum storage during chrage for all storage class except the standard package (it may take 30 days ~ 180 days min. charge depends on differnt classes)
+Retrieval fee for cold storage is expensive
+S3 Storage class selection is an art between cost, data access frequency
+S3 is a region wise service but the actual storage is in a specific region
+
+[HOL] Create Amazon S3 Bucket: S3 Dashboard, create bucket -> give bucket name, select a region (public access is blocked by default, you can add select encryption for data) -> Done
+You can back to S3 and upload file to the S3 bucket that you just created; after uploading the file, you can speicfy the property of that file, you can select storage class here (eg. standard, Glacier, etc)
+each uploaded file will have it's unique URL
+
 
 
