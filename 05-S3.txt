@@ -31,7 +31,6 @@ each uploaded file will have it's unique URL
 
 Access Control of S3: IAM policies, bucket policies and access control lists (ACL) 
 
-
 IAM policies it talking about user and role; IAM policy directly apply the permissions to the principal (user, group, role), 
 Bucket Policies are resource-based policies; directly attach the policy to S3 bucket;
 ACL is an old (legacy) way to secure the bucket; it's recommand to use IAM or Bucket policies; ACL can attach to bucket or an object; 
