@@ -39,7 +39,7 @@ Authorization Process: Decision starts at deny; explicit deny then deny; explici
 
 [HOL] Access Control List (easier than bucket and user policy) -> goto the created S3 Bucket -> Permission -> Block public access, deselect block all public access -> goto Permission, Edit Object Ownership, ACLs Enabled -> goto Permission, Edit ACLs (leave it as defualt just take a look, no need to enable anythings here)(edit this to control the overall access on S3 BUCKET LEVEL)
 ACL on object level -> Goto S3 and select an object (any file maybe an image file) -> click the permission tab of the object -> Edit the permission (OBJECT LEVEL)
-The other way is goto S3 select an object -> Actions, Make Public -> Done (shortcut; setting the same things as above; it grant permission in OBJECT LEVEL)
+The other way is goto S3 select an object -> Actions, Make Public via ACL -> Done (shortcut; setting the same things as above; it grant permission in OBJECT LEVEL)
 Remark: if Block Public Access is disabled, you are not allow to edit the ACL; 
 Remark: Block Public Access has an option -> "Block public access to buckets and objects granted through any access control lists (ACLs)". Therefore you must disable it to allow editing the ACL.
 
