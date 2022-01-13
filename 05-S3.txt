@@ -37,7 +37,7 @@ IAM policies it talking about user and role; IAM policy directly apply the permi
 Bucket Policies are resource-based policies; directly attach the policy to S3 bucket;
 ACL is an old (legacy) way to secure the bucket; it's recommand to use IAM or Bucket policies; ACL can attach to bucket or an object; 
 Authorization Process: Decision starts at deny; explicit deny then deny; explicit allow then allow; if not specify then deny (simily speaking you must give an allow otherwise all are deny)
-Remark: S3 is defualt Block Public Access, you must disable it then apply the permission (ACL, Bucket and IAM policy). Otherwise it override everythin
+Remark: S3 is defualt Block Public Access, you must disable it then apply the permission (ACL, Bucket and IAM policy). Otherwise it override everything (because it's an explicitly deny)
 ************************************************************************************************************************************************************
 ============================================================================================================================================================
 
