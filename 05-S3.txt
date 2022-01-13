@@ -26,8 +26,7 @@ S3 Storage class selection is an art between cost, data access frequency
 S3 is a region wise service but the actual storage is in a specific region
 
 [HOL] Create Amazon S3 Bucket: S3 Dashboard, create bucket -> give bucket name, select a region (public access is blocked by default, you can add select encryption for data) -> Done
-You can back to S3 and upload file to the S3 bucket that you just created; after uploading the file, you can speicfy the property of that file, you can select storage class here (eg. standard, Glacier, etc)
-each uploaded file will have it's unique URL
+You can back to S3 and upload file to the S3 bucket that you just created; after selected the file, you can speicfy the property of that file, you can select storage class here (eg. standard, Glacier, etc), click upload -> each uploaded file will have it's unique URL
 
 Access Control of S3: IAM policies, bucket policies and access control lists (ACL) 
 
