@@ -43,6 +43,7 @@ The other way is goto S3 select an object -> Actions, Make Public via ACL -> Don
 Remark: if Block Public Access is disabled, you are not allow to edit the ACL; 
 Remark: Block Public Access has an option -> "Block public access to buckets and objects granted through any access control lists (ACLs)". Therefore you must disable it to allow editing the ACL.
 
+
 [HOL] Bucket and User Policy 
 In root account, create a bucket and upload some images (don't set any permission at this moment)
 In root account setup user accounts (username = ryan); use this non S3 permission account and login to the console, you will see that no permisson to access the S3 bucket
