@@ -73,3 +73,21 @@ Next goto the S3 Bucket, Permissions, Edit the Bucket Policy with the following 
     ]
 }
 After that everything inside the bucket is publicly available.
+
+
+S3 versioning, replication, and lifecycle
+Versioning - s3 keep multiple version of files, enable bucket to recover the data
+Replication - Two form: cross regions replication and same region replication (both theory are the same; but one in different region and one in the same region); replication must go with versioning
+Life Cycle Management: Transition actions - define when objects transition to another storage class (eg. standard, glacier); Expiration actions - define when objects expire (deleted by S3)
+
+
+[HOL] Versioning and Replication
+Versioning:
+Goto S3 and select a bucket -> Properties -> Bucket Versioning, enable it -> done
+Upload a document (eg. xxx.txt) to the versioning enabled S3
+Then update the xxx.txt content and save it, upload the updated xxx.txt to S3 again
+Back to the bucket dashboard, there is a switch button “show versions”, you click click around and see the difference
+Create the other file yyy.txt, upload it to S3, then delete the yyy.txt, click the switch button “show versions”, you will see that the deleted file still there due to the versioning
+Replication:
+Create the other S3 bucket, Enable the bucket versioning (must set for replication)
+Back to the original S3 bucket, click Management tab, Replication rules, create replication rule -> give a name, enable the status, apply the rule to all object, choose the backup bucket,  
