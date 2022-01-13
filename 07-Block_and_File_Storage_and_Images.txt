@@ -46,8 +46,16 @@ AWS not support RAID, but you can set it in OS level.
 
 Elastic file system - file based storage using NFS protocol (Network file system)
 Create VPC, create a file system within the VPC, EC2 connector the EFS by NFS protocol
-EFS can connect thousands of instance simultaneously
+EFS can connect thousands of instance simultaneously; for linux based system
 
 [HOL] Create EFS Filesystem -> Create a new security group allow inbound with NFS traffic -> goto the EFS dashboard, click create file system, click Customize, give name and select the option base on your need (once the EFS is setted up, the configuration can't be changed) -> associate the newly created security group to the EFS (in network access page) -> EFS creation done -> goto the EFS page and copy the "File system ID" -> goto the ssh of EC2 instance, create a mount directory "sudo mkdir efs", run "sudo yum install -y amazon-efs-utils" (this install the EFC utility), then run "sudo mount -t efs xxxxx-file-sys-id efs/" (mount the efs with the EC2 mount directory)
 
+FSx for Windows: for windows based application
+FSx for Lustre: for compute-intensive (use case: machine learning, high performance computing, video processing); works natively with S3 (on the other hand behind luster is S3)
 
+AWS Storage Gateway enables you to connect the on-premises stroage to AWS
+AWS Storage Gateway - File Gateway: connect to your storage gateway and mounting the file system using NFS or SMB; file gateway provides a virtual on-premises file server; store and retrive files as objects in S3; just like a mapping between File system to object based storage;
+AWS Storage Gateway - Volume Gateway: two type of volume gateway, cached volume mode (cached will store in the on-premise, entire data set store in S3), stored volume mode
+ASW Storage Gateway - Tape Gateway
+
+[HOL] AWS Backup: it can back up for volume, database -> AWS Backup dashboard -> Create Backup Plan, start with a template, edit backup rule (like backup frequency) -> Done -> back to the AWS Backup Dashboard, select resource assignments, click assign resources, assign resource by tag or resource id (reousrce can be dynamoDB, EBS, EC2, EFS, FSx, RDS, Storage Gateway)
