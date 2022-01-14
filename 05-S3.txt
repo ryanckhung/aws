@@ -101,4 +101,11 @@ If you go back to the original bucket and delete the replication rule, then it w
 You can create more rules at the same time. Eg. Expire and you set the rule of “Lifecycle rule actions” as “Permanently delete previous versions of objects”, remove after 30 days, 
 After the rule is created, it is default enable, you can disable it under the lifecycle configuration of S3 
 
+MFA on S3 for “changing the versioning state of a bucket” and “permanently delete the object”. (Versioning is needed for MFA)
+The other use of MFA is called MFA Protected API Access,
+
+
+
+
+
 
