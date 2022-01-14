@@ -82,12 +82,17 @@ Life Cycle Management: Transition actions - define when objects transition to an
 
 
 [HOL] Versioning and Replication
-Versioning:
+> Versioning:
 Goto S3 and select a bucket -> Properties -> Bucket Versioning, enable it -> done
 Upload a document (eg. xxx.txt) to the versioning enabled S3
 Then update the xxx.txt content and save it, upload the updated xxx.txt to S3 again
 Back to the bucket dashboard, there is a switch button “show versions”, you click click around and see the difference
 Create the other file yyy.txt, upload it to S3, then delete the yyy.txt, click the switch button “show versions”, you will see that the deleted file still there due to the versioning
-Replication:
+> Replication:
 Create the other S3 bucket, Enable the bucket versioning (must set for replication)
-Back to the original S3 bucket, click Management tab, Replication rules, create replication rule -> give a name, enable the status, apply the rule to all object, choose the backup bucket,  
+Back to the original S3 bucket and create the replication rules, click Management tab, Replication rules, create replication rule -> give a name, enable the status, apply the rule to all object, choose the backup bucket,  IAM roles chooses create new role, you may change the destination storage class (eg. standard, glacier) -> done for replication rules
+Back to the original S3 bucket and check for the newly created replication rules
+Goto the newly created S3 bucket, you can’t see any thing replicated at this moment because it won’t replicate object that already exist, it only replicate newly added object
+Goto the original bucket and upload, after a while (maybe few minutes for sync) the new object will be in the newly created S3 bucket
+If you go back to the original bucket and delete the replication rule, then it won’t be update to the newly created S3 bucket anymore
+
