@@ -105,7 +105,7 @@ MFA on S3 for “changing the versioning state of a bucket” and “permanently
 The other use of MFA is called MFA Protected API Access,
 
 
-
+S3 Encryption: it talking about the stroage encryption but not transmission encryption, transmission encryption rely on https; only the newly added file can be encrypted; There are several ways of encrytpion: server side, client side.
 
 
 
