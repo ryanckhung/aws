@@ -108,4 +108,11 @@ The other use of MFA is called MFA Protected API Access,
 S3 Encryption: it talking about the stroage encryption but not transmission encryption, transmission encryption rely on https; only the newly added file can be encrypted; There are several ways of encrytpion: server side, client side.
 
 
+[HOL] Enforce Encryption: 
+- Create S3 Bucket, give a name, no need to enable the encryption; just crate the bucket 
+- Upload a file to the created S3 Bucket, in the file upload page goto Properties, Server-side encryption settings, select Specify an encryption key, select SSE-S3; back to the uploaded file and check then server-side encryption settings [it's the file level encryption]
+- Now go back to the bucket, goto default encryption, click the edit button, and enable the server side encryption and select SSE-KMS, AWS managed key (was/s3)
+- Now upload a file again without specify the encryption properties; after upload check the encryption properties of the file, you will find that it's encrypted 
+- The bucket encryption setting can also be achieved by bucket policy "x-amz-server-side-encryption"
+
 
