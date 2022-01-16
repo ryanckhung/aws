@@ -143,5 +143,6 @@ Back to the bucket and click permissions tab; Block public access (disable then 
 Goto Route 53, hosted zones, select the domain name (which is the same as the bucket name), Create record with Record type = A, Route traffic to alias = alias to s3 website endpoint, select then region and endpoint
 
 
+Cross-Origin Resource Sharing (CORS): must allow request form the other origin (one browser from two origins)
 
 
