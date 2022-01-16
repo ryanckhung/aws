@@ -128,3 +128,20 @@ goto bucket, upload a file; by default it's not accessible publicly; then you ne
 aws s3 presign s3://bucket-name/object-name --expires-in 60 (it is in 60 seconds); this will generated a pre signed URL
 Remark: the bucket at this moment can be completed blocked for public; but with the pre signed URL, it can be browsed by the unauthorised users
 
+
+Multipart Upload : uploads objects by parts and upload parallels in any order; performed by using S3 Multipart upload API
+Transfer Acceleration: use cloud front edge locations to improve performance of transfer from client to S3 bucket (talking about upload from the client, but not getting data from bucket)
+
+
+S3 Select is an SQL expression to retrieve individual file from zip archive (instead of getting the whole large zip file)
+
+
+Server access logging can log the events that happen in S3; goto bucket and enable the logging
+
+[HOL] S3 Static website: bucket name must match with then domain name; got that bucket click upload, add files (eg. index.html), after upload goto bucket and click the properties tab, edit the static website hosting (enable the bucket to be static website), specify the entry point (eg. index.html); 
+Back to the bucket and click permissions tab; Block public access (disable then block all public access); then goto each file and select Actions, Make Public (make each file to be public)
+Goto Route 53, hosted zones, select the domain name (which is the same as the bucket name), Create record with Record type = A, Route traffic to alias = alias to s3 website endpoint, select then region and endpoint
+
+
+
+
