@@ -19,3 +19,6 @@ Disaster Recovery: have 1 RDS Master for read and write in AZ-A, have other RDS 
 Scaling Out: 1 RDS Master and RDS Read Replica; read replicas use asynchronous replication; RDS read replica is used for scaling read (only for queries);
 RDS can be encrypted and take snapshots
 RDS can configure with a backup window (backup start time and duration) the backup will become the snapshot; the snapshot can be restored back; in single AZ zone, the DB will be suspension for a while for backup (in multi AZ, no suspension will happen)
+
+
+
