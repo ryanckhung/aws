@@ -183,6 +183,8 @@ Goto Route 53, hosted zones, select the domain name (which is the same as the bu
         }
     ]
 }
+
+For demo: you don't need the domain name, dont need to set Route53, don't need to match the bucket name with the domain name
 =============================================================================================================================
 
 
