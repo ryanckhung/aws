@@ -115,6 +115,7 @@ S3 Encryption: it talking about the stroage encryption but not transmission encr
 
 
 [HOL] S3 Event Notifications: something happen in S3 (eg upload) can trigger an event; sends notifications when events happen in buckets; notifications can send to SNS, SQS, Lambda
+0. assume a bucker already exist
 1. Create an SNS: goto then SNS dashboard, create a topic, select standard type, edit the access policy (there is a JSON template, you can copy it and edit the bucket id); after create then SNS topic, create a subscription for this topic, select email as the protocol, endpoint put the email address; goto the email account to confirm the subscription
 2. Back to S3, click the Properties tab, event notifications and click then create event notification button, then give the notification a name, event types (eg. Upload a file), set the destination as SNS topic, associate it with the SNS just created
 3. Back to then S3 bucket and upload a file, you should now got then notification email
