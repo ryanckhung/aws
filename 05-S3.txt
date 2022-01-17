@@ -168,9 +168,22 @@ S3 Select is an SQL expression to retrieve individual file from zip archive (ins
 
 Server access logging can log the events that happen in S3; goto bucket and enable the logging
 
+=============================================================================================================================
 [HOL] S3 Static website: bucket name must match with then domain name; got that bucket click upload, add files (eg. index.html), after upload goto bucket and click the properties tab, edit the static website hosting (enable the bucket to be static website), specify the entry point (eg. index.html); 
-Back to the bucket and click permissions tab; Block public access (disable then block all public access); then goto each file and select Actions, Make Public (make each file to be public)
+Back to the bucket and click permissions tab; Block public access (disable then block all public access); then edit the bucket policy
 Goto Route 53, hosted zones, select the domain name (which is the same as the bucket name), Create record with Record type = A, Route traffic to alias = alias to s3 website endpoint, select then region and endpoint
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::ryan-98760000/*"
+        }
+    ]
+}
+=============================================================================================================================
 
 
 Cross-Origin Resource Sharing (CORS): must allow request form the other origin (one browser from two origins)
