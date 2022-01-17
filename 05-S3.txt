@@ -125,7 +125,6 @@ S3 Encryption: it talking about the stroage encryption but not transmission encr
 
 3. Back to then S3 bucket and upload a file, you should now got then notification email
 
-arn:aws:s3:::ryan-98760000
 
 https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html#sns-grant-aws-account-access-to-topic
 
@@ -146,6 +145,9 @@ https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html#sns-g
 }
 
 Please update the Resource and SourceAccount accordingly
+The above set principal to all S3 service
+Resources is the current SNS
+SourceAccount is the console login user
 =====================================================================================================================================
 
 
