@@ -115,10 +115,36 @@ S3 Encryption: it talking about the stroage encryption but not transmission encr
 
 
 [HOL] S3 Event Notifications: something happen in S3 (eg upload) can trigger an event; sends notifications when events happen in buckets; notifications can send to SNS, SQS, Lambda
-0. assume a bucker already exist
-1. Create an SNS: goto then SNS dashboard, create a topic, select standard type, edit the access policy (there is a JSON template, you can copy it and link the SNS to the bucket id); after create then SNS topic, create a subscription for this topic, select email as the protocol, endpoint put the email address; goto the email account to confirm the subscription
+
+0. assume a bucker already exist; Keep the defualt permission.
+
+1. Create an SNS: goto then SNS dashboard, create a topic, select standard type, edit the access policy (you should set the permission for S3 to publish, refer to the reference link below); after create then SNS topic, create a subscription for this topic, select email as the protocol, endpoint put the email address; goto the email account to confirm the subscription
+
 2. Back to S3, click the Properties tab, event notifications and click then create event notification button, then give the notification a name, event types (eg. Upload a file), set the destination as SNS topic, associate it with the SNS just created
+
 3. Back to then S3 bucket and upload a file, you should now got then notification email
+
+arn:aws:s3:::ryan-98760000
+
+https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html#sns-grant-aws-account-access-to-topic
+
+{
+  "Statement": [{
+    "Effect": "Allow",
+     "Principal": { 
+      "Service": "s3.amazonaws.com" 
+    },
+    "Action": "sns:Publish",
+    "Resource": "arn:aws:sns:ap-east-1:864996340542:s3-events",
+    "Condition": {
+      "StringEquals": {
+        "AWS:SourceAccount": "864996340542"
+      }       
+    }
+  }]
+}
+
+Please update the Resource and SourceAccount accordingly
 
 
 [HOL] S3 Presigned URLs: allow user access an object for a limited period of time; use for those who don't have the AWS account (for those don't have the access right)
