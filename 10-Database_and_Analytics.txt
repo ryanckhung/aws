@@ -11,3 +11,11 @@ Amazon RedShift: Data warehouse for large volume of aggregated data
 Amazon ElasticCache: Fast temporary storage for small amounts of data
 Amazon EMR: Analytics workloads using the Hadoop framework
 
+Amazon Relational Database Service (it run on EC2 but fully managed by AWS):  
+You can run Amazon Aurora, MySQL, MariaDB, Oracle, Microsoft SQL Server, PostgreSQL (other than these, you need to run on EC2 by yourself)
+It can scale up vertically by upgrade the hardware like CPU, memory
+RDS can have disaster recovery and scaling out (horizontally) features:
+Disaster Recovery: have 1 RDS Master for read and write in AZ-A, have other RDS Standby in AZ-B, master will sync to standby instance (db should set in different availability zone)
+Scaling Out: 1 RDS Master and RDS Read Replica; read replicas use asynchronous replication; RDS read replica is used for scaling read (only for queries);
+RDS can be encrypted and take snapshots
+RDS can configure with a backup window (backup start time and duration) the backup will become the snapshot; the snapshot can be restored back; in single AZ zone, the DB will be suspension for a while for backup (in multi AZ, no suspension will happen)
