@@ -51,7 +51,7 @@ Remark: Block Public Access has an option -> "Block public access to buckets and
 
 [HOL] Bucket and User Policy 
 In root account, create a bucket and upload some images (don't set any permission at this moment)
-In root account setup user accounts (username = ryan); use this non S3 permission account and login to the console, you will see that no permisson to access the S3 bucket
+In root account setup user accounts (username = ryan); use this (ryan) non S3 permission account and login to the console, you will see that no permisson to access the S3 bucket
 In root account, back to user account, select the user ryan, add permissions (you can choose "add inline policy" and edit the json)
 Now use ryan to login to the console and reload the S3 bucket, you will find that the S3 dashboard is accessible by ryan (CRUD actions allowed depends on the S3 permission you grant to ryan)
 In root account, goto S3, select a bucket, Permissions (no need to care about Block public access, just let it to be disable public access), edit the Bucket Policy 
