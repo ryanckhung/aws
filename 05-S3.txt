@@ -114,6 +114,7 @@ S3 Encryption: it talking about the stroage encryption but not transmission encr
 - The bucket encryption setting can also be achieved by bucket policy "x-amz-server-side-encryption"
 
 
+=====================================================================================================================================
 [HOL] S3 Event Notifications: something happen in S3 (eg upload) can trigger an event; sends notifications when events happen in buckets; notifications can send to SNS, SQS, Lambda
 
 0. assume a bucker already exist; Keep the defualt permission.
@@ -145,6 +146,7 @@ https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html#sns-g
 }
 
 Please update the Resource and SourceAccount accordingly
+=====================================================================================================================================
 
 
 [HOL] S3 Presigned URLs: allow user access an object for a limited period of time; use for those who don't have the AWS account (for those don't have the access right)
