@@ -1,1 +1,13 @@
+Relational Database; Scale Vertically; Amazon RDS, MySQL, IBM DB2, PostgreSQL; talking about column, row, table, schema; use for operation/transaction CRUD operation
+Non-Relational Database: Scale Horizontally; DynamoDB, MongoDB, Redis, Neo4j, graph database (store relationships between different people); talking about key value pairs, document; for analytical (like big data)
+
+The data store in analytical database (NonSQL) usually come from the operational databases (SQL); Example, lots of Amazon RDS databases (for operations) copy the data to the centralised data warehouse (eg. Amazon Redshift for data analysis)
+
+Type of database in AWS:
+Database on EC2: running database in EC2, fully managed by user
+Amazon RDS: AWS managed relation database
+Amazon DynamoDB: AWS managed NoSQL
+Amazon RedShift: Data warehouse for large volume of aggregated data
+Amazon ElasticCache: Fast temporary storage for small amounts of data
+Amazon EMR: Analytics workloads using the Hadoop framework
 
