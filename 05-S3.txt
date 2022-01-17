@@ -127,6 +127,7 @@ Presigned in CLI: aws s3 presign s3://bucket-name/object-name (default 1 hour)
 goto bucket, upload a file; by default it's not accessible publicly; then you need to goto the AWS CLI to run the following command
 aws s3 presign s3://bucket-name/object-name --expires-in 60 (it is in 60 seconds); this will generated a pre signed URL
 Remark: the bucket at this moment can be completed blocked for public; but with the pre signed URL, it can be browsed by the unauthorised users
+*** OR you can goto the bucket dashboard, select the file, Actions, Share with a presigned URL
 
 
 Multipart Upload : uploads objects by parts and upload parallels in any order; performed by using S3 Multipart upload API
