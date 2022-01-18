@@ -55,3 +55,13 @@ DB type other than MySQL MariaDB, SQL Server, Oracle, PostgreSQL
 RDS can’t allow you to have full access, if you need full access you should do it on EC2 by yourself
 
 
+Above is SQL
+============================================================================================================================================================
+Below is NoSQL
+
+
+
+
+
+
+
