@@ -57,6 +57,10 @@ RDS can’t allow you to have full access, if you need full access you should do
 
 Above is SQL
 ============================================================================================================================================================
+Reference URL: https://www.digitalocean.com/community/tutorials/understanding-database-sharding
+
+Sharding is a database architecture pattern related to horizontal partitioning — the practice of separating one table’s rows into multiple different tables, known as partitions. Each partition has the same schema and columns, but also entirely different rows. Likewise, the data held in each is unique and independent of the data held in other partitions.
+============================================================================================================================================================
 Below is NoSQL
 
 
