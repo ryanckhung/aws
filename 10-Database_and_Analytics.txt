@@ -48,6 +48,10 @@ After the snapshot is created, select it and click Actions, Restore snapshot (co
 Amazon Aurora: AWS developed more powerful on durability and scalability (AWS growing product); RDS database; Aurora is MySQL and PostgreSQL compatible; 5x faster than MySQL; has distributed, fault-tolerant, self-healing, auto scales feature (can scale to 128TB); Aurora is fault tolerance across 3 AZs, scale-out read request, can promote Aurora replica to new primary, auto scaling to add read replica (when facing high traffic on read), usually have 1 master to write (can set to have multi-master).
 
 
+Aurora Options: Aurora Fault Tolerance and Aurora Replicas, Cross-Region Replica with Aurora MySQL, Aurora Global Database, Aurora Multi-Master, Aurora Serverless
 
+When shouldn’t we use the RDS? (RDS is AWS managed SQL database)
+DB type other than MySQL MariaDB, SQL Server, Oracle, PostgreSQL
+RDS can’t allow you to have full access, if you need full access you should do it on EC2 by yourself
 
 
