@@ -36,4 +36,12 @@ after updated to multi-az, goto the RDS click configuration tab you can see mult
 select the database again, select Actions, reboot, check the Reboot with failover; during the reboot AWS will failover to the standby RDS; you can check the Zone under configuration to check if failover to other AZ successfully
 
 
+Amazon RDS Security: 
+Set RDS Security Group for inbound traffic to the RDS; for EC2 which want to query the database should set and outbound traffic to RDS; you can also set SSL/TLS for EC2 and RDS transmission
+
+[HOL] Create Encrypted Copy of RDS Database: 
+You can’t directly backup an unencrypted RDS database to an encrypted RDS database, to achieve it, you need to make use of snapshot
+Goto RDS, select snapshots, select an existing snapshot, select Actions, copy snapshot, give the name of snapshot, Enable Encryption
+After the snapshot is created, select it and click Actions, Restore snapshot (copy the snapshot to the database), give the DB a name, 
+
 
