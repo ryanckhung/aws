@@ -29,4 +29,9 @@ Goto the Amazon RDS dashboard, Snapshots -> in the snapshots dashboard you can s
 Or you can back to the RDS dashboard, check the created database, click Actions, you can see Take snapshot, Create read replica, Restore to point in time,  
 
 
+[HOL] Read Replicas and Multi-AZ:  
+goto Amazon RDS dashboard, select the database, click Actions, Create read replica -> choose the instance specifications (hardware setting, storage type) -> Done
+Back to the RDS dashboard, select a database, goto Availability & durability and select Multi-AZ deployment; updating database may course temporary shutdown, you can Scheduling of modifications by setting a time or do it immediately 
+after updated to multi-az, goto the RDS click configuration tab you can see multi-az=YES and secondary zone in other AZ 
+select the database again, select Actions, reboot, check the Reboot with failover; during the reboot AWS will failover to the standby RDS; you can check the Zone under configuration to check if failover to other AZ successfully
 
