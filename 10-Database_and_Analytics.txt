@@ -35,3 +35,5 @@ Back to the RDS dashboard, select a database, goto Availability & durability and
 after updated to multi-az, goto the RDS click configuration tab you can see multi-az=YES and secondary zone in other AZ 
 select the database again, select Actions, reboot, check the Reboot with failover; during the reboot AWS will failover to the standby RDS; you can check the Zone under configuration to check if failover to other AZ successfully
 
+
+
