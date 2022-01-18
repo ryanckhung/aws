@@ -21,4 +21,12 @@ RDS can be encrypted and take snapshots
 RDS can configure with a backup window (backup start time and duration) the backup will become the snapshot; the snapshot can be restored back; in single AZ zone, the DB will be suspension for a while for backup (in multi AZ, no suspension will happen)
 
 
+[HOL] Create Amazon RDS Database: Amazon RDS, Create database -> standard create, choose engine options (eg. MySQL, MaraDB), edit name of DB, give username and password, edit DB instance (hardware), edit storage, storage autoscaling, you can edit VPC, subnet, Enable automated backups, backup retention period, monitoring, maintenance (auto upgrade for minor version) (free tire will have fewer options)
+After the DB is created, select the DB and click Connectivity and Security, find the endpoint which is used to connect to the database
+Since the AWS managed RDS also implemented in EC2, therefore an inbound security rule on port 3306 must be enabled
+If automatic backup is enabled, you can find a snapshot is associated with the database 
+Goto the Amazon RDS dashboard, Snapshots -> in the snapshots dashboard you can see the system and manual tab; system tab is auto backup the database by the AWS; you can goto Manual tab to backup manually, click take snapshot and choose the database you want to backup
+Or you can back to the RDS dashboard, check the created database, click Actions, you can see Take snapshot, Create read replica, Restore to point in time,  
+
+
 
