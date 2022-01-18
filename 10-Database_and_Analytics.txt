@@ -66,6 +66,26 @@ Below is NoSQL
 
 
 
+Amazon ElasticCache: in memory database; fully managed implementations Redis and Memcached; Elastic cache is key/value based storage; Use case is put in front of database such as RDS and DynamoDB; Elastic Cache run on EC2 instance, therefore you need to choose instance hardware; 
+Application for Elastic Caches: “Application running on EC2” write data to “Amazon RDS”, these data will also load to the “Elastic Cache”; next time EC2 try to read data from ealsticahce first, if ealsticache has that piece of data, it will load to the EC2; this arrangement improve the read efficiency (simply speaking, the most often use case is used as read buffer; therefore the application should allow a tolerance on eventually consistent)
+Other use case for Elastic Caches is : storing session state
+
+
+[HOL] Create Elastic Cache Cluster
+ElastiCache Dashboard -> Get Started Now -> Select Redis / Memcached
+For Memcahced: Set hardware, set Number of Nodes (it refer to number of separated partition of data), set VPC subnet (actually the memcahced is deploy in EC2, therefore you need to set the hardware and network to use)
+For Redis: you can set number of Shards, Replicas per Shard (if cluster mode enabled);  similar setting as Memcached;
+Select the Cluster you just created, click Actions, modify, you can modify the node type (the hardware setting)
+Select the Cluster you just created, click into the cluster, you can see there are several replica (if you have set it before); select the replica, click Action, click Promote to make it as the primary; or select primary, click Actions, click Failover Primary to make it as replica
+Select the cluster you just crated, click into the cluster, Click Add Node, this can add the replica
+Back to the cluster level, select a cluster, click Actions, click backup
+Remark: the keys are there is a cluster level and node level; cluster level refer to all the node (primary and all replicas); node level refer to all nodes (replicas)
+
+
+
+
+
+
 
 
 
