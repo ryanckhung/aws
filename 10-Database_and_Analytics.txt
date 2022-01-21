@@ -89,6 +89,10 @@ NoSQL allow to add attributes (no strict definition)
 
 
 
-
+[HOL] Create DynamoDB Table:
+Goto DynamoDB Dashboard, Create table -> Give a name, get partition key a name, give sort key a name, choose customise settings, play around the capacity calculator, you can set the read/write capacity setting (On demand or Provisioned), select read/write capacity setting as on demand, click create table -> done
+Select the created DynamoDB; click Indexes tab, you can deaf the global secondary indexes; click backup tab, you can set periodic / on demand back up features; click exports and streams, you can export the data to 
+S3, you can use Kinesis data streams; click Additional settings, you can set the TTL
+Back to DynamoDB dashboard, click items (you can add items by command line), you can scan the item (if there are any item exists)
 
 
