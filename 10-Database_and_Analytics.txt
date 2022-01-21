@@ -125,3 +125,8 @@ For analytics:
 
 Amazon Elastic Map Reduce (EMR): For big data and perform some kind of analytics; it’s an AWS managed implementation of Hadoop; 
 
+
+
+
+
+
