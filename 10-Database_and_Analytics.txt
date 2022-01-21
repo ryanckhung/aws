@@ -99,3 +99,10 @@ Back to DynamoDB dashboard, click items (you can add items by command line), you
 DynamoDB Streams: Application write to DynamoDB Table, then the record is written to dynamoDB, then trigger a lambda function to retrieve information from stream, then trigger the CloudWatch
 DynamoDB Streams captures time ordered sequence in DynamoDB and store the information in log for up to 24 hours
 
+
+DynamoDB Accelerator (DAX): DAX is a service to improve the performance of DynamoDB; fully managed in memory cache for DynamoDB; improve read write performance; you don’t need to update the code if you put the DAX in front of DynamoDB (same interface as DAX and DynamoDB); 
+Application connected as EC2 <-> DAX <-> DynamoDB; the EC2 will first check if it’s cached in the DAX before reaching dynamoDB; you need to set IAM role for DAX to access DynamoDB; you need to set the IAM role for EC2 for DAX and DynamoDB;
+DAX vs ElastiCache: DAX optimised for DynamoDB
+
+
+
