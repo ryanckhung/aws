@@ -127,6 +127,11 @@ Amazon Elastic Map Reduce (EMR): For big data and perform some kind of analytics
 
 
 
+Amazon Kinesis: Kinesis has three core products, they are the data streams, firehose, and data analytics; (Details refer to the PPT)
+Simply speaking,
+Data streams is a message queue
+Data firehose will captures, transforms and loads streaming data to other services; data is loaded continuously to destination
+Data analytics: perform real time SQL processing for streaming data
 
 
 
