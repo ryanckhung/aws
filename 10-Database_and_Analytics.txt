@@ -108,4 +108,12 @@ DAX vs ElastiCache: DAX optimised for DynamoDB
 DynamoDB Global Tables: Global Tables is multi-region and multi master database (multi master = you can write in any DBs and it will sync up to other regions); DB in different regions will sync up asynchronously; 
 
 
+[HOL] Create DynamoDB Global Table: 
+DynamoDB Dashboard, Tables, select the created table, click the Global tables tab, click create replica, select the other region (eg. Region-A) -> done
+Switch the region (Region-A) and check if the table is replicated in other region.
+This replication will make the DynamoDB as Global Table. No matter which region’s table you updated, it will auto sync up with the other dynamoDB in all regions
+You can edit the table in different regions and check the tables content and see if they are auto sync up
+
+
+
 
