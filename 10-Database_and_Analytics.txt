@@ -83,7 +83,9 @@ Remark: the keys are there is a cluster level and node level; cluster level refe
 
 
 
-
+DynamoDB: serverless NoSQL DB; push button scaling (means don’t have downtime when scaling); horizontally scaling (that's why no downtime); Tables -> Items (rows) -> Attributes (fields); you can set TTL which automatically deleted data from database when it’s expired (use case session information); Write Capacity Units (WCU), Read Capacity Unit (RCU), these values will increase if the table size get large because it need to scan the table to get the value, the larger the table, the more the scanning time, therefore TTL can help to maintain the table size and hence reduce the WCU/RCU; 
+Primary Key = Partition Key + Sort Key
+NoSQL allow to add attributes (no strict definition)
 
 
 
