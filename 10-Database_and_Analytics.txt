@@ -105,4 +105,5 @@ Application connected as EC2 <-> DAX <-> DynamoDB; the EC2 will first check if i
 DAX vs ElastiCache: DAX optimised for DynamoDB
 
 
+DynamoDB Global Tables: Global Tables is multi-region and multi master database (multi master = you can write in any DBs and it will sync up to other regions); DB in different regions will sync up asynchronously; 
 
