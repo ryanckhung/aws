@@ -115,5 +115,13 @@ This replication will make the DynamoDB as Global Table. No matter which regionâ
 You can edit the table in different regions and check the tables content and see if they are auto sync up
 
 
+Amazon Redshift: data warehouse solution; Redshift is a SQL based data warehouse used for analytics applications; redshift is a relational database that used for online analytics processing (OLAP); Redshift use EC2 instances; always keeps three copy of the data; provides continuous / incremental backups; 
+You can sync up a lot of source to the Redshift; for example, RDS, DynamoDB, EMR, S3, EC2, on premises
+Use case: complex queries on massive collections of structured and semi-structured data
+For analytics:
+1. You can use a read replica for analytics; (read replicas of a RDS, this wonâ€™t affect the performance of the RDS) (simple case with 1 RDS)
+2. If you have many RDS, you can first sync the data to Redshift and do the analytics
+
+
 
 
