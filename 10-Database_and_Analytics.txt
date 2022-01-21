@@ -96,3 +96,6 @@ S3, you can use Kinesis data streams; click Additional settings, you can set the
 Back to DynamoDB dashboard, click items (you can add items by command line), you can scan the item (if there are any item exists)
 
 
+DynamoDB Streams: Application write to DynamoDB Table, then the record is written to dynamoDB, then trigger a lambda function to retrieve information from stream, then trigger the CloudWatch
+DynamoDB Streams captures time ordered sequence in DynamoDB and store the information in log for up to 24 hours
+
