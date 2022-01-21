@@ -123,5 +123,5 @@ For analytics:
 2. If you have many RDS, you can first sync the data to Redshift and do the analytics
 
 
-
+Amazon Elastic Map Reduce (EMR): For big data and perform some kind of analytics; it’s an AWS managed implementation of Hadoop; 
 
