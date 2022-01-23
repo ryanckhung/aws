@@ -139,5 +139,12 @@ Athena is a serverless service taht can use to run SQL queries against data (que
 Glue as a data catalog, use it to stores the metadata; fully managed extract, tansform and load service; used for preparing data for analytics;
 
 [HOL] Query S3 ALB Access Logs with Athena:
+Assume you have setup a ALB (applicaiton load balancer), select the ALB, click Actions, edit attributes, enable access logs, specify the log location in S3, enable the "Create this location for me" (this will auto setup the bucket and the permission of the bucket)
+You can back to S3 and see the just created bucket
+copy the url of the ALB and try to load some traffic (on the other hand it create some logs)
+Back to S3 and check the log associate with the ALB
+Now use Athena to query on those logs; goto athena dashboard and click Get Started; click "set up a query result location in Amazon S3", edit the query result location as theh S3 bucket just created (eg s3://<bucketname>/<foldername>/) (becareful to add a / at the end); back to the S3, under the <bucketname> and create folder with the <foldername>; back to Athena and edit the SQL statement
+For details please refere to the video
+
 
 
