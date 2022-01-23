@@ -134,4 +134,10 @@ Data firehose will captures, transforms and loads streaming data to other servic
 Data analytics: perform real time SQL processing for streaming data
 
 
+Amazon Athena and AWS Glue are two analytic servies;
+Athena is a serverless service taht can use to run SQL queries against data (query data on S3, DynamoDB, MySQL, Redis, Lamda, etc);
+Glue as a data catalog, use it to stores the metadata; fully managed extract, tansform and load service; used for preparing data for analytics;
+
+[HOL] Query S3 ALB Access Logs with Athena:
+
 
