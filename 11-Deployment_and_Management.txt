@@ -18,5 +18,15 @@ You can roughly create the infrastructure by using a template; after the system 
 Back to cloud formation, click the templates tab, click View in Designer (you can see the system connection visually), 
  
 
+AWS Elastic Beanstalk: deploy web application on EC2; can create environment with auto scaling, load balancer, RDS; similar to CloudFormation but scope is different; Cloud Formation is for a complex architecture while Beanstalk is for managing web applications;
+User upload a zip file to the beanstalk; beanstalk will handle the remaining
 
+[HOL] Deploy Elastic Beanstalk Web Server and Worker: 
+Goto Elastic Beanstalk Dashboard, Create Application; Give the application a name, in Platform choose Node.js, under Application codes select sample application; click configure more options (you can see there is a single instance, high availability options; you can add a database, monitoring, notifications and many more things here); click create app; after created by Beanstalk, goto the beanstalk main page and select the just created beanstalk and find a URL and click it;
+In the elastic beanstalk dashboard main page, click upload and deploy (this can deploy your own code in the created platform) 
+Create a worker, goto the elastic beanstalk, click environment, click Create a new environment; select Worker environment; give an application name, give an environment name, select nodejs as platform, select Sample application; click Create environment -> done -> back to the elastic beanstalk dashboard, select environment, select the worker environment just created, there is a “View queue” link, click the “View queue” link, then it will open SQS and you swill see it auto crated 2 SQS -> done (up till now the worker can’t process the queue, but it just created the infrastructure, you need to write the code to process the queue)
+
+Remark: key difference between the worker environment and the web app environment is that the worker environment is going to process messages from an SQS queue, and the web app environment is going to be the web frontend.
+
+ 
 
