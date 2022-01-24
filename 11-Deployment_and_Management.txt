@@ -28,5 +28,10 @@ Create a worker, goto the elastic beanstalk, click environment, click Create a n
 
 Remark: key difference between the worker environment and the web app environment is that the worker environment is going to process messages from an SQS queue, and the web app environment is going to be the web frontend.
 
- 
+SSM Parameter Store: Systems Manager Parameter Store; store data such as passwords; 
+
+AWS Config: used for viewing and managing theh configuration of your resource on AWS; AWS Config evaluates theh configuration against desired confguration; the configuration can store in S3;
+
+
+
 
