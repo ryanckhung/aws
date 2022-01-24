@@ -5,5 +5,18 @@ SSM Parameter Store and AWS Secrets Manager: store secrets like database connect
 AWS Resource Access Manger: share resources with other accounts
 
 
+AWS Cloud Formation: anything from VPC, EC2 to serverless application can be described in template file; this template file can be used as input for cloud formation to build the infrastructure
+
+[HOL] Deploy Stack an Change Set: 
+Goto Cloud Formation Dashboard, click create stack; if template is ready, you can upload it from local machine (the simplest form is just define an EC2 with image and machine type, no security group is needed); done -> you can goto EC2 and see something is created
+To update the stack, select the just created stack, click Stack actions, select Create change set for current stack; then select Replace current template and upload the template file
+Delete the stack will delete all the created resources
+
+[HOL] Complex CloudFormation Template:
+Goto Cloud Formation Dashboard, click create stack; the template can create the parameters, then you can select the parameter options in Cloud Formation Dashboard;
+You can roughly create the infrastructure by using a template; after the system is created, you can edit it (eg. Security group by allowing more ports) later;
+Back to cloud formation, click the templates tab, click View in Designer (you can see the system connection visually), 
+ 
+
 
 
