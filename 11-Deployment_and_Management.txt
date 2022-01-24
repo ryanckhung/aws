@@ -42,3 +42,4 @@ goto the just crated rule, click Actions, Manage remediation -> choose Automatic
 goto IAM, select Roles, Select your use case as System Manager; attach permission policy = AmazonS3FullAccess; give a name; Role is created; copy it's ARN and go back to the config and set AutomationAssumeRole=<the ARN of IAM Role>; it need the S3 full access because it need the permission to cahnge encryption status
 Go back to the rule, you will find the S3 is Noncompliant (because it unencrypted); now clcick Actions and Re-evaluate; after few minutes and check for the S3, you will find that it become enable the encryption
 
+
