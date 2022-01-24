@@ -1,1 +1,9 @@
+Cloud Formation: deploy infrastructure using code
+Elastic Beanstalk: deploy your web apps
+AWS Config: manage configuration and compliance for the resources
+SSM Parameter Store and AWS Secrets Manager: store secrets like database connection information
+AWS Resource Access Manger: share resources with other accounts
+
+
+
 
