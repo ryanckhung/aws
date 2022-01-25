@@ -1,1 +1,31 @@
+AWS Migration Tools usually talks about the Cloud and on-premises data center migration
+AWS Application Discovery Service: help to find out what's running in the on-premises data center
+AWS Server Migration Service: migrate the on permises data center servers to EC2 instance
+AWS Database Migration Service: migrate the on permises data center database to platform such as RDS
+AWS DataSync: migrate the on permises NAS/File Server to the EFS File System
+AWS Migration Hub: one unified console and you can see all of these different components
+* the corresponding agents are required to install in the on-premises machines
+
+
+AWS Applicatoin Discovery Service: you need to add an agent into the VM/physical server in the on-premises data center, it will then communicate with the AWS Application Discovery Service
+Goto the AWS Console, Select Migration Hub service, click Start discovery, then you can see there is a Discovery Connection and Discovery Agent; you can download the agent and install in the on-premises machines
+
+AWS Database Migration Service (DMS): For example in on-premises data center we use Oracle, while inside the cloud we use Amazon Redshift; then we need the DMS to map the data to the cloud database
+Actually you can migrate from cloud to cloud database migration OR On-premises to Cloud database migration
+Goto the AWS Console, select AWS DMS, click around the Replication Instance, click around the create database migration task; (you can treate it as copy database)
+
+AWS Server Migration Service (SMS): migrate servers from on-premises / cloud like Azure to AWS EC2; the SMS will create an AMI (Amazon Machine Image) from the on-premises machines; from the AMI it will launch in EC2 instances;
+For Applicatoin Migration: SMS will generate AMIs and Cloud Formation tempalte; base on AMI and cloud formation template it can generate EC2 instances; 
+Goto the AWS Console, select Server Migration Service, click Get started, then download the AWS Server Migration Connector (to be installed in the on-premises machines)
+
+AWS Data Sync: DataSync software agent is required to install in the on-premises NAS server; the agent will then forward the data to ASW DataSync; then the data can migrate to S3, FSx for Window, Elastic File System
+Goto the AWS Console, select the AWS DataSync Service, click Get started (you can migrate between on-premises stroage and AWS OR migrate between AWS Storage Services); download the corresponding agents; select the storage location (eg S3) for the migration data; 
+
+AWS Snow Family: Snow family inculdes Snowball, Snowball Edge, SnowCone, SnowMobile; snowball family is a physical family used to migrate large volume of data to AWS
+Snowball is a starndard product in Snow family
+SnowballMobile is a large physical storage device on the truck
+Snowball Edge can process data at the edge and then store it for transport
+Snowcone is a small device used for edge computing, storage and data transfer; DataSync agent is installed on SnowCone to sync data to the AWS cloud (S3, EFS, FSx for windows); can transfer data online (using the agent) or offline (by physical device); 
+Optimize the performance of snowball: batch small files together; perform multiple copy operations at one time
+
 
