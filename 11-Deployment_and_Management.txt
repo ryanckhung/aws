@@ -33,7 +33,7 @@ SSM Parameter Store: Systems Manager Parameter Store; store data such as passwor
 AWS Config: used for viewing and managing theh configuration of your resource on AWS; AWS Config evaluates theh configuration against desired confguration; the configuration can store in S3;
 
 
-[HOL] AWS Config Rule withh Remediation: (this lab will check if an S3 is encrypted)
+[HOL] AWS Config Rule with Remediation: (this lab will check if an S3 is encrypted)
 Goto Config Dashboard, you can see the resources that you can monitor it's configuration, eg. EC2 Security Group, Routing Table, S3, etc; 
 in AWS config dashboard, click Rules, click Add rule, Add AWS managed rule, in AWS Managed Rules search S3, select "S3-bucket-server-side-encryption-enabled", click next; under Trigger select Tags (will tag the bucket later)
 goto s3, select a bucket (assume it's an unencrypted S3 bucket), click Properties tab, edit tag, add the key value pair with Classification - Sensitive 
@@ -41,5 +41,11 @@ back to AWS config dashbard and continue the setting by edit the trigger tag wit
 goto the just crated rule, click Actions, Manage remediation -> choose Automatic remediation action and select AWS-EnableS3BucketEncryption; Resource ID parameter set as BucketName; SSEAlgorithm=AES256; AutomationAssumeRole=<iam role> (which set as the following)
 goto IAM, select Roles, Select your use case as System Manager; attach permission policy = AmazonS3FullAccess; give a name; Role is created; copy it's ARN and go back to the config and set AutomationAssumeRole=<the ARN of IAM Role>; it need the S3 full access because it need the permission to cahnge encryption status
 Go back to the rule, you will find the S3 is Noncompliant (because it unencrypted); now clcick Actions and Re-evaluate; after few minutes and check for the S3, you will find that it become enable the encryption
+
+AWS Secrete Manager: store the secrete data; the secrete can be rotated automatically; Similar to SSM Parameter Store, but SSM can't roate the secret
+AWS OpsWorks: unclear, check the web
+AWS Resource Access Manager (RAM): share resource across AWS accounts
+
+
 
 
