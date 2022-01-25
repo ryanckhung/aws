@@ -1,1 +1,29 @@
+CLoudWatch: require install agents on the instances or on-premises servers; for monitoring and logging
+CloudTrial: is for auditing; capture information about every API action that takes place in the AWS account;
+* Remark: agent is installed in the client, eg. EC2 to send metric to CloudWatch
+
+CloudWatch is a performance monitoring tool; collect performance metrics from AWS and on-premises systems; 
+CloudWatch Metrics is a services send time ordered data to CloudWatch; metrics are sent to CloudWatch from other AWS Services; EC2 by default send out the metrics every 5 minutes (free); Unified CloudWatch Agent will give extra information like memory and disk usage;
+CloudWatch Alarms can monitor metrics and initiate actions; two type of alarms, Metric alarm (base on single metric), Composite alarm (base on rule expression)
+CloudWatch Logs is a centralised collection of system and application logs
+CloudWatch Events stream of system events describing change to AWS resource and can trigger actions
+
+[HOL] Create a Custom Metric: (use command line to send a custom metric to CloudWatch from Amazon EC2)
+Run an EC2 instance, create a role with permissions to be able to put the metric data to the CloudWatch; 
+Create a Role, set use case as EC2, attach policy “cloudWatchAgentServerPolicy, after created the role attach it to the EC2 instance (select the EC2, Actions, Security, Modify IAM Role, select the created role);
+Connect the EC2 by SSH then use an API call to trigger the metric
+Then back to cloud watch and check the events; Goto CloudWatch Dashboard, click All metrics, check the custom namespace 
+
+[HOL] Create a CloudWatch Alarm:
+Goto CloudWatch dashboard, click All alarms, Create alarm, select metric, select the metric which generated from the previous lab; drill down and select a particular metric; goto Conditions, set for example Greater than a particular threshold; Next; select EC2 action and select then the state is “in alarm” then “terminate the instance”; (simply speaking the cloud watch will check the metric and see if the condition meet, then take some actions) -> Create the alarm -> Done;
+To test it, you can ssh into the EC2 instance and use API to send some value which is over the condition and trigger the event
+
+
+Amazon CloudWatch Logs gather application and system logs in CloudWatch; 
+
+[HOL] Review CloudWatch Logs: 
+Goto CloudWatch Dashboard, under Logs click Log groups (all the logs from different services are put here it’s automatically grouped by the CloudWatch log. Eg. It will group logs from lambda with a particular function), Click into the logs groups, under the log metrics tab you will find the logs stream of a particular log group; Under subscription filters tab, when the information comes in the cloud watch logs will be forwarded to the subscribers like lambda; you can play around it
+Back to the CloudWatch Dashboard, under Logs click Log insights, select the log groups, then you can run a query (sql like statement)
+
+
 
