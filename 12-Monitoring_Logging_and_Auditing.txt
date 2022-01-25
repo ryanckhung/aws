@@ -33,3 +33,11 @@ CloudTrial logs API activity for auditing; by default the logs are stored for 90
 
 [HOL] Create a CloudTrial Trial
 Goto the AWS CloudTrial Dashboard,  in the left navigation menu click Trials, click Create trials, give a name, Create new S3 bucket (to store the logs) it will automatically give you a S3 bucket name, you can select the Management events, Data events or insight events;  done; play around it
+
+
+EventBridge used to be known as CloudWatch Events; There are many events sources send the events to the EventBridge; the event bridge base on the rule and determine what to do next
+
+[HOL] Create EventBridge rule for CloudTrial API calls: (API happens and cloud trial record it in S3, then we want to be able to automatically respond to that information and trigger an event) (in this lab, we stop the EC2 instance, an API action is generated, then we run the lambda function, then send information to cloud watch logs)
+1. Create a Lambda function, select Use a blueprint, type hello to find the hello world blueprint; [do it later]
+
+
