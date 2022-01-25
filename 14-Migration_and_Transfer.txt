@@ -17,6 +17,7 @@ Goto the AWS Console, select AWS DMS, click around the Replication Instance, cli
 AWS Server Migration Service (SMS): migrate servers from on-premises / cloud like Azure to AWS EC2; the SMS will create an AMI (Amazon Machine Image) from the on-premises machines; from the AMI it will launch in EC2 instances;
 For Applicatoin Migration: SMS will generate AMIs and Cloud Formation tempalte; base on AMI and cloud formation template it can generate EC2 instances; 
 Goto the AWS Console, select Server Migration Service, click Get started, then download the AWS Server Migration Connector (to be installed in the on-premises machines)
+* Remark: platform that support for migration are VMware, Hyper-V and Azure
 
 AWS Data Sync: DataSync software agent is required to install in the on-premises NAS server; the agent will then forward the data to ASW DataSync; then the data can migrate to S3, FSx for Window, Elastic File System
 Goto the AWS Console, select the AWS DataSync Service, click Get started (you can migrate between on-premises stroage and AWS OR migrate between AWS Storage Services); download the corresponding agents; select the storage location (eg S3) for the migration data; 
