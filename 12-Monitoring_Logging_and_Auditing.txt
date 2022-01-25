@@ -26,4 +26,10 @@ Goto CloudWatch Dashboard, under Logs click Log groups (all the logs from differ
 Back to the CloudWatch Dashboard, under Logs click Log insights, select the log groups, then you can run a query (sql like statement)
 
 
+The Unified CloudWatch Agent can collect internal system-level metrics from EC2 instances; it also can collect metric from on-premises servers; the unified cloud watch metrics can get more advanced metrics when compare to the default cloudWatch metric (eg. Disk, memory information);
 
+AWS CloudTrial use for capturing information about the API actions generates in the AWS account (eg. Laugh an EC2 instance, create Lambda function or modify resource will trigger the APIs call - no matter if you are using AWS console, CLI, API or SDK) (it is not taking about the API you created by node.js and put it in EC2);
+CloudTrial logs API activity for auditing; by default the logs are stored for 90 days 
+
+[HOL] Create a CloudTrial Trial
+Goto the AWS CloudTrial Dashboard,  in the left navigation menu click Trials, click Create trials, give a name, Create new S3 bucket (to store the logs) it will automatically give you a S3 bucket name, you can select the Management events, Data events or insight events;  done; play around it
