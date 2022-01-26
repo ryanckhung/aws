@@ -25,3 +25,15 @@ Cognito identity pools are used to obtain temporary, limited-privilege credentia
 Use case:  step1: client access the Cognito User Pool  to get the JWT token; step2:  the client exchange the token with Cognito Identity Pool and get the AWS credentials; step3 access AWS services with the AWS credentials
 
 
+Encryption Primer:
+Encryption in Transit: Data is protected by SSL/TLS in transit (https connection); usually encrypted from the client to ALB, then ALB will decrypt the data and the unencrypted data will be used inside the cloud;
+Encryption at Rest: unencrypted object use data encryption key to encrypt the data and stored in the encrypted bucket; when you read the data back, the data will pass through the same process and decrypts the data;
+Asymmetric encryption also know as public key cryptography; message encrypted with he public key can only be decrypted with the private key; message encrypted with the private key can be decrypted with public key; example of asymmetric encryption include SSL/TLS and SSH
+Symmetric encryption: use the same key for encryption and decryption
+
+
+AWS Key Management Service (KMS) is used for creation and management of encryption keys; the following is copied from AWS official website:
+AWS KMS is replacing the term customer master key (CMK) with AWS KMS key and KMS key. The concept has not changed. To prevent breaking changes, AWS KMS is keeping some variations of this term.
+
+AWS KMS keys (KMS keys) are the primary resource in AWS KMS. You can use a KMS key to encrypt, decrypt, and re-encrypt data. It can also generate data keys that you can use outside of AWS KMS. Typically, you'll use symmetric KMS keys, but you can create and use asymmetric KMS keys for encryption or signing.
+
