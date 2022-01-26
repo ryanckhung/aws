@@ -37,3 +37,8 @@ AWS KMS is replacing the term customer master key (CMK) with AWS KMS key and
 
 AWS KMS keys (KMS keys) are the primary resource in AWS KMS. You can use a KMS key to encrypt, decrypt, and re-encrypt data. It can also generate data keys that you can use outside of AWS KMS. Typically, you'll use symmetric KMS keys, but you can create and use asymmetric KMS keys for encryption or signing.
 
+
+[HOL] Create Encryption Key:
+Goto the Key Management Service (KMS), explore the AWS managed keys and you will see some of the keys associated with the services with which we’ve enabled encryption; those encryption keys created by AWS are managed by AWS; AWS will performers all the cryptographic operations for you;
+Again goto the Key Management Service Dashboard, goto Customer managed keys; click Create Key; Select Symmetric or Asymmetric key; give the name; there are two type of permissions (administrative permissions and usage permissions; who can administrate the key and who can use the key); select user(s) as the key administrators (eg. Can delete the key); select user(s) with key usage permission; Done;
+Delete a key is a very danger action; therefore KMS request you delete the key with few days buffer; that is if you delete the key, it will help you to keep few days before it’s really gone; 
