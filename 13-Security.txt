@@ -1,1 +1,27 @@
+AWS Directory Service allows to connect the on-premises active directories or your now directory in the cloud
+KMS provide various types of encryption that you can implement using KMS
+AWS Certificate Manager for SSL/TLS certificates
+AWS Web Application Firewall help to protect resources from common web exploits
+AWS Shield protects resources against distributed denial of service attack (DDoS)
+Security Group, Network ACLs, AWS IAM also provide security
+
+
+AWS Directory Service: AWS Managed Microsoft Active Directory is a fully AWS managed service
+AD Connector: this is useful when you have an existing active directory in the on-premises environment; AD Connector service is going to map the Active Directory credentials (from on-premises) to IAM roles, and they give you the permissions that you need to connect to the AWS service
+Simple AD: inexpensive AD compatible service with common directory features; with less features therefore it’s cheaper
+
+
+Identity Federation: talking about trust relationships between multiple parties; it’s a mechanism to authorise the on-premises services to use the AWS service
+Eg. User does have an identity in an on-premises directory store in  this case, using the Lightweight Directory Access Protocol, LDAP; We then have an identity provider, it’s something like the active directory federation service. On the AWS side we have STS; the mechanism will allow the client in on-premises machine to get the STS token and access the AWS service
+
+
+AWS Single Sign On (SSO): trying to be able to authenticate once with the credentials and then get access to a variety of system; and hence no re-authenticate is needed; and we don’t have to supports credentials to different systems; To achieve this we need to implement the SSO and connecting to those various system;
+
+
+Amazon Cognito is used for adding sing in and signup functionality to the web and mobile;  there are user pools and identity pools;
+Cognito user pool is a directory for managing singing and signup for applications; it generate the JWT to the client; the client can use this JWT to access AWS services
+User can also using apple, Facebook, Amazon, google account to login through the AWS Cognito services
+Cognito identity pools are used to obtain temporary, limited-privilege credentials for AWS services
+Use case:  step1: client access the Cognito User Pool  to get the JWT token; step2:  the client exchange the token with Cognito Identity Pool and get the AWS credentials; step3 access AWS services with the AWS credentials
+
 
