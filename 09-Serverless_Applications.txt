@@ -1,1 +1,1 @@
-
+Serverless means don’t have manage anything underneath the platform; you don’t need to care about the loading (it will automatically adjusted for you), no need to manage EC2, no need to install patches or update software;  Serverless services includes Lambda (run compute functions), SNS, SQS, API Gateway.
