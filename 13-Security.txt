@@ -87,5 +87,9 @@ Below is talking about secure the server like DDos
 
 AWS Web Application Firewall (WAF) let you create rules called web ACLs, and that means you can use those to filter traffic based on conditions (eg. IP address, HTTP headers, the body, custom URIs or against geography as well); WAF good for protecting against web exploits (eg. SQL injection and cross site scripting); WAF usually put in front of CloudFront, ALB, API gateway; Web ACLs = web access control list;  
 
+AWS Shield is a service to protect against distributed denial of service attacks (DDoS); protect someone want to kill your services by sending a large amounts of data;
+[HOL] goto WAF & Shield Dashboard, click AWS Shield, click getting started, DON’T click Subscribe to Shield Advanced (it cost 3000USD for a year) just look around it (AWS Shied has a free tier and paid tier);
+
+
 
 
