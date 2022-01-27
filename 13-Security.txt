@@ -85,3 +85,7 @@ Below is talking about secure the server like DDos
 ===========================================================================================================================================================
 ===========================================================================================================================================================
 
+AWS Web Application Firewall (WAF) let you create rules called web ACLs, and that means you can use those to filter traffic based on conditions (eg. IP address, HTTP headers, the body, custom URIs or against geography as well); WAF good for protecting against web exploits (eg. SQL injection and cross site scripting); WAF usually put in front of CloudFront, ALB, API gateway; Web ACLs = web access control list;  
+
+
+
