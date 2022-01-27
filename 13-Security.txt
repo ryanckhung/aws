@@ -52,3 +52,10 @@ AWS Certificate Manager (ACM) is a service that we can use for issuing certifica
 Remark: KMS/CloudHSM is used for encryption at rest, ACM is used for encryption for transit
 
 
+[HOL] SSL/TLS Certificate in ACM:
+Goto the Certificates Dashboard, click Request a certificate, Add domain name, you can add subdomain or more name as well; Select validation method (to validate you own the domain; you can use DNS or email validation)
+Back to the Certificates Dashboard, click Import a certificate, then you can use the open SSL utility to create your own certificate material (the content), then copy the certificate body, private key and optionally the certificate chain; you can put your self-signed certificates
+Goto the AWS Certificate Manager Private Certificate Authority; click Create a public CA (use to create your own certificate authority in cloud, use for issuing certificate; this used as a private certificate authority); [just click around and won’t create it]
+Remark: if we put star.example.com, we would then be able to use subdomains with example.com using the same certificate and a subdomain would be something like www. 
+
+
