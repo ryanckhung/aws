@@ -91,5 +91,13 @@ AWS Shield is a service to protect against distributed denial of service attacks
 [HOL] goto WAF & Shield Dashboard, click AWS Shield, click getting started, DON’T click Subscribe to Shield Advanced (it cost 3000USD for a year) just look around it (AWS Shied has a free tier and paid tier);
 
 
+Don't forget Secuity Group (secure the AWS resource) and Network ACL (secure the subnet) and IAM can be part of the securty infrastructure
+
+
+In Summary:
+Defense In-Depth refers to the practice of implementing security multiple layers within your application, within your infrastructure; that means even you fail in one security area within your application or infrastructure, then hopefully it’s not going to lead to any major exposure;
+
+
+
 
 
