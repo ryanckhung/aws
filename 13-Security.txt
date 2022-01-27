@@ -1,3 +1,10 @@
+Security can be in different level, for example:
+1. talking about user login
+2. talking about encryption in transit (SSL/TLS)
+3. talking about encryption at rest (eg. inside database)
+4. talking about server security (eg. DDoS)
+
+
 AWS Directory Service allows to connect the on-premises active directories or your now directory in the cloud
 KMS provide various types of encryption that you can implement using KMS
 AWS Certificate Manager for SSL/TLS certificates
@@ -23,6 +30,18 @@ Cognito user pool is a directory for managing singing and signup for application
 User can also using apple, Facebook, Amazon, google account to login through the AWS Cognito services
 Cognito identity pools are used to obtain temporary, limited-privilege credentials for AWS services
 Use case:  step1: client access the Cognito User Pool  to get the JWT token; step2:  the client exchange the token with Cognito Identity Pool and get the AWS credentials; step3 access AWS services with the AWS credentials
+
+
+===========================================================================================================================================================
+===========================================================================================================================================================
+Above is talking how user can access the AWS cloud with security (like login)
+
+Below is talking about how data encrypt in transit or at rest
+At rest we use KMS and CloudHSM
+In transit we use AWS Certificate Manager (ACM)
+===========================================================================================================================================================
+===========================================================================================================================================================
+
 
 
 Encryption Primer:
@@ -58,4 +77,11 @@ Back to the Certificates Dashboard, click Import a certificate, then you can use
 Goto the AWS Certificate Manager Private Certificate Authority; click Create a public CA (use to create your own certificate authority in cloud, use for issuing certificate; this used as a private certificate authority); [just click around and won’t create it]
 Remark: if we put star.example.com, we would then be able to use subdomains with example.com using the same certificate and a subdomain would be something like www. 
 
+===========================================================================================================================================================
+===========================================================================================================================================================
+Above is talking about encryption in transit or at rest
+
+Below is talking about secure the server like DDos
+===========================================================================================================================================================
+===========================================================================================================================================================
 
