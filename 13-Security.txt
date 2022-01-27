@@ -44,5 +44,11 @@ Again goto the Key Management Service Dashboard, goto Customer managed keys; cli
 Delete a key is a very danger action; therefore KMS request you delete the key with few days buffer; that is if you delete the key, it will help you to keep few days before it’s really gone; 
 
 
-AWS CloudHSM is another service you can use for creating and managing encrpytion keys;
-Key big difference between KMS and CloudHSM is the CloudHSM use a dedicated hardware device
+AWS CloudHSM is another service you can use for creating and managing encryption keys;
+The key big difference between KMS and CloudHSM is the CloudHSM use a dedicated hardware device
+AWS CloudHSM is a cloud-based hardware security module (HSM = cloud based security module); It can offload the SSL/TLS processing from web servers; CloudHSM can help to store the private key for an issuing certificate authority; Store the master key for DB encryption; CloudHSM can store the key for KMS; CloudHSM is an AWS managed service but it’s a customer managed root of trust, while KMS is AWS managed service and AWS managed root of trust; for CloudHSM, AWS has no visibility of your encryption keys
+AWS Certificate Manager (ACM) is a service that we can use for issuing certificates; those certificates are SSL/TLS certificates that we use or encryption in transit; can issue a cert with single domain, multiple domain names and wildcards; Public certificates are signed by the AWS public Certificate Authority; can import certificates from third party issuers;  
+
+Remark: KMS/CloudHSM is used for encryption at rest, ACM is used for encryption for transit
+
+
