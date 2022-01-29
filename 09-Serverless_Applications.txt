@@ -45,6 +45,12 @@ Subscribers can be Lambda, SQS, Web Applications
 9. goto the DynamoDB, you can see record is added by the Lambda function, as SQS linkup with Lambda, and theh Lambda function already run by the code which will write the data to the dynamoDB; 
 10. goto CloudWatch, select Log groups, you will also see the logs "/aws/lambda/productVisionDatahandler" ("/aws/lambda/<function-name>"); the CloudWatch has the new record is becauae the code inside the Lambda trigger this happen 
 
-AWS Step Functions
+AWS Step Functions is a service that coordinates the components of an application; just like a state machine to trigger different lambda functions;
+
+[HOL] Create a State Machine
+1. goto AWS Step Functions dashboard, click Get started, you can see a Review Hello World example (with code and visual state machine), leave remainging as default and click Create state machine,
+2. goto Lambda, Create Function, give the function name, runtime=nodejs12, role=Create a new role with basic Lambda permissions; edit the lambda function;
+
+
 
 
