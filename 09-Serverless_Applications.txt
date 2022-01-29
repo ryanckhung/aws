@@ -4,4 +4,32 @@ Serverless Services and Event-Driven Architecture; you can have serverless compu
 
 AWS Lambda is a serverless compute service which runs function; upload your code to lambda and wait for something to trigger that function; pay for execution time and thhe allocated resource only; functions execution can run up to 15 minutes (can't run function more that 15 mins run time); Use case: data processing, file processing, event source mapping (map data from one service to the other service, eg. S3 to SQS); Lambda function can run concurrently, that is one lambda function which trigger by N events at theh same time, then N lambda function with the same code can run concurrently;
 
-[HOL] Create Simple Lambda Function: 
+[HOL] Create Simple Lambda Function: (run a function in Lambda and trigger CloudWatch Logs - in this lab, no CloudWatch, trigger or destination are need to set)
+Goto theh Lambda Dashboard, Click Create Function; The function can created from Scratch, Use a Blueprint, Container Image, serverless app repository; in this exercise we choose start from scratch, give it a name, use a run time (eg. Nodejs, Python), set permission (espeically if need to work with other AWS services) by create a new role with basic lambda permissions OR use exisiting role OR create a new role from AWS policy template; then goto the function page, at the top you can see the function, on the left there is an "Add trigger" button (add source like S3, SQS), on the right there is an "Add destination" button; 
+In the function page, scroll down and click the code tab, you can edit theh code or upload the code from .zip file or AWS s3 location; 
+In the function page, scroll down and click the Test tab, play around the Test; 
+In the function page, scroll down and click the Monitor tab, click View logs in CloudWatch; then it will jump to the CloudWatch, inside CloudWatch, click logs, log groups, then you can see something about thhe logs from Lambda;
+In the function page, scroll down and click Configuration tab, click Permissions, check the execution role, resource summary and play around it
+
+Application Integration Services Overview:
+They include, SQS, SNS, Step Functions, Simple Workflow Service, Amazon MQ, Amazon Kinesis (SQS, SNS, Step Functions are the most important)
+Amazon Kinese can be considered as integration services but it also an analytic service
+SQS = message queue; SNS = notification; Step Functions = coordinations of AWS service component;
+Simple Workflow Service = old version of step function; use case: automated flow enable by the code, then you need human interaction and no code it needed, then after human finish the the process manually, you put it back to the automated flow
+Amazon MQ is similar to SQS; use case: use theh Active MQ and RabbitMQ and want to shift the services to AWS cloud can consider Amazon MQ; because Amazon MQ use Active MQ and RabbitMQ for the service
+Amazon Kinesis is a service that collects, processes, and analyzes data
+
+
+Amazon SQS can decouple the applications; Two type of Queues, each has it's advtange and disadvantage
+Standard Queue: Best-effor ordering; Unlimited Throughput; At least once delivery (beware if your application is sensitive to receive the same message twice)
+FIFO Queue: First in First out ordering; High Throughhput; Exactly once processing
+Dead Letter Queue (not a queue type) is used to store the message which cannot process successfully; it's store for analysis later;
+Delay Queue (not a queue type) is used to store in the queue and delay for N seconds before the consumer (eg. Lambda) can see it;
+Long Polling waits for theh WaitTimeSeconds and elemenates empty responses (can reduce the number of API call, but not the fastest response)
+Short Polling just checks a subset of servers and may not return all messages (faster response but more API calls)
+
+
+Amazon SNS Publisher sends one message to one SNS topic and the subscribers can read the notifications
+Subscribers can be Lambda, SQS, Web Applications
+
+
