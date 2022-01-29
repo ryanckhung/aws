@@ -33,3 +33,18 @@ Amazon SNS Publisher sends one message to one SNS topic and the subscribers can 
 Subscribers can be Lambda, SQS, Web Applications
 
 
+[HOL] Simple Event-Driven App: (use CLI send command to SQS, once the message add to the queue, SQS will trigger the Lambda and write the results to DynamoDB, the Lambda will also trigger the CloudWatch Logs) (refer to the Code>Simple-Event-Driven-App>Introduction.md)
+1. goto DynamoDB, click Create table, give the name, set Partition key = ProductVisitKey
+2. goto Simple Queue Service, click Create queue, select Standard Queue, give theh name as ProductVisitsDataQueue, keep default access poicy, done -> copy thhe SQS URL for later use
+3. goto Lambda, click Create function, select Author from scratch, set function name = productVisitsDataHandler, runtime = nodejs 12.x, Execution rule = Create a new role from AWS policy templates, role name = lambdaRoleForSQSPermissions, Policy templates = "Simple microservice permissions" and "Amazon SQS poller permissions", click Create function; upload the zip file for the lambda function, 
+4. go back to Amazon SQS, select the just created SQS, scroll down and select theh Lambda triggers tab, just browse around
+5. goto CLI and use command to send messsage to SQS
+6. back to Amazon SQS, click Send and review messages, you can see a message under Messages section, you can click "Pull for messages" which will refresh from the queue in case there are new messages, 
+7. in the Amazon SQS, goto the created SQS, scroll down, click Lambda triggers tab, click Configure Lambda function trigger button, select the Lambda function by choosing the just created Lambda function, then click save, this will trigger the lambda function when SQS got new message, 
+8. in Amazon SQS, goto the created SQS, scroll to theh top, click Send and recive messages button, after sending, you call click the Poll for messages button
+9. goto the DynamoDB, you can see record is added by the Lambda function, as SQS linkup with Lambda, and theh Lambda function already run by the code which will write the data to the dynamoDB; 
+10. goto CloudWatch, select Log groups, you will also see the logs "/aws/lambda/productVisionDatahandler" ("/aws/lambda/<function-name>"); the CloudWatch has the new record is becauae the code inside the Lambda trigger this happen 
+
+AWS Step Functions
+
+
