@@ -47,7 +47,7 @@ Subscribers can be Lambda, SQS, Web Applications
 
 AWS Step Functions is a service that coordinates the components of an application; just like a state machine to trigger different lambda functions;
 
-[HOL] Create a State Machine
+[HOL] Create a State Machine (come back later)
 1. goto AWS Step Functions dashboard, click Get started, you can see a Review Hello World example (with code and visual state machine), leave remainging as default and click Create state machine,
 2. goto Lambda, Create Function, give the function name, runtime=nodejs12, role=Create a new role with basic Lambda permissions; edit the lambda function;
 
