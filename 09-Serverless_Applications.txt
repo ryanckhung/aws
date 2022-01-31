@@ -66,3 +66,15 @@ API Gateway is a service that you can use to create API; support restful APIs an
 [HOL] Simple REST API:
 Goto API Gateway Dashboard, select a REST API, in Create new API select Example API, the Endpoint types select Regional, then click Import; “/“ is the resource, “/Get” is method, select the method and click Actions, Create Method; after adding the method, click Actions, click Deploy API, after deploy it will generate an API path; you can try the API path in the browser
 Back to the API gateway dashboard, select the API just created, scroll down and you will see a Settings tab (can enable cache, throttling, encryptions, TTL, ), 
+
+
+
+
+
+
+// My test (not yet completed)
+Step 1: create SNS topics, create subscription; back to the topic and click Publish message;
+Step 2: create a Lambda function with default settings; Click Test tab and check the execution results
+Step 3: in the created Lambda fuction page; scroll to the top and click "Add destination"; set condtion as On success, add the SNS which created in Step 1
+Step 4: goto the crated Lambda function page, click Test Tab, click the Test Button
+
