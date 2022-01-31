@@ -6,9 +6,9 @@ AWS Lambda is a serverless compute service which runs function; upload your code
 
 [HOL] Create Simple Lambda Function: (run a function in Lambda and trigger CloudWatch Logs - in this lab, no CloudWatch, trigger or destination are need to set)
 Goto theh Lambda Dashboard, Click Create Function; The function can created from Scratch, Use a Blueprint, Container Image, serverless app repository; in this exercise we choose start from scratch, give it a name, use a run time (eg. Nodejs, Python), set permission (espeically if need to work with other AWS services) by create a new role with basic lambda permissions OR use exisiting role OR create a new role from AWS policy template; then goto the function page, at the top you can see the function, on the left there is an "Add trigger" button (add source like S3, SQS), on the right there is an "Add destination" button; 
-In the function page, scroll down and click the code tab, you can edit theh code or upload the code from .zip file or AWS s3 location; 
+In the function page, scroll down and click the code tab, you can edit the code or upload the code from .zip file or AWS s3 location; 
 In the function page, scroll down and click the Test tab, play around the Test; 
-In the function page, scroll down and click the Monitor tab, click View logs in CloudWatch; then it will jump to the CloudWatch, inside CloudWatch, click logs, log groups, then you can see something about thhe logs from Lambda;
+In the function page, scroll down and click the Monitor tab, click View logs in CloudWatch; then it will jump to the CloudWatch, inside CloudWatch, click logs, log groups, then you can see something about thhe logs from Lambda; CloudWatch is auto attached in the Lambda
 In the function page, scroll down and click Configuration tab, click Permissions, check the execution role, resource summary and play around it
 
 Application Integration Services Overview:
