@@ -52,5 +52,12 @@ AWS Step Functions is a service that coordinates the components of an applicatio
 2. goto Lambda, Create Function, give the function name, runtime=nodejs12, role=Create a new role with basic Lambda permissions; edit the lambda function;
 
 
+Amazon EventBridge is a serverless event bus; useful for building distributed event-driven applications; Services like AWS Services, Custom Apps send events (eg. EC2 termination) to the EventBridge event bus, EventBridge process information by rules, base on those rules the information will send through various destinations like SNS, Lambda, Kinesis data streams
+
+[HOL] Create Event Bus and Rule; (EC2 terminate and trigger an event, this event goto EventBridge and trigger the SNS)
+Step1: Launch an EC2 instance, copy the instance ID to the clipboard
+Step2: Goto EvenBridge Dashboard, [Set Event] click Create rule, give a name, choose Event pattern,  set Event matching pattern = Pre-defined pattern by service, set Service Provider = AWS, set Service Name = EC2, set Event type = EC2 instance State-change Notification, set Specific state(s) = terminated, set Specific instance (ids) = copied instance ID (can add as many as you need); [Set Target] set target as SNS, select a Topics (if no topic goto SNS to create it) -> DONE; 
+Step3: go back to EC2 and terminate the instance and check email to see if receive the notification
+
 
 
