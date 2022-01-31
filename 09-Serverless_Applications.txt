@@ -60,4 +60,7 @@ Step2: Goto EvenBridge Dashboard, [Set Event] click Create rule, give a name, ch
 Step3: go back to EC2 and terminate the instance and check email to see if receive the notification
 
 
+API Gateway is a service that you can use to create API; support restful APIs and web socket APIs;  API Gateway act as a front door for AWS Lambda, EC2 in private subnet; treat API gateway as a single endpoint which connect to various internet base services, but not open several API services and expose several endpoints to the external world; API Gateway can modify the information in the request; API Gateway can also provide cache function; API gateway can control the limit of requests; 
+
+
 
