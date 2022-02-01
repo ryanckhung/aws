@@ -101,3 +101,35 @@ S3 trigger lambda
 Step 1. create an S3 (with default setting)
 Step 2. create a Lambda Function (with default setting), Add trigger, select the bucket just created and select "All object create event" (other options are put, post, copy, multipart upload)
 Step 3. goto S3 upload a file; back to Lambda, monitor, View logs in CloudWatch
+
+======================================================================================================================
+The following are my Test
+
+Lambda trigger SNS
+Step 1. Create SNS (use default setting), create Subscription
+Step 2. Create a Lambda Function, Author from scratch, Add destination and link it to the SNS just created and set the condtion = "On success" (when you add the destination, AWS will attemp to add the permission role automatically)
+Step 3. Update the Lambda Function code as the following then deploy it (in the code update the SNS TopicArn = the ARN of the just created SNS)
+* Remark: Input (trigger) to Lambda can be any event, then the Lambda will process this event
+          outout (destination) from Lambda need to have a code to do specific action, like publish an SNS as the following
+          if the dstination is S3, the Lambda function need to update accordingly
+
+
+var AWS = require("aws-sdk");
+exports.handler = function(event, context) {
+    var eventText = JSON.stringify(event, null, 2);
+    console.log("Received event:", eventText);
+    var sns = new AWS.SNS();
+    var params = {
+        Message: eventText, 
+        Subject: "Ryan Test",
+        TopicArn: "arn:aws:sns:ap-east-1:864996340542:ryantopic001"
+    };
+    sns.publish(params, context.done);
+};
+
+
+======================================================================================================================
+The following are my Test
+
+
+
