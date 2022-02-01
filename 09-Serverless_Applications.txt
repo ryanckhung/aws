@@ -71,10 +71,25 @@ Back to the API gateway dashboard, select the API just created, scroll down and 
 
 
 
+======================================================================================================================
+The following are my Test
 
-// My test (not yet completed)
-Step 1: create SNS topics, create subscription; back to the topic and click Publish message;
-Step 2: create a Lambda function with default settings; Click Test tab and check the execution results
-Step 3: in the created Lambda fuction page; scroll to the top and click "Add destination"; set condtion as On success, add the SNS which created in Step 1
-Step 4: goto the crated Lambda function page, click Test Tab, click the Test Button
+<<1>>
+SNS trigger Lambda Hello World
+Step 1. Create an SNS topic (with most setting by default), Create a subscription, confirm email subscription, Publish message (for testing)
+Step 2. Create a Lambda Function; Use a blueprint, search sns blueprint, associate the SNS trigger to the just created SNS; 
+Step 3. goto the SNS to publish message; then goto the lambda function, monitor tab click view logs in cloudwatch
+
+// the following is generated from the blueprint
+exports.handler = async (event, context) => {
+    //console.log('Received event:', JSON.stringify(event, null, 2));
+    const message = event.Records[0].Sns.Message;
+    console.log('From SNS:', message);
+    return message;
+};
+
+The other way to acheive the same effect
+Step 1. Create an SNS topic (with most setting by default), Create a subscription, confirm email subscription, Publish message (for testing)
+Step 2. Create a Lambda Function; Author from scratch; in the function overview, click Add tigger and associate the SNS
+Step 3. goto the SNS to publish message; then goto the lambda function, monitor tab click view logs in cloudwatch
 
