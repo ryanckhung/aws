@@ -93,3 +93,11 @@ Step 1. Create an SNS topic (with most setting by default), Create a subscriptio
 Step 2. Create a Lambda Function; Author from scratch; in the function overview, click Add tigger and associate the SNS
 Step 3. goto the SNS to publish message; then goto the lambda function, monitor tab click view logs in cloudwatch
 
+
+======================================================================================================================
+The following are my Test
+
+S3 trigger lambda
+Step 1. create an S3 (with default setting)
+Step 2. create a Lambda Function (with default setting), Add trigger, select the bucket just created and select "All object create event" (other options are put, post, copy, multipart upload)
+Step 3. goto S3 upload a file; back to Lambda, monitor, View logs in CloudWatch
