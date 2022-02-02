@@ -152,3 +152,11 @@ Step 4. terminate EC2 and check email from SNS
 
 
 
+======================================================================================================================
+The following are my Test
+
+use API Gateway to access Lambda
+Step 1. Create a Lambda function with default setting (Author from scratch)
+Step 2. Goto API Gateway, create REST API, Choose the protocol = REST, Create new API = New API, Give API a name
+Step 3. inside the API Gateway, Actions, create resource, give resource a name, inside resource click Actions select Create Method, select Get, Integration  type = Lambda (options are Lambda, HTTP, Mock, AWS Service, VPC Link), set Lambda Function with the copied ARN (from step 1)
+Step 4. back to the API Gateway, click TEST; you can see that it can trigger the API gateway
