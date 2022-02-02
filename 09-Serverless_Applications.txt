@@ -134,7 +134,7 @@ The following are my Test
 SQS trigger Lambda
 Step 1. Create Standard SQS; test by "Send and receive messages"; in Send message, key in message then click Send message button; in Receive messages window, click Poll for messages (this will only read the message from the queue but after polling, the message still inside the SQS), select the polled message then click delete button (this will clear the message from the SQS); after a while click "Poll for messages" button, you can see the messages available count decrease
 Step 2. Create a Lambda Function, Use a blueprint ~ sqs-poller, give a Role name for SQS permission, select the SQS trigger, 
-Step 3. In the Lambda Function, you can see that it claims the SQS is disabled; in the lambda funciton click the "Configuration" Tab, select the SQS, click the Enable button
+Step 3. In the Lambda Function, if you see it claims the SQS is disabled; in the lambda funciton click the "Configuration" Tab, select the SQS, click the Enable button
 Step 4. goto SQS and Send message; in SQS Receive messgaes, Poll for messages, you can see that the Messages available =0; this is because it's consumed by the Lambda
 Step 5. Goto Lambda, Monitor tab, click View logs in CloudWatch, you can see the SQS message trigger the log
 
