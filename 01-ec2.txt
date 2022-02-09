@@ -81,6 +81,9 @@ Step 4. In the EC2 Dashboard, left menu, Under Network & Security, click Network
 Step 5. Create an Elastic IP, then associate it with the network interface just created; Try to login to the EC2 by SSH with the new network interface (copy the DNS name of the network interface)
 
 
+[HOL] VPC - subnet - route table - gateway - add EC2 in
+
+
 Above is my created lab
 =================================================================================================================================================================
 
