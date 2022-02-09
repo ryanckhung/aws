@@ -70,3 +70,18 @@ EC2:
 
 
 
+=================================================================================================================================================================
+Below is my created lab
+
+[HOL] EC2 and Elastic IP
+Step 1. Create the Security Groups with SSH port open (set inbound rules allow SSH; outbound rules allow All traffic)
+Step 2. Create an EC2 instance and associate the Security Groups created in Step 1
+Step 3. Log into the EC2 by SSH
+Step 4. In the EC2 Dashboard, left menu, Under Network & Security, click Network interfaces, Create network interface with the same subnet as the created EC2; assign the created security group to this interface; after created, attach the network interface to the EC2 instance; the just created interface will not associate with Public IP address
+Step 5. Create an Elastic IP, then associate it with the network interface just created; Try to login to the EC2 by SSH with the new network interface (copy the DNS name of the network interface)
+
+
+Above is my created lab
+=================================================================================================================================================================
+
+
