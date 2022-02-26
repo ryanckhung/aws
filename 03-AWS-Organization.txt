@@ -5,7 +5,7 @@
 3. Create an account here is not assigning using name and password; but creating a role: OrganizationAccountAccessRole (eg. a role is assoicated with the prodution account); then the user in the management account can assume the role
 
 4. [HOL] Create Organization and Account 
-[1] AWS Organizations Service -> Create an Organization (after clicking this button, then done; all the things are created automatically) (you can see the management account as root) -> In side the AWS accounts page, click "Add an AWS Account" button to create an aws account -> give the name of the account, link with a new email account (can't be the root account), like with an IAM Role (use default OrganizationAccountAccessRole) -> 
+[1] AWS Organizations -> Create an Organization (after clicking this button, then done; all the things are created automatically) (you can see the management account as root) -> In side the AWS accounts page, click "Add an AWS Account" button to create an aws account -> give the name of the account, link with a new email account (can't be the root account), like with an IAM Role (use default OrganizationAccountAccessRole) -> 
 [2] goto AWS Accounts page, select root, select children, actions, create new organization unit (OU) and give the name (prouction in this example) for this OU -> move the newly created account to OU (production)
 
 5. [HOL] Create Service Control Policy -> copy the newly created AWS account number -> goto top right most AWS page, user name, select switch role (similar to login and logout process, but this time is switch role) ->
