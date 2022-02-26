@@ -8,20 +8,43 @@
 <Step 3> Back to the EC2 dashbard, auto scaling and selected the just created Auto Scaling group (ASG), play around and take a look on the monitoring [you shouldn't directly change the setting of EC2 created by ASG; you should goto ASG to update the EC2 instead][delete the ASG will automatically deleted the EC2][you shoun't delete the EC2 which is created by ASG; you should delete the ASG instead][Up to this moment, no load balancer is attached; for testing purpose, you can goto the EC2 dashboard, and find the ASG created EC2, copy the IP/domain name of the EC2 and paste it in the browser (assume the userdata.sh is applied; Nginx is installed)]
 
 5. Load Balancing includes the concept of ALB/NLB and Target Group, the Load Balancer will redirect traffic to difference target group
-6. [HOL] Create Target Group -> EC2 Dashboard -> Load Balancing -> Target Groups -> You can create a target group protocol for http (ALB) or TCP (NLB)-> You can not include any EC2 instance in this target group and leave it to update later
-7. [HOL] Create NLB (similar to ALB) -> create the Elastic IP for Load Balancer (optional; if not assigned, aws will assign an IP for you), the elastic IP is used to connect to the subnet -> create Load Balancer, EC2 Dashboard, Load Balancers, Create Load Balancer -> Forward the listener (eg. TCP @ port 80) to the Target Groups which created before -> After created the Load Balancer, copy it's endpoint name -> if you following the lab, the target groups should be empty -> back to the ASG and select the created ASG instance, goto load balancing option under the ASG instance, attach the newly created Target Group to the ASG instance -> after that the target group will auto include the instance stated in the ASG, you can go back to target group and see if new instance is inside the target group
+
+6. [HOL] Create Target Group -> EC2 Dashboard -> Load Balancing -> Target Groups -> You can create a target group protocol for http (ALB) or TCP (NLB)-> You should not include (group) any EC2 instance in this target group (at this moment) and leave it to update later (just create an empty target group and don't register any EC2 into this target group)
+
+
+7. [HOL] Create NLB (similar to ALB) (Launch Template + ASG + Target Group + Load Balancer)
+<Step 1> create the Elastic IP for Load Balancer (optional; if not assigned, aws will assign an IP for you), the elastic IP is used to connect to the subnet 
+<Step 2> create Load Balancer, EC2 Dashboard, Load Balancers, Create Load Balancer -> Forward the listener (eg. TCP @ port 80) to the Target Groups which created before
+<Step 3> After created the Load Balancer, copy it's endpoint name -> if you following the lab, the target groups should be empty -> back to the ASG and select the created ASG instance, goto load balancing option under the ASG instance, attach the newly created Target Group to the ASG instance -> after that the target group will auto include the instance stated in the ASG, you can go back to target group and see if new instance is inside the target group
+
 
 8. [*****] The relationship for all component to link up together: 
     Launch Template <-> ASG <-> Target Group <-> Load Balancer [ASG and LB link up together by Target group; ASG will put all it's instances into it's associated target group]
     EC2 <-> Target Group <-> Load Balancer [no ASG, directly add EC2 into the target group; this approach no auto scaling]
 
-9. [HOL] Query String Routing: Create an EC2 instance -> Create a target group, add the newly created instance to this target group [this target group won't have auto scaling] -> Goto the created ALB, Listener, Edit/Add Listener, if you want to attach the target to the http:80 (which used beofre), then choose edit the http:80, add rule, query string
 
-10. [HOL] Scaling Policies -> EC2 dashboard -> Create ASG - Scaling Policies, Target tracking scaling policy (No scaling policy needed to create at this moment) -> after create ASG; selected the created ASG; click the tab Automatic Scaling; Dynamic scaling policies; Create dynamic scaling policy; select the policy type -> after adding the scaling policy - add the load in the existing EC2; then new EC2 should add in automatically after N (300) seconds.
+9. [HOL] Query String Routing (edit the ALB Listener and add the coresponding action)
+<Step 1> Create an EC2 instance -> Create a target group, add the newly created instance to this target group [this target group won't have auto scaling] 
+<Step 2> Goto the created ALB, Listener, Edit/Add Listener, if you want to attach the target to the http:80 (which used beofre), then choose edit the http:80, add rule, query string (the ALB can base on Path, http header, http request method, query string or source ip to forward to particular target group)
 
-11. [HOL] Sticky Session -> EC2 Dashboard -> Target Groups -> Select the created target group -> Attributes -> Edit -> Select from Round Robin to Stickiness -> after that you keep reloading the content pointing to the load balancer will always stick to the same node
+
+10. [HOL] Scaling Policies 
+<Step 1> EC2 dashboard -> Create ASG - Scaling Policies, Target tracking scaling policy (No scaling policy needed to create at this moment)
+<Step 2> after create ASG; selected the created ASG; click the tab Automatic Scaling; Dynamic scaling policies; Create dynamic scaling policy; select the policy type -> after adding the scaling policy - add the load in the existing EC2; then new EC2 should add in automatically after N (300) seconds.
+<Remark> Dynamic scaling policy include "Target tracking scaling", "Step Scaling" and "Simple Scaling"
+
+
+11. [HOL] Sticky Session 
+<Step 1> EC2 Dashboard -> Target Groups -> Select the created target group -> Attributes -> Edit -> Select from Round Robin to Stickiness -> after that you keep reloading the content pointing to the load balancer will always stick to the same node
+<Remark> Stickness Type = "Load balancer generated cookie" and "Application-based cookie"
+
 
 12. SSL can be generated in the AWS Certificate Manager (ACM) Service or import a cert. into the ACM. The certificate usually bind with the load balancer
 
-13. [HOL] [1] Create a secure listener -> goto AWS Certificate Manager (ACM) -> Request a public certificate -> Associate the domain name with the certificate (Goto Route 53; hosted zone; there should be a domain name, associate it with the cert in ACM) -> Use email validation; then cert applied successfully -> [2] Then back (EC2 Dashboard) to the Load Balancer -> Listeners -> Add Listeners -> Select HTTPS, Select forward the traffic to a particular Target Group, and select the newly created certificate (associate the cert. to the HTTPS portocol in Load Balance - that is when traffic with https protocl goes to the Load Balancer will forward to a Target group) -> [3] Back to Route 53, selected the associated domain name, create record -> Select Alias, Route Traffic to the Load Balancer (this let DNS map the domain name to the entry point of the Load Balance) -> [4] make sure the security group, inbound rules open the https port -> [REMARK] Alias = A Record
+
+13. [HOL] 
+<Step 1> Create a secure listener -> goto AWS Certificate Manager (ACM) -> Request a public certificate -> Associate the domain name with the certificate (Goto Route 53; hosted zone; there should be a domain name, associate it with the cert in ACM) -> Use email validation; then cert applied successfully
+<Step 2> Then back (EC2 Dashboard) to the Load Balancer -> Listeners -> Add Listeners -> Select HTTPS, Select forward the traffic to a particular Target Group, and select the newly created certificate (associate the cert. to the HTTPS portocol in Load Balance - that is when traffic with https protocl goes to the Load Balancer will forward to a Target group)
+<Step 3> Back to Route 53, selected the associated domain name, create record -> Select Alias, Route Traffic to the Load Balancer (this let DNS map the domain name to the entry point of the Load Balance)
+<Step 4> make sure the security group, inbound rules open the https port -> [REMARK] Alias = A Record
 
