@@ -2,8 +2,8 @@
 2. Scaling up = vertical scaling; scaling out = horizontal scaling
 
 3. Auto Scaling includes the concept of Launch Templates and Auto Scaling Group
-4. [HOL] Auto Scaling: 
-<Step 1> EC2 Dashboard -> Instances -> Launch Templates -> Launch template is just like telling AWS that you have a EC2 template, which include the image type, machine type, security group, key pair, storage, user template, etc 
+4. [HOL] Auto Scaling: (Create Launch Template and Associate it to ASG)
+<Step 1> EC2 Dashboard -> Instances -> Launch Templates -> Launch template is just like telling AWS that you have a EC2 template, which include the image type, machine type, security group, key pair, storage, user template, etc (create a launch template here)
 <Step 2> back to the EC2 dashboard and select Auto Scaling -> Auto Scaling Groups -> Create Auto Scaling Groups -> Associate the Launch Template just crated with the Auto Scaling Group -> you can select mulitple AZ and subnets for autoscaling -> you can set the desire, min, max number of instances to run -> after the ASG is created, the EC2 instance will automatically created
 <Step 3> Back to the EC2 dashbard, auto scaling and selected the just created Auto Scaling group (ASG), play around and take a look on the monitoring [you shouldn't directly change the setting of EC2 created by ASG; you should goto ASG to update the EC2 instead][delete the ASG will automatically deleted the EC2][you shoun't delete the EC2 which is created by ASG; you should delete the ASG instead][Up to this moment, no load balancer is attached; for testing purpose, you can goto the EC2 dashboard, and find the ASG created EC2, copy the IP/domain name of the EC2 and paste it in the browser (assume the userdata.sh is applied; Nginx is installed)]
 
