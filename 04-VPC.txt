@@ -50,7 +50,11 @@ Let's externally access the public and private EC2 instance, this make sure the 
 ======================================================================================================================================================
 
 
-4 [HOL] continue the above (continue optional setting) -> [7] Create a NAT gateway -> assign a name and MUST put it in the PUBLIC subnet, allocate Elastic IP -> [8] update the route table of the private subnet -> check the private subnet, click the Routes tab, Add Route with 0.0.0.0/0 point to NAT gateway -> [9] Create Security Group -> Assign name, assoicate with the new VPC, set in bound and out bound will all permission (all traffic go in and out) for testing purpose 
+4 [HOL] continue the above (continue optional setting) [NAT gateway is for Private network to access outside, eg. update the batch, pip, apt, etc.]
+[7] Create a NAT gateway -> assign a name and MUST put it in the PUBLIC subnet, allocate Elastic IP 
+[8] Ceate a new Route Table -> Add Route with 0.0.0.0/0 point to NAT gateway 
+[9] Associate the newly created Route Table to the Private subnet which created before
+
 
 
 5. Security Group vs Network ACL
