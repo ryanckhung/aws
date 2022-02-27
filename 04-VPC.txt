@@ -47,13 +47,16 @@ To create a table -> Route tables -> Create Route Table -> assign route table na
 Try to install the EC2 in public and private subnets; 
 let's the private and public EC2 to talk, this can show 10.0.0.0/16 route table can route through all the subnets (10.0.1.0/24 and 10.0.2.0/24;)
 Let's externally access the public and private EC2 instance, this make sure the Internet gateway set probably
-======================================================================================================================================================
 
 
-4 [HOL] continue the above (continue optional setting) [NAT gateway is for Private network to access outside, eg. update the batch, pip, apt, etc.]
+
+
+4. [HOL] continue the above (continue optional setting) [NAT gateway is for Private network to access outside, eg. update the batch, pip, apt, etc.]
 [7] Create a NAT gateway -> assign a name and MUST put it in the PUBLIC subnet, allocate Elastic IP 
 [8] Ceate a new Route Table -> Add Route with 0.0.0.0/0 point to NAT gateway 
 [9] Associate the newly created Route Table to the Private subnet which created before
+======================================================================================================================================================
+
 
 
 
