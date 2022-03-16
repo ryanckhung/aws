@@ -29,5 +29,5 @@ EKS control plane is provisioned for you
 
 [Summary]
 There are 2 main branch to handle docker in AWS. 
-1. ECS - AWS made K8s like container management tool; it can have EC2 instance (managed by you) and Fargate (serverless)
+1. ECS - AWS made K8s like container management tool; it can have EC2 instance (managed by you) and Fargate (serverless); Task can be deployed in EC2 or Fargate
 2. EKS - industry standard; can delploy quickly between differnt cloud platform like Google, Azure, AWS
