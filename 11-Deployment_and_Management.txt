@@ -1,4 +1,4 @@
-Cloud Formation: deploy infrastructure using code
+Cloud Formation: deploy infrastructure using code (like the k8s yaml file)
 Elastic Beanstalk: deploy your web apps
 AWS Config: manage configuration and compliance for the resources
 SSM Parameter Store and AWS Secrets Manager: store secrets like database connection information
