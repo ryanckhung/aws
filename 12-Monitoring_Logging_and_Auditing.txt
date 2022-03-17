@@ -15,7 +15,7 @@ Connect the EC2 by SSH then use an API call to trigger the metric
 Then back to cloud watch and check the events; Goto CloudWatch Dashboard, click All metrics, check the custom namespace 
 
 [HOL] Create a CloudWatch Alarm: (base on the collected matric, set the condtion to trigger the alarm)
-Goto CloudWatch dashboard, click All alarms, Create alarm, select metric, select the metric which generated from the previous lab; drill down and select a particular metric; goto Conditions, set for example Greater than a particular threshold; Next; select EC2 action and select then the state is “in alarm” then “terminate the instance”; (simply speaking the cloud watch will check the metric and see if the condition meet, then take some actions) -> Create the alarm -> Done;
+Goto CloudWatch dashboard, click All alarms, Create alarm, select metric (select the metric which generated from the previous lab); drill down and select a particular metric; goto Conditions, set for example Greater than a particular threshold; Next; select EC2 action and select then the state is “in alarm” then “terminate the instance”; (simply speaking the cloud watch will check the metric and see if the condition meet, then take some actions) -> Create the alarm -> Done;
 To test it, you can ssh into the EC2 instance and use API to send some value which is over the condition and trigger the event
 
 
