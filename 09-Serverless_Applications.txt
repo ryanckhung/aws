@@ -93,7 +93,7 @@ Step 1. Create an SNS topic (with most setting by default), Create a subscriptio
 Step 2. Create a Lambda Function; Author from scratch; in the function overview, click Add tigger and associate the SNS
 Step 3. goto the SNS to publish message; then goto the lambda function, monitor tab click view logs in cloudwatch
 
-
+REMARK: when you add the trigger (eg. sns) to Lambda, the Lambda will auto give the permission to the trigger (SNS) 
 ======================================================================================================================
 The following are my Test
 
