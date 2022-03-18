@@ -146,9 +146,9 @@ The following are my Test
 Terminate EC2 - Trigger the EventBridge - Then trigger SNS
 Step 1. create an EC2
 Step 2. create a SNS with Email Subscription
-Step 3. goto EventBridge, click Create rule, give the name, Rule type = Rule with event pattern;
-        Event source = AWS services; skip Sample event; Event pattern: Event source = EC2, Event Type = "EC2 Instance State-Change Notification", Specific state(s) = terminated, Any instance;
-        Select target(s), Target types = AWS service, Select a target = SNS topic, Topic = just created SNS topic
+Step 3. (Step 3.1) goto EventBridge, click Create rule, give the name, Rule type = Rule with event pattern;
+        (Step 3.2) Event source = AWS services; skip Sample event; Event pattern: Event source = EC2, Event Type = "EC2 Instance State-Change Notification", Specific state(s) = terminated, Any instance;
+        (Step 3.3) Select target(s), Target types = AWS service, Select a target = SNS topic, Topic = just created SNS topic
 Step 4. terminate EC2 and check email from SNS
 
 *******
