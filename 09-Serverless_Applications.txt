@@ -150,7 +150,7 @@ Step 3. goto EventBridge, click Create rule, give the name, select the Event pat
         Select targets, Target = SNS topic, Topic = just created SNS topic
 Step 4. terminate EC2 and check email from SNS
 
-
+Remark: Event Bridge = bridge between events
 
 ======================================================================================================================
 The following are my Test
