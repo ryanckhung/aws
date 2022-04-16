@@ -1,0 +1,5 @@
+Use S3 create a static web hosting
+1. goto S3, create a bucket name as your domain (e.g., www.abc.com)
+2. Set the permission and allow public access
+3. Enable the "Static website hosting" and then copy the end point
+4. goto Route 53, set the CNAME of www.abc.com to the S3 endpoint
