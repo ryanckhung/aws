@@ -42,3 +42,17 @@ Reference: https://www.youtube.com/watch?v=w-nEmKwfrx8
 <Step 5> in Cluster definition, give the cluster a name
 <Step 6> Back to the created cluster; click the Services tab; select the created service; then click the Details tab and find the load balancing information, click the target group name; then it will jump to the EC2 dashboard - target group page (base on it find the entry point of the load balancer);
 <Step 7> Delete the cluster when you finish the demo 
+
+
+
+[My HOL]
+<Step 1> Goto the ECS, Cluster, Create cluster
+<Step 2> Goto the ECS, Task definitions, Create new task definition (tell which container image to use, OS, CUP, memory, add volume)
+<Step 3> Goto the ECS, Task definitions, select the created task definitions, Deploy, "Create Service" / "Run Tasks" (you can treat "Run Tasks" as simplier version of "Create Service", Service is used to guarantee that you always have some number of Tasks running at all times.); associate it with the created cluster
+<Step 4> Done
+* Remark: Service just like tell the ECS how to deploy the tasks
+
+
+
+
+
