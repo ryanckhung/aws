@@ -50,7 +50,7 @@ Reference: https://www.youtube.com/watch?v=w-nEmKwfrx8
 <Step 2> Goto the ECS, Task definitions, Create new task definition (tell which container image to use, OS, CUP, memory, add volume)
 <Step 3> Goto the ECS, Task definitions, select the created task definitions, Deploy, "Create Service" / "Run Tasks" (you can treat "Run Tasks" as simplier version of "Create Service", Service is used to guarantee that you always have some number of Tasks running at all times.); associate it with the created cluster
 <Step 4> Done
-* Remark: Service just like tell the ECS how to deploy the tasks
+* Remark: Service just like tell the ECS how to deploy the tasks. Therefore when you created the Service, it will automatically add the Task for you.
 * Remark: you can directly running a task without create a service
 
 
