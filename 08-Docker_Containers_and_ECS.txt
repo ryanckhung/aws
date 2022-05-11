@@ -51,7 +51,7 @@ Goto the ECS, Cluster, Create cluster
 <Step 2> [Create a Task, just like create a container which specify the hardware config, but not yet deploy]
 Goto the ECS, Task definitions, Create new task definition (tell which container image to use, OS, CUP, memory, add volume)
 <Step 3> [Deploy the Tasks into the Cluster] 
-Goto the ECS, Task definitions, select the created task definitions, Deploy, "Create Service" / "Run Tasks" (you can treat "Run Tasks" as simplier version of "Create Service", Service is used to guarantee that you always have some number of Tasks running at all times.); associate it with the created cluster; you must config the networking, secruity group with port 80 open
+Goto the ECS, Task definitions, select the created task definitions, Deploy, "Create Service" / "Run Tasks" (you can treat "Run Tasks" as simplier version of "Create Service", Service is used to guarantee that you always have some number of Tasks running at all times.); associate it with the created cluster; you must config the networking, secruity group (eg. open port 80 for nginx)
 <Step 4> Done
 * Remark: Service just like tell the ECS how to deploy the tasks. Therefore when you created the Service, it will automatically add the Task for you.
 * Remark: you can directly running a task without create a service
