@@ -7,9 +7,13 @@ Please refer to ec2_efs.txt for basic skill
 <Step 1> Goto EC2, Create the Security Groups with in bound NFS port enable
 <Step 2> Goto EFS, Create the EFS with Networking assign the NFS enabled Security Groups; also create the Access Point
 <Step 3> Goto ECS, Create Cluster
-<Step 4> Goto ECS (use old AWS portal), Create Task (just like pod in K8s); Remove the port 80 (as not used in this docker image); 
+<Step 4> Goto ECS (use old AWS portal), Create Task (just like pod in K8s); 
 Make the task with
+Task role: ecsTaskExecutionRole
+Operating system family: Linux
 Task execution: roleecsTaskExecutionRole
+Task memory: 1GB
+Task CPU: 0.5vCPU
 
 Add volume and point it to the EFS with the following config:
 Volume type: EFS
@@ -19,4 +23,15 @@ Root Directory: /
 Encryption in transit: ENABLED
 EFS IAM authorization: ENABLED
 
-Then inside the container, Storage and Logging, Set the mount point to EFS and the container internal path
+Click the "Add container" button
+Container Name: "anything you like"
+Image: ryanckhung/gen_file
+Goto Storage and Logging, Set 
+Mount points: Source volume: <the efs you created before>, Container Path: /usr/src/app/data <the path inside the container>
+
+
+<Step 5> Back to ECS, goto the Task Definitions, Actions, Create Service
+Then the docker should keep writing to the EFS
+
+<Step 6> Create a EC2 to check the file in the EFS 
+Please refer to "ec2_efs.txt" in this git repo.
