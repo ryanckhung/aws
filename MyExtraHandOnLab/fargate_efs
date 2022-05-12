@@ -1,2 +1,9 @@
 Reference link:
 https://medium.com/@jmn8718/setup-efs-with-ecs-fargate-8017a6dca5ef
+Docker Hub; docker image we used in this example
+https://hub.docker.com/repository/docker/ryanckhung/gen_file
+
+<Step 1> Goto EC2, Create the Security Groups with in bound NFS port enable
+<Step 2> Goto EFS, Create the EFS with Networking assign the NFS enabled Security Groups
+<Step 3> Goto ECS, Create Cluster
+<Step 4> Goto ECS, Create Task (just like pod in K8s); Remove the port 80 (as not used in this docker image); Storage, Add volume,  
