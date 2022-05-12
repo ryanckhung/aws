@@ -3,7 +3,6 @@ Goto EC2, Create a Security Groups with inbound "NSF PORT 2049" enable
 
 <Step 1> [Create the EFS]
 Goto Elastic File System (EFS), "Create file system"; enter the name and click "Customize" button; Goto Networking and update the Security Group (allow NFS);
-Create the Access Point and associate it to the EFS
 
 <Step 2> [Check EFS Mount point]
 Back to the EFS, and select the created EFS; then click "Attach" button; copy the mount command (eg. sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0328126279d7448df.efs.ap-east-1.amazonaws.com:/ efs)
