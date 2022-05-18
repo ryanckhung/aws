@@ -3,10 +3,11 @@ Then Lambda with correct IAM role will be used to access the S3 bucket.
 The API Gateway will trigger the Lambda Function.
 
 
-<Step 1> 
+<Step 1> [S3 Bucket]
 1. Create the S3 bucket without setting any bucket policy.
 2. Load a file with the following JSON content
    {"success":true, "data":"hello world"}
    
-   
+<Step 2> [IAM Role]
+1. Create Policy; Choose a service (S3)
    
