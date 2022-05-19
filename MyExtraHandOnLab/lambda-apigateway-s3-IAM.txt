@@ -49,4 +49,15 @@ exports.handler = function (event, context, callback) {
 ====================================================================================================================
 
 
+<Step 4> [Create API Gateway]
+1. Goto API Gateway and create the "Rest API"
+2. Create new API: "New API"; API name: <any you like>
+3. Back to the API page, then Actions, then Create Method (GET), then associate it to the Lambda Function and check the Lambda Proxy integration (this action will auto add permission to the apigateway to trigger the Lambda function) {after the association, you can back to the lambda page and reload it, you will see the api gateway is added}
+4. Back to the API page, select GET, then in the diagram Client click "Test", then test it
+5. Back to the API page, select GET, then Actions and select Deploy API, after deployment, copy the URL endpoint and paste it in browser
+
+
+
+
+
 
