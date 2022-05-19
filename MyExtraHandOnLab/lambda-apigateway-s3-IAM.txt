@@ -8,6 +8,40 @@ The API Gateway will trigger the Lambda Function.
 2. Load a file with the following JSON content
    {"success":true, "data":"hello world"}
    
+   
 <Step 2> [IAM Role]
 1. Create Policy; Choose a service (S3), Actions (Read), Resources (bucket assign the ARN; enter the S3 ARN created in Step 1) [crate a policy to allow Read a particular S3 bucket]
 2. Create Role; Service (Lambda), Assign the Policy created above [associate the policy to a Role]   
+
+
+=======================================================================================================================
+var AWS = require('aws-sdk');
+var S3 = new AWS.S3();
+
+var bucket = 'ryan-temp001';
+var key = 'hello.txt';
+
+exports.handler = function (event, context, callback) {
+
+    const done = function (err, res) {
+        callback(null, {
+            statusCode: err ? '400' : '200',
+            body: err ? JSON.stringify(err) : JSON.stringify(res),
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        });
+    };
+
+    S3.getObject({
+        Bucket: bucket,
+        Key: key
+    }, function (err, data) {
+        done(err, err ? null : JSON.parse(data.Body.toString()));
+    });
+};
+=======================================================================================================================
+
+
+
