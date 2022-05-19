@@ -4,7 +4,7 @@ The API Gateway will trigger the Lambda Function.
 
 
 <Step 1> [S3 Bucket]
-1. Create the S3 bucket without setting any bucket policy.
+1. Create the S3 bucket WITHOUT setting any bucket policy.
 2. Load a file with the following JSON content
    {"success":true, "data":"hello world"}
    
@@ -14,10 +14,15 @@ The API Gateway will trigger the Lambda Function.
 2. Create Role; Service (Lambda), Assign the Policy created above [associate the policy to a Role]   
 
 
-=======================================================================================================================
+<Step 3> [Create and Test Lambda]
+1. Create the Lambda Function, select from Scretch, associate the role crated in Step 2, add the source code as follow, then select deploy and test it
+* Remark: Lambda can be trigger by other services like: API Gateway, SNS, SQS, Cloudwatch, DynamoDB
+
+====================================================================================================================
 var AWS = require('aws-sdk');
 var S3 = new AWS.S3();
 
+// assume you have crated 'ryan-temp001' bucket and upload a file 'hello.txt'
 var bucket = 'ryan-temp001';
 var key = 'hello.txt';
 
@@ -41,7 +46,7 @@ exports.handler = function (event, context, callback) {
         done(err, err ? null : JSON.parse(data.Body.toString()));
     });
 };
-=======================================================================================================================
+====================================================================================================================
 
 
 
