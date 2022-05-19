@@ -1,0 +1,20 @@
+This tutorial will access the DynamoDB. 
+The Lambda function will set with the correct IAM role to access teh DynamoDB.
+
+<Step 1> Create the DynamoDB
+1. Goto the DynamoDB page, Create Table (give name, partition key and sort key) {by default auto scaling is set}; Set Settings = "Customize settings"; Set Read/write capacity settings = "On-demand" and turn off the auto sacling (for both read and write) and set the Provisioned capacity = 1 
+* partition key can asssign as id; and sort key can assign as timestamp (both in number type)
+
+<Step 2> Write Item into the table created in Step 1
+1. Goto the Table and "Create item"
+2. fill the item with id and timestamp value; you can click "Add new attribute" to the item (eg. name)
+
+<Step 3> Create the IAM policy and role
+1. Create the IAM policy and specify the region and the name of the table
+2. Create the IAM role and associate the policy (allow the service lambda to access the resource specify in the poilcy)
+
+<Step 4> Create Lambda
+1. Goto the Lambda page, select "Author from scratch", give the name and change the permission with the role created in step 3 (Permissions, change default execution role, Use an existing role)
+2. Inside the Lambda function edit the code, deploy and test it
+
+
