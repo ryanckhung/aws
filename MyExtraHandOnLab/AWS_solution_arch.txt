@@ -3,3 +3,4 @@
 Do you have steady connections, or do you have peaks to consider?
 Do your requests vary in size, or are they fairly consistent?
 Do you need to be ready for large volumes of unexpected traffic?
+When studying this area, make sure you are considering how scaling can occur at each level of your multi-tiered architecture, as well as the possible use of both horizontal and vertical scaling methods.
