@@ -15,7 +15,7 @@ The API Gateway will trigger the Lambda Function.
 
 
 <Step 3> [Create and Test Lambda]
-1. Create the Lambda Function, select from Scretch, associate the role crated in Step 2, add the source code as follow, then select deploy and test it
+1. Create the Lambda Function, select from Scretch, associate the role crated in Step 2 (Permissions > Change default execution role > Use an existing role), add the source code as follow, then select deploy and test it
 * Remark: Lambda can be triggered by other services like: API Gateway, SNS, SQS, Cloudwatch, DynamoDB
 
 ====================================================================================================================
