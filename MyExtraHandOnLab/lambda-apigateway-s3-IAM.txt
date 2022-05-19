@@ -9,7 +9,7 @@ The API Gateway will trigger the Lambda Function.
    {"success":true, "data":"hello world"}
    
    
-<Step 2> [IAM Role]
+<Step 2> [IAM Role - create a policy to a specific S3 bucket and then associate it to the role]
 1. Create Policy; Choose a service (S3), Actions (Read), Resources (bucket assign the ARN; enter the S3 ARN created in Step 1 &&&& check object as any),[crate a policy to allow Read a particular S3 bucket]
 2. Create Role; Service (Lambda), Assign the Policy created above [associate the policy to a Role]   
 
@@ -55,6 +55,7 @@ exports.handler = function (event, context, callback) {
 3. Back to the API page, then Actions, then Create Method (GET), then associate it to the Lambda Function and check the Lambda Proxy integration (this action will auto add permission to the apigateway to trigger the Lambda function) {after the association, you can back to the lambda page and reload it, you will see the api gateway is added}
 4. Back to the API page, select GET, then in the diagram Client click "Test", then test it
 5. Back to the API page, select GET, then Actions and select Deploy API, after deployment, copy the URL endpoint and paste it in browser
+6. Back to the API page, select GET, then Actions and select Enable CORS
 
 
 
