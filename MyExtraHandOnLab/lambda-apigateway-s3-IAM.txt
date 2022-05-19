@@ -19,6 +19,7 @@ The API Gateway will trigger the Lambda Function.
 * Remark: Lambda can be triggered by other services like: API Gateway, SNS, SQS, Cloudwatch, DynamoDB
 
 ====================================================================================================================
+// try to conver the following code to async/await
 var AWS = require('aws-sdk');
 var S3 = new AWS.S3();
 
