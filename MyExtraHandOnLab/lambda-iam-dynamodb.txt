@@ -10,7 +10,7 @@ The Lambda function will set with the correct IAM role to access teh DynamoDB.
 2. fill the item with id and timestamp value; you can click "Add new attribute" to the item (eg. name)
 
 <Step 3> Create the IAM policy and role
-1. Create the IAM policy and specify the region and the name of the table
+1. Create the IAM policy (Service: DynamoDB, Action: all, Resource: table {specify the region(ap-east-1) and the name of the table(ryan-dynamodb)})
 2. Create the IAM role and associate the policy (allow the service lambda to access the resource specify in the poilcy)
 
 <Step 4> Create Lambda
