@@ -17,4 +17,12 @@ The Lambda function will set with the correct IAM role to access teh DynamoDB.
 1. Goto the Lambda page, select "Author from scratch", give the name and change the permission with the role created in step 3 (Permissions, change default execution role, Use an existing role)
 2. Inside the Lambda function edit the code, deploy and test it
 
+=================================================================================================
+var AWS = require('aws-sdk');
+var dynamo = new AWS.DynamoDB();
 
+exports.handler = async (event) => {
+    let x = await dynamo.scan({TableName: 'ryan-dynamodb'}).promise();
+    console.log(x.Items)
+};
+==================================================================================================
