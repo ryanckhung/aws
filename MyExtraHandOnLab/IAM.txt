@@ -1,6 +1,14 @@
+<Knowledge 1>
 In IAM, you can create a policy to grant permission to a specific resource (eg. a particular S3 - but not all S3)
 Then assoicate the policy to a Role or Users
 
 Reference:
 ./lambda-apigateway-s3-IAM.txt
 ./lambda-iam-dynamodb.txt
+
+
+
+<Knowledge 2>
+If you are not using IAM, you can assign a security group to a particular resource like EFS.
+eg. when you created the EFS, you can assign a security group and allow all IP to NSF protocol
+then other resources (eg. EC2) can access it (EFS) without setting the permission
