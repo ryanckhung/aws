@@ -1,2 +1,5 @@
-Domain 1: Design Resilient Architectures
-Multi-tier solution
+<Domain 1>: Design Resilient Architectures
+- Multi-tier solution - Base on the Access Pattern to design the architecture; eg. traffic
+Do you have steady connections, or do you have peaks to consider?
+Do your requests vary in size, or are they fairly consistent?
+Do you need to be ready for large volumes of unexpected traffic?
