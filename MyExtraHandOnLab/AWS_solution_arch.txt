@@ -143,6 +143,23 @@ Auto scaling also help to optize the cost for both compute and database
 for cost optimization for compute and databases is to use managed services when possible. (AWS managed service)
 This means you should consider using managed services like AWS Fargate for containers, AWS Lambda for serverless compute, or Amazon DynamoDB for a database. (those AWS service may add some cost, but it save your admin time and hence save the money)
 
+- Cost-optimized Network Architectures
+Remember that data transfer and API calls can potentially incur costs.
+Using S3 incurs charges for the amount of data stored in the S3 bucket, but it also incurs costs for API calls made to S3, as well as data transfer out of the bucket.
+Use CloudFront to optimize the cost of S3; Route 53 <-> CloudFront <-> S3; CloudFront cache the S3 data and reduce the traffic from S3
+Determine strategies for reducing dta transfer costs within AWS.
+Understand the cost differences between using AWS Managed VPN and AWS Direct Connect.
+Aware the cost of other networking services, like NAT gateways or transit gateways.
+Session Manager enables you to set up secure and auditable instance management without the need to open inbound ports, maintain bastion hosts, or manage SSH keys. This makes it a great option for accessing private instances, because you do not need to open up any ports, and it's also very cost-effective because it comes at no extra charge.
 
+- Design Cost-optimized Architectures: Conclusion
+For Amazon EC2, choose the appropriate pricing model for the use case.
+For AWS Lambda, consider runtime and resource comsumption. This means you can optimize by writing functions that consume fewer resources, and are more efficient for runtime.
+For containers, it can be a similar thing. You can save by having smaller, more lightweight containers, and choosing the correct compute platform for your cluster, whether that is Amazon EC2 or AWS Fargate.
+For Amazon S3, use the appropriate storage tier for the use case.
+For Amazon EBS, choose the appropriate volume type and automate the management of the snapshot lifecycle.
+For databases, choose the most-aligned database for the use case. Consider caching mechanisms for cost savings, and also consider database design.
+You should look into how to take advantage of caching, instead of always scaling up or scaling out.
+For networking, choose the correct connectivity service for the use case.
 
 
