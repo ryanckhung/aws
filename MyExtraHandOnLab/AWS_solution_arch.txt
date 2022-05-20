@@ -93,6 +93,7 @@ Networking services and features to study: AWS Managed VPN, AWS Direct Connect, 
 
 
 
+<Domain 3>: Design Secure Applications and Architectures
 
 
 
