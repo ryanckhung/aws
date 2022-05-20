@@ -33,4 +33,10 @@ EFS provide File system, and can be run across AZ.
 
 
 <Domain 2>: Design High-Performing Architectures
+- Elastic and Scalable Compute Solutions for a Workload
+
+
+
+
+
 
