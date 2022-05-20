@@ -103,6 +103,28 @@ Accerss Key ID and secret access key is for programmatic request.
 Roles are used for services.
 
 - Secure Application Tiers
+Pay significant attention to the use and functionality of security groups and network access control lists (network ACLs).
+Network segmentation. Understand the strategies behind when to use public and private subnets.
+Understand routing mechanisms within a virtual private cloud (VPC).
+Select and deploy other components, such as AWS service endpoints, VPN connections.
+Select appropriate AWS services to protect applications from external threats.
+
+- Data Security Options
+What methods are available within AWS to secure your data, both at rest and in transit?
+VPN over the internet; a private connection through AWS Direct Connect; connections between VPCs; transfer between services, such as Amazon Simple Storage Service, and your VPC;
+How do the various data management and storage services handle data protection?
+As an example, how would that differ when looking at S3 versus Elastic Block Store, and does the use of those protections change the performance of the services?
+What are your encryption options in AWS?
+How are encryption keys handled?
+Look into data security based on access patterns.
+AWS Key Management Service (KMS) can generate AWS KMS keys and data keys. 
+
+- Design Secure Applications and Architectures: Conslusion
+IAM, Security Groups, Network ACLs, Route tables, Protecting Data at Rest, Protecting Data in Transit, Encrypting Data at Rest and in Transit
+
+
+
+
 
 
 
