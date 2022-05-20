@@ -53,6 +53,43 @@ Familiarize yourself with S3: Basic API calls, Multipart uploads, Amazon S3 Acce
 Besing able to determione which storage services to use that can scale to accommodate current and future storage needs, and choosing AWS services and configurations what meet performance needs under different circumstances.
 AWS CLI can execute multipart upload to S3 automatically (multipart uploades for objects is suggested to be over 100MB; ie. 90M shouldn't run multipart upload; and AWS CLI can auto detect and execute the multipart upload; AWS management console (the portal) can't perform auto upload automatically)
 
+- High-performing Networking Solutions for a Workload
+Select high-performing networking solutions for a workload given a defined set of requirements or circumstances.
+On permises data center and AWS clound (hybird mode is very common); AWS Managed VPN and AWS Driect Connect are the services for on permises and cloud connection
+AWS networking connectivity services: AWS Managed VPN, AWS Direct Connect, AWS Transit Gateway, AWS VPN CloudHub
+Connectivity between VPCs: VPC peering, AWS Transit Gateway, AWS PrivateLink, AWS Managed VPN
+Amazon Route53 routing policies (eg. geoproximity)
+AWS Global Accelerator can improve application network performance.
+Consider caching assets closer to your end users by using Amazon CloudFront.
+Data transfer serices: AWS DataSync, AWS Snow Family, AWS Transfer Family, AWS Databae Migration Service (AWS DMS)
+AWS Private Link is best used when you have a client-server setup where you want to allow one or more consumer VPCs unidirectional access to a specific service in the service-provider VPC.
+VPC peering connection have limitation on the number of peering connections. One VPC accept up to 125 peering connections.
+
+- High-performing Database Solutions for a Workload
+You need to be able to identify which AWS Service to use for non-relational databases, relational databases, graph databases, and more.
+If you have a use casethat needs single-digit-millisecond response times, then Amazon DynamoDB (Amazon RDS can't achieve that fast) would likely be a better choice for that solution.
+Know the differences (limitation and performance) between Amazon Relational Database Service (Amazon RDS) and Amazon Aurora.
+Amazon RDS storage types: General Purpose SSD, Provisioned IOPs SSD, Magnetic
+Beyond choosing services or features that best fit a use case and performance needs, you should also be able to choose appropriate scaling strategies to meet your scaling needs.
+Amazon DynamoDB automatically scales storage and you retain control over scaling throughput.
+To scale Amazon RDS, update the DB instance, use storage auto scaling, or use read replicas.
+Know when to use Amazon ElastiCache for caching, and the impacts on performance.
+Amazon Neptune, the graph database.
+DynamoDB is a key-value database that can scale automatically and handle spiky access patterns.
+Example of stroring IoT streaming data: Amazon DynamoDB -> Amazon DynamoDB Streams -> Amazon Kinesis Data Streams -> Amazon Kinesis Data Firehose -> Amazon S3 Data Lake
+
+- Design High-Performing Architectures [Conclusion]
+Solution Layers: Compute, Storage, Database, Networking
+Understand the scaling mechanisms for the different compute services.
+Understand Amazon EC2 Auto Scaling step by step.
+You should understand cluster scaling for container services, as well as concurrency rates for AWS Lambda.
+Consider where the service you are using resides in the AWS global infrastructure. (eg. across AZ or Regions)
+Knowing how to take and manage EBS volume snapshots is an important part of setting up block-storage solutions.
+Know when to offload data requests to caches to increase performance.
+Using read replicas for Amazon RDS, DynamoDB Accelerator for DynamoDB, or Amazon ElastiCache for Redis, or for Memcached.
+Understand Amazon Route 53, the different record types, the different routing methods, and how Regional failover works.
+Know how to: Create a VPC, Create Subnets, Use network ACLs, Use security groups, Use route table, Use gateways.
+Networking services and features to study: AWS Managed VPN, AWS Direct Connect, AWS Transit Gateway, VPC Peering, AWS PrivateLink, VPC endpoints,
 
 
 
