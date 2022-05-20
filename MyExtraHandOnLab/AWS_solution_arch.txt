@@ -12,3 +12,14 @@ Determine the amount of resources needed.
 Determine which AWS services can be used to improve reliability.
 Select highly available configurations to mitigate single point of failure, and select appropriate disaster recovery strategies.
 Evaluating the needs of environments and architectures, assessing how to implement high availability and fault tolerance, and determining how and when to implement disaster recovery strategies make up the major themes for this section.
+
+- Decoupling Mechanisms
+Decoupling refers to components remaining autonomous and unaware of each other as they complete their work as part of a larger system.
+Decoupling techniques: synchronous and asynchronous integration.
+Synchronous decoupling involves components that must always be available for proper functionality. (eg, Load Balancer)
+Asynchronous decopling involves communication between components through durable components. (eg. SQS, service can temporary offline)
+Knowing how to utilize decoupling services will be incredibly important.
+Decoupling services: eg. Load Balancer, Event Bridge
+Serverless tools in AWS help improve decoupling mechanisms. eg. SQS, API Gateway, DynamoDB
+
+- Resilient Storage
