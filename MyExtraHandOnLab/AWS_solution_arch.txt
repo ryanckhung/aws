@@ -4,3 +4,11 @@ Do you have steady connections, or do you have peaks to consider?
 Do your requests vary in size, or are they fairly consistent?
 Do you need to be ready for large volumes of unexpected traffic?
 When studying this area, make sure you are considering how scaling can occur at each level of your multi-tiered architecture, as well as the possible use of both horizontal and vertical scaling methods.
+
+- High Availability and Fault Tolerance
+Designing for high availability means designing for minimal downtime.
+Designing for fault tolerance means designing for zero downtime.
+Determine the amount of resources needed.
+Determine which AWS services can be used to improve reliability.
+Select highly available configurations to mitigate single point of failure, and select appropriate disaster recovery strategies.
+Evaluating the needs of environments and architectures, assessing how to implement high availability and fault tolerance, and determining how and when to implement disaster recovery strategies make up the major themes for this section.
