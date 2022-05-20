@@ -34,7 +34,12 @@ EFS provide File system, and can be run across AZ.
 
 <Domain 2>: Design High-Performing Architectures
 - Elastic and Scalable Compute Solutions for a Workload
-
+Identify elastic and scalable compute solutions for a workload.
+Some services in AWS are elastic by nature automatically, without you needing to do anything, like AWS Lambda, for example.
+Amazon EC2 is a service that is not inherently scalable.
+Choose the appropriate architecture and servicdes that scale to meet performance requirements.
+EC2 usually use with Load Balancer and Auto Scaling to make it scalable.
+Possible solution are: EC2, ECS, Lambda (can only run for 15 mins.)
 
 
 
