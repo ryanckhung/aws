@@ -23,3 +23,8 @@ Decoupling services: eg. Load Balancer, Event Bridge
 Serverless tools in AWS help improve decoupling mechanisms. eg. SQS, API Gateway, DynamoDB
 
 - Resilient Storage
+Define your strategy to ensure the durability of data.
+Identify how data service consistency will affect operations.
+Know how to implement across a variety of architectures, including hybird and no-cloud-native applications.
+Storage type: Amazon Elastic Block Store, Amazon EC2 instance store, S3
+Consideration: data durability, ephermeral, data interchangeably (eg. S3 and S3 Glacier), data consistency, access pattern (eg. access by global user, large file or small file), 
