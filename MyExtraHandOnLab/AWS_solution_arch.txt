@@ -30,3 +30,7 @@ Storage type: Amazon Elastic Block Store, Amazon EC2 instance store, S3
 Consideration: data durability, ephermeral, data interchangeably (eg. S3 and S3 Glacier), data consistency, access pattern (eg. access by global user, large file or small file), 
 S3 not provide File System; EC2 instance store is not ephemeral and only attach to single instance; EBS volume cannot be mounted across different AZ.
 EFS provide File system, and can be run across AZ.
+
+
+<Domain 2>: Design High-Performing Architectures
+
