@@ -123,10 +123,18 @@ AWS Key Management Service (KMS) can generate AWS KMS keys and data keys.
 IAM, Security Groups, Network ACLs, Route tables, Protecting Data at Rest, Protecting Data in Transit, Encrypting Data at Rest and in Transit
 
 
+<Domain 4> Design Cost-Optimized Architectures
+- Cost-effective Storage Solutions
+S3 is object storage and not file storage (file system); Make sure which service fit for your application; then consider the cost-optimized solution
+Ways to optimize Amazon EBS for cost: Right-size EBS volumes; Choose the appropriate volume type; Use services like AWS Trusted Advisor; Delete old EBS snapshots
+S3 offers different storage tiers that have varying pricing
+S3 Standard storage class, which incurs the highest cost for storage, (storage cost vs retrieval cost)
+you can automate storage tiering for services like S3 (S3 intelligent-Tiering can automiatically optimize for cost by changing storage tiers based on usage patterns.)
+AWS Backup is a backup service that automates backup processes for application data across AWS services in the AWS Cloud, including Amazon EBS.
+Amazon DLM enables you to manage the lifecycle of your AWS resources through lifecycle policies.
 
-
-
-
+- Cost-effective Compute and Database Services
+Amazon EC2 pricing models: On-Demand Instances (use to serve the unknow processing), Reserved Instances (if you know there must be some fixed usage), Dedicated Instances, Spot Instances (for very peak of usage), Savings Plans
 
 
 
