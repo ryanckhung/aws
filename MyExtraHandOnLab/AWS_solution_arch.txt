@@ -135,6 +135,13 @@ Amazon DLM enables you to manage the lifecycle of your AWS resources through lif
 
 - Cost-effective Compute and Database Services
 Amazon EC2 pricing models: On-Demand Instances (use to serve the unknow processing), Reserved Instances (if you know there must be some fixed usage), Dedicated Instances, Spot Instances (for very peak of usage), Savings Plans
+Reserved Instances can also be used for Amazon RDS database instances, which can further cost optimization.
+EC2 should also consider the instance size and family for cost optimization (base on monitoring, you can scale down if most of the time are very low utilization)
+Right-sizing EC2 instances and RDS DB instances are a good way to optimize for cost.
+For DB, you can "increaes the instance size for DB" OR "add a read replica and cache to reduce the loading and hence keep the instance size" (this meet performance and optimize the cost)
+Auto scaling also help to optize the cost for both compute and database
+for cost optimization for compute and databases is to use managed services when possible. (AWS managed service)
+This means you should consider using managed services like AWS Fargate for containers, AWS Lambda for serverless compute, or Amazon DynamoDB for a database. (those AWS service may add some cost, but it save your admin time and hence save the money)
 
 
 
