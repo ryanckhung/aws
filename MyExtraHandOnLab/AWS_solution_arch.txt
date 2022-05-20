@@ -40,6 +40,21 @@ Amazon EC2 is a service that is not inherently scalable.
 Choose the appropriate architecture and servicdes that scale to meet performance requirements.
 EC2 usually use with Load Balancer and Auto Scaling to make it scalable.
 Possible solution are: EC2, ECS, Lambda (can only run for 15 mins.)
+SQS can help to decouple the multi tier loading
+
+-High-performing and Scalable Storage Solutions for a Workload
+Amazon EBS Volume Attached to EC2; Scale by changing the volume size; Scale by attaching more volumes
+Amazon EFS Mount to EC2; Scales Automatically 
+Determine which storage solution is the best fist based on future storage needes.
+Know general upper bounds for the capacity of storage solutions.
+Determine which solution would be the most appropriate for a situation based on performance.
+Amazon EBS volumes are extremely low latency (high performance, but lower flexibility)
+Familiarize yourself with S3: Basic API calls, Multipart uploads, Amazon S3 Accelerator, Caching with Amazon CloudFront
+Besing able to determione which storage services to use that can scale to accommodate current and future storage needs, and choosing AWS services and configurations what meet performance needs under different circumstances.
+AWS CLI can execute multipart upload to S3 automatically (multipart uploades for objects is suggested to be over 100MB; ie. 90M shouldn't run multipart upload; and AWS CLI can auto detect and execute the multipart upload; AWS management console (the portal) can't perform auto upload automatically)
+
+
+
 
 
 
