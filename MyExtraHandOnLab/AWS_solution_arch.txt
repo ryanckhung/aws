@@ -94,6 +94,17 @@ Networking services and features to study: AWS Managed VPN, AWS Direct Connect, 
 
 
 <Domain 3>: Design Secure Applications and Architectures
+- Secure Resource Access
+Consider security at every level.
+Domain segments: Design secure access to AWS services; Design secure application tiers; Select appropriate data security options
+AWS Identity and Access Management (IAM)
+Never hardcode credentials into your application
+Accerss Key ID and secret access key is for programmatic request.
+Roles are used for services.
+
+- Secure Application Tiers
+
+
 
 
 
