@@ -20,7 +20,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-l
 
 
 <Knowledge 4>
-Create a Policy (eg. policy for access S3 and DynamoDB)
+Create a Policy with mulitple services (eg. policy for access S3 and DynamoDB)
 You need to tell
 1. Service: S3
 2. Action: All S3 actions or list/Read/... etc
