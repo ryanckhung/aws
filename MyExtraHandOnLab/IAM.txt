@@ -17,3 +17,16 @@ then other resources (eg. EC2) can access it (EFS) without setting the permissio
 <Knowledge 3>
 Priority among difference AWS policies (eg. resource base and identity base policy)
 https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html
+
+
+<Knowledge 4>
+Create a Policy (eg. policy for access S3 and DynamoDB)
+You need to tell
+1. Service: S3
+2. Action: All S3 actions or list/Read/... etc
+3. Resource: all S3 or spcific S3
+4. Add additional permissions (add DynamoDB Service)
+5. Service: DynamoDB
+6. Action: All DynamoDB actions or list/Read/... etc
+7. Resource: all DynamoDB or spcific DynamoDB
+Final: create a role and associate it to the crated policy
