@@ -4,3 +4,5 @@
 4. Goto EC2, create EC2 (Ubuntu) without any security setting, put the EC2 in public subnet with the same VPC as RDS (to access RDS is in private subnet)
 5. SSH to EC2 and type the following command
 > mysql -h <RDS Endpoint> -P 3306 -u admin -p
+
+* REMARK: if you set public access = YES, it can allow any machines to access; easier for development
