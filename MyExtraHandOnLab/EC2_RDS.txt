@@ -1,6 +1,6 @@
-1. Create the RDS in Private Subnet (enter the db name, username=admin, password=password)
+1. Create the RDS in Private Subnet (free tier, enter the db name, username=admin, password=password, public access=NO)
 2. Update the Security policy of the RDS => Type=MySQL/Aurora (allow the 3306 port for all/particular IP) [MUST enable otherwise it blocked ALL]
 3. Copy the Endpoint of the RDS
-4. Goto EC2, create EC2 without any security setting, put the EC2 in public subnet
+4. Goto EC2, create EC2 (Ubuntu) without any security setting, put the EC2 in public subnet with the same VPC as RDS (to access RDS is in private subnet)
 5. SSH to EC2 and type the following command
 > mysql -h <RDS Endpoint> -P 3306 -u admin -p
