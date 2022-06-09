@@ -1,0 +1,15 @@
+1. Create the DynamoDB with Partition key = id
+2. In the DynamoDB portal you can "scan the table" or "create item with new attributes"
+
+3. IAM create Policy to access DynamoDB
+   Create role and allow the EC2 to access the DynamoDB
+   Crete EC2 and assoicate the Role to the EC2
+
+3. launch an EC2 with Ubuntu OS (associate EC2 with the Role), then update and install the awscli
+> sudo apt-get update
+> sudo apt-get install awscli
+> aws --version
+> aws configure (only edit the region: ap-east-1)
+> aws dynamodb list-tables
+
+
