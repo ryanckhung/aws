@@ -5,4 +5,8 @@
 5. SSH to EC2 and type the following command
 > mysql -h <RDS Endpoint> -P 3306 -u admin -p
 
-* REMARK: if you set public access = YES, it can allow any machines to access; easier for development
+
+* REMARK: 
+1. if you set public access = YES, it can allow any machines to access; easier for development; for example, you can use MySQL workbench to do the query
+2. for primary db, you can use the primary endpoint for both "select" and "insert"
+3. for read replica, you should use the read replica endpoint for "select" buy not for "insert"
