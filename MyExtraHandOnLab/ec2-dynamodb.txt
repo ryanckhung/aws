@@ -14,5 +14,5 @@
 
 4. you can refer to sdk.txt to see how to use SDK to access Dynamodb
 In DynamoDB, you just need to define the key (you don't need to attributes at this moment); 
-for those attributes, you can define when you write;
+for other attributes, you can define when you write;
 
