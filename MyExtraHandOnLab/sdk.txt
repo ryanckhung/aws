@@ -1,0 +1,6 @@
+This example show a python SDK for accessing Dynamodb
+1. install the SDK
+> pip install boto3
+2. refer to the following URL:
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
+
