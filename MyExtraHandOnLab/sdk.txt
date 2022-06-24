@@ -11,8 +11,8 @@ https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
 3. example code
 ===========================================================================
 import boto3
+import uuid
 dynamodb = boto3.resource('dynamodb')
-# art337-lora is the table name
 table = dynamodb.Table('art337-lora')
 
 # print the creation date about the table
@@ -21,7 +21,7 @@ print(table.creation_date_time)
 # create item; partition key and sort key (optional) must be provided
 table.put_item(
    Item={
-        'id': '1',
+        'id': str(uuid.uuid4()),
         'device_id': 'b0f0',
         'timestamp': '1655975602',
         'header': '68'
