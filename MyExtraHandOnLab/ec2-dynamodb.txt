@@ -15,4 +15,4 @@
 4. you can refer to sdk.txt to see how to use SDK to access Dynamodb
 In DynamoDB, you just need to define the key (you don't need to attributes at this moment); 
 for other attributes, you can define when you write;
-
+For IoT application: deviceID can be the partition key and timestamp can be the sort key
