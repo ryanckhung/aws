@@ -4,4 +4,4 @@ https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html
 0. Create a User in AWS (with Access Key checked)
 1. install AWS ToolKit in AWS
 2. command shift P; then key the in "AWS: Create Credentials Profile"; then key in the "profile name", "secret key" and "access key"
-3. 
+3. you can search more command by CMD+SHIFT+P; "AWS: Show Region in the Explorer", "AWS: ...."
