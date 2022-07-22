@@ -1,0 +1,6 @@
+https://aws.amazon.com/visualstudiocode/
+https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html
+
+1. install AWS ToolKit in AWS
+2. command shift P; then key the in "AWS: Create Credentials Profile"; then key in the secret key and access key
+3. 
