@@ -7,6 +7,10 @@ https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html
 3. you can search more command by CMD+SHIFT+P; "AWS: Show Region in the Explorer", "AWS: ...."
 
 
+
+************************************************
+VERY IMPORTANT! VERY IMPORTANT! VERY IMPORTANT! 
+************************************************
 Connect to the EC2 directly
 1. install "Remote SSH" in VS code
 2. CMD+SHIFT+P > Remote-SSH: Add new SSH Host > ssh hello@abc.com -A > then select "Users/xxx/.ssh/config" then the machine name will be added to the config file
