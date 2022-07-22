@@ -24,3 +24,5 @@ Host ec2-xx-xxx-xxx-xxx.ap-east-1.compute.amazonaws.com
 5. you can directly edit the file there and use terminal to run; if can't save, it must due to the permission of the file, use "chmod" in terminal to solve this issue
   
 https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff
+
+
