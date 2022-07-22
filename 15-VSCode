@@ -8,7 +8,7 @@ https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html
 
 
 Connect to the EC2 directly
-1. install Remote SSH in VS code
+1. install "Remote SSH" in VS code
 2. CMD+SHIFT+P > Remote-SSH: Add new SSH Host > ssh hello@abc.com -A > then select "Users/xxx/.ssh/config" then the machine name will be added to the config file
 3. the following is the example of config file; please add "IdentityFile" to include the cert
 Host ec2-xx-xxx-xxx-xxx.ap-east-1.compute.amazonaws.com
@@ -17,5 +17,6 @@ Host ec2-xx-xxx-xxx-xxx.ap-east-1.compute.amazonaws.com
   ForwardAgent yes
   IdentityFile ~/Downloads/ryan-aws.pem
 4. Connect to the config. host: CMD+Shift+P > Remote-SSH: Connect to Host; select the machine you just created
+5. you can directly edit the file there and use terminal to run; if can't save, it must due to the permission of the file, use "chmod" in terminal to solve this issue
   
 https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff
