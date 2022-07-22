@@ -5,3 +5,8 @@ https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html
 1. install AWS ToolKit in AWS
 2. command shift P; then key the in "AWS: Create Credentials Profile"; then key in the "profile name", "secret key" and "access key"
 3. you can search more command by CMD+SHIFT+P; "AWS: Show Region in the Explorer", "AWS: ...."
+
+
+Connect to the EC2 directly
+0. install Remote SSH in VS code
+https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff
