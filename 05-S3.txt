@@ -194,3 +194,43 @@ For demo: you don't need the domain name, dont need to set Route53, don't need t
 Cross-Origin Resource Sharing (CORS): must allow request form the other origin (one browser from two origins)
 
 
+
+
+=============================================================================================================================
+Example on Server (local not in cloud) to access S3
+
+1. Create a user with permission to access specific bucket (get the secret key and access key of the user)
+2. then write the following code in local
+3. if this code put in AWS cloud, access key and secret key shouldn't put inside the code. IAM role should use instead.
+
+var AWS = require('aws-sdk');
+var credentials = {
+    accessKeyId: 'AKIAWAKIWQKGGTFXXXXX',
+    secretAccessKey : 'TLQurtOr537dowFqfkljasdklfjkl2n+Piqz1YctcQ'
+};
+AWS.config.update({credentials: credentials, region: 'ap-east-1'});
+var s3 = new AWS.S3();
+
+// this will return the URL which stored in the S3
+// that's the file called hammer1.jpg which stored inside the ryan2019 bucket
+var presignedGETURL = s3.getSignedUrl('getObject', {
+    Bucket: 'astri-concordia',
+    Key: 's3.png', //filename
+    Expires: 10000 //time to expire in seconds
+});
+
+
+var presignedPUTURL = s3.getSignedUrl('putObject', {
+    Bucket: 'astri-concordia',
+    Key: 's3.png', //filename
+    ACL: 'public-read',
+    Expires: 10000 //time to expire in seconds
+});
+
+console.log("===================GET===================")
+console.log(presignedGETURL)
+console.log("===================PUT===================")
+console.log(presignedPUTURL)
+
+
+=============================================================================================================================
