@@ -188,6 +188,7 @@ Goto Route 53, hosted zones, select the domain name (which is the same as the bu
 For Bucket Policy: allow all to getObject is make sense; because the web componet should be publicly available
 
 For demo: you don't need the domain name, dont need to set Route53, don't need to match the bucket name with the domain name
+If you want to have cloudfont for CDN or HTTPS, please set the Default root object as "index.html" (for react application)
 =============================================================================================================================
 
 
