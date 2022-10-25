@@ -16,3 +16,12 @@ then mount the efs to ec2 by
 
 
 <Step 4> Try to kick up more VMs and access the EFS; the file wirtten by VMA should be accessible by VMB
+
+
+# New Lab: Assume EFS is created and use EC2 to mount to the EFS
+<Step 1> Create EC2, no EFS permission is needed (just create a simple EC2 without special setting)
+<Step 2> in EC2, create a directory "> mkdir efs"
+<Step 3> Install the EFS package (for ubuntu) "sudo apt-get install nfs-common"
+<Step 4> Goto EFS and find the Attach button, then copy something like the following and paste it in the EC2
+"> sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0051309b6ed58d5b9.efs.ap-east-1.amazonaws.com:/ efs"
+<Step 5> Done
