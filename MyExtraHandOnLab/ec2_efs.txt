@@ -25,3 +25,7 @@ then mount the efs to ec2 by
 <Step 4> Goto EFS and find the Attach button, then copy something like the following and paste it in the EC2
 "> sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0051309b6ed58d5b9.efs.ap-east-1.amazonaws.com:/ efs"
 <Step 5> Done
+
+Remark: You may want to mount the drive to other directory at the same time. 
+Eg. map the above efs to the express public, then you need to enter
+> mount --bind /home/ubuntu/efs /home/ubuntu/express/public
