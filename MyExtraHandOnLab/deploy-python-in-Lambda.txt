@@ -31,3 +31,17 @@ my-deployment-package.zip$
   ...
 
 7. Deploy the Lambda Function
+
+
+==========================================================================
+Sample of lambda_function.py
+import requests
+def lambda_handler(event, context):
+    response = requests.get('http://api.dsd337.com:8081/highway_images/1')
+    return response.json()
+==========================================================================
+Sample of test function to test the lambda_function locally (test.py)
+from lambda_function import lambda_handler 
+print(lambda_handler('event','context'))
+
+    
