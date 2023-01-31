@@ -58,6 +58,7 @@ print(lambda_handler('event','context'))
 Others
 To mount EFS to Lambda
 Goto the created Lambda Function, select the "Configuration", then select "File Systems", "Add file system"
+select the created EFS and Access Point then give the "local mount path" as "/mnt/efs" (it just an example)
 
 
     
