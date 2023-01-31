@@ -20,6 +20,9 @@ zip -r ../../../../my-deployment-package.zip .
 ~/my-function/myvenv/lib/python3.8/site-packages$ cd ../../../../
 ~/my-function$ zip -g my-deployment-package.zip lambda_function.py
 
+* Remark: follow the above command lines to zip it. Don't use the desktop version.
+This can make sure zipping the contents of the directory and not the directory itself.
+
 6. After you complete this step, you should have the following directory structure:
 my-deployment-package.zip$
   │ lambda_function.py
