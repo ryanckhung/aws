@@ -3,6 +3,9 @@ https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
 general idea is to zip the virtual environment and add the souce code back to the same level as the package
 The following is the flow copied from the AWS Document (the above URL)
 
+0. Create the virtual environment
+python -m venv venv
+
 1. Activate the virtual environment. For example:
 ~/my-function$ source myvenv/bin/activate
 
