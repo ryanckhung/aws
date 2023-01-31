@@ -60,6 +60,7 @@ To mount EFS to Lambda
 - Add "AmazonElasticFileSystemFullAccess" permission to the Lambda execution role
 Goto the create Lambda Function, select the "Configuration", then "Permissions", "Add permissions", "Attach policies", "AmazonElasticFileSystemFullAccess"
 Goto the create Lambda Function, select the "Configuration", then "VPC", "Edit", Add Security Group which allow to access efs (port 2049)
+* up to this moment; lambda still doesn't have write permission; you need to login into linux, "sudo mkdir folder" and "chmod  777"
 
 - To connect to a file system, you must first connect your function to the VPC where your file system runs.
 Goto the created Lambda Function, select the "Configuration", then select "VPC", "Edit"
