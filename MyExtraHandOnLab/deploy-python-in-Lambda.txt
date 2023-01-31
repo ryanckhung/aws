@@ -69,17 +69,27 @@ Goto the created Lambda Function, select the "Configuration", then select "VPC",
 select the created EFS and Access Point then give the "local mount path" as "/mnt/efs" (it just an example)
 
 - After the above process, put the lambda code as the following:
-s
 import json
 import os
 FILE_PATH = "/mnt/efs"
+DIRECTORY = "/SYSTEM_LOG"
+LOG_FILE = "/backend_log.txt"
 
 def lambda_handler(event, context):
+    fullPath = '{}{}{}'.format(FILE_PATH,DIRECTORY,LOG_FILE)
+    print(fullPath)
+    # please make sure you login into Linux and create folder
+    # sudo mkdir SYSTEM_LOG
+    # sudo chmod 777 SYSTEM_LOG
+
+    os.system("echo hello world >> {}".format(fullPath))
+
     # TODO implement
     return {
         'statusCode': 200,
         'body': os.listdir(FILE_PATH)
     }
+
 
 
 
