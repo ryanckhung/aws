@@ -31,6 +31,9 @@ my-deployment-package.zip$
   ...
 
 7. Deploy the Lambda Function
+create a lambda funciton in the management console
+upload the zip code
+edit the "Runtime setting", telling Lambda that the hundler is lambda_function.lambda_handler (inside lambda_function.py, there is a lambda_handler function); this tell the Lmabda to look for the entry of the executable code.
 
 
 ==========================================================================
