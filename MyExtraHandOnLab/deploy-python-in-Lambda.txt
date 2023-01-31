@@ -1,3 +1,4 @@
+https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html
 https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
 general idea is to zip the virtual environment and add the souce code back to the same level as the package
 The following is the flow copied from the AWS Document (the above URL)
