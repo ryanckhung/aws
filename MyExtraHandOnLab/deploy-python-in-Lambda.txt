@@ -1,0 +1,32 @@
+https://docs.aws.amazon.com/lambda/latest/dg/python-package.html
+general idea is to zip the virtual environment and add the souce code back to the same level as the package
+The following is the flow copied from the AWS Document (the above URL)
+
+1. Activate the virtual environment. For example:
+~/my-function$ source myvenv/bin/activate
+
+2. Install libraries with pip.
+(myvenv) ~/my-function$ pip install requests
+
+3. Deactivate the virtual environment.
+(myvenv) ~/my-function$ deactivate
+
+4. Create a deployment package with the installed libraries at the root.
+~/my-function$cd myvenv/lib/python3.8/site-packages
+zip -r ../../../../my-deployment-package.zip .
+
+5. Add function code files to the root of your deployment package.
+~/my-function/myvenv/lib/python3.8/site-packages$ cd ../../../../
+~/my-function$ zip -g my-deployment-package.zip lambda_function.py
+
+6. After you complete this step, you should have the following directory structure:
+my-deployment-package.zip$
+  │ lambda_function.py
+  │ __pycache__
+  │ certifi/
+  │ certifi-2020.6.20.dist-info/
+  │ chardet/
+  │ chardet-3.0.4.dist-info/
+  ...
+
+7. Deploy the Lambda Function
