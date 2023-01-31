@@ -55,18 +55,21 @@ print(lambda_handler('event','context'))
 ==========================================================================
 
 
-Others
-To mount EFS to Lambda
+Others: To mount EFS to Lambda
+
 - Add "AmazonElasticFileSystemFullAccess" permission to the Lambda execution role
-Goto the create Lambda Function, select the "Configuration", then "Permissions", "Add permissions", "Attach policies", "AmazonElasticFileSystemFullAccess"
-Goto the create Lambda Function, select the "Configuration", then "VPC", "Edit", Add Security Group which allow to access efs (port 2049)
-* up to this moment; lambda still doesn't have write permission; you need to login into linux, "sudo mkdir folder" and "chmod  777"
+Goto the create Lambda Function, "Configuration", "Permissions", "Execution role" -> select the "role", "Add permissions", "Attach policies", "AmazonElasticFileSystemFullAccess"
 
 - To connect to a file system, you must first connect your function to the VPC where your file system runs.
-Goto the created Lambda Function, select the "Configuration", then select "VPC", "Edit"
+Goto the created Lambda Function, "Configuration", "VPC", "Edit", Select the defualt VPC, default Subnets, default Security Groups
 
 - Goto the created Lambda Function, select the "Configuration", then select "File Systems", "Add file system"
 select the created EFS and Access Point then give the "local mount path" as "/mnt/efs" (it just an example)
+
+- Change the EFS Linux Permission
+up to this moment; lambda still doesn't have write permission; 
+you need to login into linux and access the efs (create folder and change permission), "sudo mkdir folder" and "chmod  777"
+
 
 - After the above process, put the lambda code as the following:
 import json
