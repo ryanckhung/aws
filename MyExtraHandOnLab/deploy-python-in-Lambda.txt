@@ -52,5 +52,13 @@ def lambda_handler(event, context):
 Sample of test function to test the lambda_function locally (test.py)
 from lambda_function import lambda_handler 
 print(lambda_handler('event','context'))
+==========================================================================
 
+
+Others
+To mount EFS to Lambda
+Goto the created Lambda Function, select the "Configuration", then select "File Systems", "Add file system"
+
+
+    
     
