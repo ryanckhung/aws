@@ -95,6 +95,10 @@ def lambda_handler(event, context):
 
 
 
+==========================================================================
+handle timeout 
+lambda function -> configuration -> General configuration -> Edit Timeout
+==========================================================================
 
     
     
