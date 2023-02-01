@@ -93,7 +93,9 @@ def lambda_handler(event, context):
         'body': os.listdir(FILE_PATH)
     }
 
-
+* Remark:
+When you connect a function to a VPC in your account, it does not have access to the internet unless your VPC provides access. To give your function access to the internet, route outbound traffic to a NAT gateway in a public subnet. Learn more 
+That means if you want to use EFS, you need to set the VPC; if you set the VPC, lambda won't have internet access; then you need to set a NAT
 
 ==========================================================================
 handle timeout 
