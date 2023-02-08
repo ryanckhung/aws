@@ -63,7 +63,7 @@ print("=================================================")
 
 
 
-
+//=========================================================================================================================================//
 // for nodejs; query partition key (location) and sortkey (timestamp) example
 async function getRadarImagesResults(location_name){
    try{
@@ -85,5 +85,28 @@ async function getRadarImagesResults(location_name){
         return {'success': false, 'data': "Load data failed!"}
     }  
 }
+//=========================================================================================================================================//
+data read from the dynamodb will have something like the following; eg {"N":"11111"}
+{
+    "updated_at":{"N":"146548182"},
+    "uuid":{"S":"foo"},
+    "status":{"S":"new"}
+}
+
+use the AWS function (AWS.DynamoDB.Converter.unmarshall) to decode it
+AWS.DynamoDB.Converter.unmarshall({
+    "updated_at":{"N":"146548182"},
+    "uuid":{"S":"foo"},
+    "status":{"S":"new"}
+})
+
+after running the above code, it gives:
+{ updated_at: 146548182, uuid: 'foo', status: 'new' }
+
+
+
+
+
+
 
 
