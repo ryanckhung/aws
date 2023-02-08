@@ -60,3 +60,30 @@ response = table.query(
 )
 print(response['Items'])
 print("=================================================")
+
+
+
+
+// for nodejs; query partition key (location) and sortkey (timestamp) example
+async function getRadarImagesResults(location_name){
+   try{
+        // location is reserved keyword for dynamodb; therefore ExpressionAttributeNames is needed; "#dynobase_" just like the conversion
+        const params = {
+            TableName: TABLE_NAME_FORECAST_RADAR,
+            KeyConditionExpression: '#dynobase_location = :loc AND #dynobase_timestamp >= :ts',
+            ExpressionAttributeValues: {
+            ':loc': {S: 'sww'},
+            ':ts': {S: '202302081030'}
+            },
+            ExpressionAttributeNames: { "#dynobase_timestamp": "timestamp", "#dynobase_location": "location" }
+        };
+
+        const data = await dynamoDb.query(params).promise();
+        return {"data": data.Items}
+    }catch (err) {
+        console.log("Error loading item: ", err);
+        return {'success': false, 'data': "Load data failed!"}
+    }  
+}
+
+
