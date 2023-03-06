@@ -29,3 +29,17 @@ then mount the efs to ec2 by
 Remark: You may want to mount the drive to other directory at the same time. 
 Eg. map the above efs to the express public, then you need to enter
 > mount --bind /home/ubuntu/efs /home/ubuntu/express/public
+
+
+
+# Latest Version (simplest version)
+1. Create EC2 and no permission is required to set
+2. Create a folder in EC2 (eg. > mkdir efs)
+3. Install the software in EC2 (sudo apt-get -y install nfs-common)
+4. goto the EFS; Attach; copy the command and paste it to EC2
+
+
+
+
+
+
