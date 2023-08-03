@@ -27,6 +27,7 @@ then mount the efs to ec2 by
 - then goto the efs and goto “Network” -> “Manage” -> Remove the default security group and replace the newly created one
 <Step 4> Goto EFS and find the Attach button, then copy something like the following and paste it in the EC2
 "> sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0051309b6ed58d5b9.efs.ap-east-1.amazonaws.com:/ efs"
+<Important> In EC2, sudo chmod 777 <mount drive folder name>
 <Step 5> Done
 Reference: https://www.easydeploy.io/blog/mount-efs-file-system-amazon-ec2-instance/
 
