@@ -1,0 +1,58 @@
+This is a notes for
+1. upload to S3, then S3 trigger SQS
+2. SQS store the message
+3. EC2 poll from SQS
+
+
+
+
+LAB STARTED
+
+1. Create a Private S3; no permission need to set
+2. Create SQS
+3. In SQS page -> Access Policy; grant S3 to have permission to access SQS; Refer to the following poicy  setting
+4. Then goto S3 to set "properties" -> "create event notification" and link it to SQS
+
+
+Access Policy in SQS; Add "Service" into the "Principal"
+{
+  "Version": "2012-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__owner_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com",
+        "AWS": "arn:aws:iam::413006201484:root"
+      },
+      "Action": "SQS:*",
+      "Resource": "arn:aws:sqs:ap-east-1:413006201484:laifa-test"
+    }
+  ]
+}
+
+5. Done
+
+
+Application; Setup EC2 and allow it to access S3 and SQS (By IAM)
+then edit the following code
+
+import boto3
+import json
+sqs_client = boto3.client("sqs", region_name="ap-east-1")
+SQS_URL = "https://sqs.ap-east-1.amazonaws.com/413006201484/laifa-test"
+
+# the following function will load 1 message from SQS (MaxNumberOfMessages=1)
+def receive_message():
+    response = sqs_client.receive_message(
+        QueueUrl=SQS_URL,
+        MaxNumberOfMessages=1,
+        WaitTimeSeconds=10,
+    )
+    message = json.loads(response.get("Messages")[0]['Body'])['Records'][0]['s3']['object']['key']
+    return message
+
+
+print(receive_message())
+
